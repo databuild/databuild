@@ -1,3 +1,4 @@
+import six
 import os, csv, codecs
 
 
@@ -16,7 +17,8 @@ class UTF8Recoder(object):
         return self.reader.next().encode("utf-8")
 
     def __next__(self):
-        return self.next()
+        # used by Py3k
+        return self.reader.__next__()
 
 
 class UnicodeDictReader(object):
@@ -32,10 +34,15 @@ class UnicodeDictReader(object):
 
     def next(self):
         row = self.reader.next()
-        return {unicode(k, "utf-8"): unicode(v, "utf-8") for k, v in row.items()}
+        return {six.text_type(k, "utf-8"): six.text_type(v, "utf-8") for k, v in row.items()}
 
     def __iter__(self):
         return self
+
+    def __next__(self):
+        # used by Py3k
+        row = self.reader.__next__()
+        return {six.text_type(k): six.text_type(v) for k, v in row.items()}
 
     def __getattr__(self, name):
         if hasattr(self.reader, name):

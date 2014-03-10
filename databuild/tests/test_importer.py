@@ -1,4 +1,5 @@
 import os
+import six
 from unittest import TestCase
 
 from databuild.adapters.locmem import LocMemBook
@@ -16,8 +17,8 @@ class ImporterTestCase(TestCase):
             row = list(reader)[0]
 
         assert isinstance(row, dict)
-        assert isinstance(row.keys()[0], unicode)
-        assert isinstance(row.values()[0], unicode)
+        assert isinstance(list(row.keys())[0], six.text_type)
+        assert isinstance(list(row.values())[0], six.text_type)
 
     def test_import_csv(self):
         book = LocMemBook('project1')

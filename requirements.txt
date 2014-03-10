@@ -2,3 +2,4 @@ cython
 git+https://github.com/fcurella/tablib.git@develop
 docopt
 git+https://github.com/dotpy/offtheshelf.git@8e1a6eb32f4e75b3bf807a824eec77e862efb999
+six

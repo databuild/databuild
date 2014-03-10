@@ -13,7 +13,7 @@ def build_lua_runtime():
 
     for fn in functions:
         if not fn in lua_globals:
-            lua_globals[fn.func_name] = fn
+            lua_globals[fn.__name__] = fn
         else:
             warnings.warn("Function '%s' already present in Lua Environment. Skipping.")
 

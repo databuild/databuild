@@ -1,5 +1,5 @@
 all:
-	pip install -r requirements.txt
+	pip install --quiet -r requirements.txt
 	make lupa clean test-install
 
 clean:

@@ -1,3 +1,6 @@
+import os
+from tempfile import gettempdir
+
 from .base import BaseWorkBook, BaseWorkSheet
 from .exceptions import DoesNotExist
 import offtheshelf
@@ -112,7 +115,9 @@ class ShelveSheet(BaseWorkSheet):
 class ShelveBook(BaseWorkBook):
     sheet_class = ShelveSheet
 
-    def __init__(self, name='workbook'):
+    def __init__(self, name='workbook', data_dir=None):
         # TODO: slugify name
-        self.db = "/tmp/%s" % name
+        if not data_dir:
+            data_dir = gettempdir()
+        self.db = os.path.join(data_dir, name)
         super(ShelveBook, self).__init__(name)

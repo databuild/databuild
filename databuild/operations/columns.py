@@ -3,7 +3,7 @@ def update_column(workbook, sheet, column, facets, expression, wrap=True):
     sheet.update_column(column, expression, filter_fn=facets)
 
 
-def add_column(workbook, sheet, name='', expression=None):
+def add_column(workbook, sheet, name, expression=None):
     sheet = workbook.sheets[sheet]
     if expression is None:
         expression = lambda row: ''

@@ -15,6 +15,9 @@ class UTF8Recoder(object):
     def next(self):
         return self.reader.next().encode("utf-8")
 
+    def __next__(self):
+        return self.next()
+
 
 class UnicodeDictReader(object):
     """

@@ -5,8 +5,11 @@ Operations are functions called on the book. Examples of operations are: ``core.
 
 They have a path that identifies them, an optional description and a number of parameters that they accept. Different operations have different parameters.
 
-``core.import_data``
+Available Operations
 ====================
+
+``core.import_data``
+~~~~~~~~~~~~~~~~~~~~
 
 arguments:
     * ``sheet``
@@ -14,7 +17,7 @@ arguments:
     * ``filename``
 
 ``core.export_data``
-====================
+~~~~~~~~~~~~~~~~~~~~
 
 arguments:
     * ``sheet``
@@ -22,7 +25,7 @@ arguments:
     * ``filename``
 
 ``columns.update_column``
-=========================
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 arguments:
     * ``sheet``
@@ -31,7 +34,7 @@ arguments:
     * ``expression``
 
 ``columns.add_column``
-======================
+~~~~~~~~~~~~~~~~~~~~~~
 
 arguments:
     * ``sheet``
@@ -39,14 +42,14 @@ arguments:
     * ``expression`` (optional)
 
 ``columns.remove_column``
-=========================
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 arguments:
     * ``sheet``
     * ``name``
 
 ``columns.rename_column``
-=========================
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 arguments:
     * ``sheet``

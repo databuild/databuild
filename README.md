@@ -9,7 +9,7 @@ Inspired by Open Refine.
 ## Quickstart
 
 ```
-$ databuild makefile.json
+$ data-build.py makefile.json
 
 ```
 

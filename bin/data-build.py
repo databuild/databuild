@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-"""Naval Fate.
+"""data-build.
 
 Usage:
   databuild.py <buildfile>
-  databuild.py ship <buildfile> [--settings=<settings_path>]
+  databuild.py <buildfile> [--settings=<settings_path>]
   databuild.py (-h | --help)
   databuild.py --version
 

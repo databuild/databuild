@@ -74,6 +74,10 @@ Expressions are objects representing code for complex situations, such as filter
 
 Licensed under BSD 3-clauses.
 
+## Status
+
+This project is still in alpha stage.
+
 ## TODO
 
 * custom settings

@@ -37,7 +37,7 @@ An example of build file could be:
       "facets": [],
       "expression": {
         "language": "lua",
-        "content": "return row['Totale Maschi'] / row['Totale Femmine']"
+        "content": "return row['Male Total'] / row['Female Total']"
       }
     }
   },
@@ -80,7 +80,6 @@ This project is still in alpha stage.
 
 ## TODO
 
-* custom settings
 * exporting for ShelveSheet
 * R environment
 * yaml buildfiles

@@ -13,7 +13,7 @@ settings.FUNCTIONS = list(settings.FUNCTIONS) + [
 class OperatorTestCase(TestCase):
     def test_operator(self):
         operation = {
-            "path": "core.transform",
+            "path": "columns.update_column",
             "description": "",
             "params": {
                 "sheet": "dataset1",
@@ -33,7 +33,7 @@ class OperatorTestCase(TestCase):
 
     def test_function(self):
         operation = {
-            "path": "core.transform",
+            "path": "columns.update_column",
             "description": "",
             "params": {
                 "sheet": "dataset1",
@@ -53,7 +53,7 @@ class OperatorTestCase(TestCase):
 
     def test_facets(self):
         operation = {
-            "path": "core.transform",
+            "path": "columns.update_column",
             "description": "",
             "params": {
                 "sheet": "dataset1",

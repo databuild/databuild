@@ -9,8 +9,6 @@ Run databuild using a buildfile::
 
   $ data-build.py buildfile.json
 
-```
-
 `buildfile.json` contains a list of operations to be performed on data. Think of it as a script for a spreadsheet.
 
 An example of build file could be::
@@ -40,7 +38,7 @@ An example of build file could be::
       },
       {
         "path": "core.export_data",
-        "description": "",
+        "description": "save the data",
         "params": {
           "sheet": "dataset1",
           "format": "csv",

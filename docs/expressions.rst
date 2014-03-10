@@ -1,4 +1,7 @@
+.. _expressions
+
 Expressions
 -----------
 
-Expressions are objects representing code for complex situations, such as filtering or calculations.
+Expressions are objects encapsulating code for situations such as filtering or calculations.
+

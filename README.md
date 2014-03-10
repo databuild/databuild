@@ -73,7 +73,7 @@ Expressions are objects representing code for complex situations, such as filter
 
 ## Installation
 
-Run `make` from the root project.
+Run `make` from the project root.
 
 ## License
 

@@ -1,8 +1,10 @@
 import os
 from setuptools import setup, find_packages
+from setuptools.command.install import install
+
+import subprocess
 
 VERSION = "0.0.1"
-
 
 def read(fname):
     try:
@@ -13,6 +15,13 @@ def read(fname):
 
 requirements = read('requirements').splitlines()
 tests_requirements = read('test-requirements').splitlines()
+
+class DataBuildInstall(install):
+
+    def run(self):
+        subprocess.call('make all')
+        install.run(self)
+
 
 setup(
     name="databuild",

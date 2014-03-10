@@ -1,5 +1,5 @@
-cython
+cython==0.20.1
 git+https://github.com/fcurella/tablib.git@develop
-docopt
+docopt==0.6.1
 git+https://github.com/dotpy/offtheshelf.git@8e1a6eb32f4e75b3bf807a824eec77e862efb999
-six
+six==1.5.2

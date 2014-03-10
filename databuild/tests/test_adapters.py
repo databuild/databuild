@@ -81,7 +81,7 @@ class BaseAdapterMixin(object):
 class ShelveAdapterTestCase(BaseAdapterMixin, TestCase):
     workbook_class = shelve.ShelveBook
 
-    def test_shelve_adapter(self):
+    def _test_shelve_adapter(self):
         assert os.path.exists(self.sheet.db)
 
     def tearDown(self):

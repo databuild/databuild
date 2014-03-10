@@ -64,6 +64,8 @@ They have a path that identifies them, an optional description and a number of p
 
 ## Expressions
 
+Expressions are objects representing code for complex situations, such as filtering or calculations.
+
 ## Functions
 
 ## Extending

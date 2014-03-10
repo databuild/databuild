@@ -11,7 +11,7 @@ lupa:
 	cd lupa-master/ && ARCHFLAGS="-arch x86_64" python setup.py install --no-luajit
 
 test-install:
-	ipython -c "from lupa import LuaRuntime; lua = LuaRuntime()"
+	python -c "from lupa import LuaRuntime; lua = LuaRuntime()"
 
 all:
 	pip install -r requirements.txt

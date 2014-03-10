@@ -9,11 +9,11 @@ Inspired by Open Refine.
 ## Quickstart
 
 ```
-$ data-build.py makefile.json
+$ data-build.py buildfile.json
 
 ```
 
-`makefile.json` contains a list of operations to be performed on data. Think of it as a script for a spreadsheet.
+`buildfile.json` contains a list of operations to be performed on data. Think of it as a script for a spreadsheet.
 
 An example of build file could be:
 
@@ -52,6 +52,7 @@ An example of build file could be:
   }
 ]
 ```
+
 ## Data Model
 
 Data is organized in a `Workbook`, containing one or more `Sheet`s.
@@ -69,6 +70,10 @@ Expressions are objects representing code for complex situations, such as filter
 ## Functions
 
 ## Extending
+
+## Installation
+
+Run `make` from the root project.
 
 ## License
 

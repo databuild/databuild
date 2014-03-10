@@ -11,6 +11,14 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   quickstart
+   buildfiles
+   operations
+   expressions
+   functions
+   extending
+   settings
+
 
 
 Indices and tables

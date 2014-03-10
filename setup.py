@@ -24,6 +24,7 @@ setup(
     author='Flavio Curella',
     author_email='flavio.curella@gmail.com',
     packages=find_packages(exclude=['tests']),
+    scripts=['bin/data-build.py'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Console',

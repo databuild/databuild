@@ -1,3 +1,7 @@
+all:
+	pip install -r requirements.txt
+	make lupa clean test-install
+
 clean:
 	rm -rf lupa-master
 	rm -rf master.tar.gz
@@ -12,7 +16,3 @@ lupa:
 
 test-install:
 	python -c "from lupa import LuaRuntime; lua = LuaRuntime()"
-
-all:
-	pip install -r requirements.txt
-	make lupa clean test-install

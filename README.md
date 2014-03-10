@@ -68,6 +68,10 @@ They have a path that identifies them, an optional description and a number of p
 
 ## Extending
 
+## License
+
+Licensed under BSD 3-clauses.
+
 ## TODO
 
 * custom settings

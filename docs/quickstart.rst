@@ -24,7 +24,7 @@ An example of build file could be::
         }
       },
       {
-        "path": "core.add_column",
+        "path": "columns.add_column",
         "description": "Calculate the gender ratio",
         "params": {
           "sheet": "dataset1",

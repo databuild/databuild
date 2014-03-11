@@ -7,7 +7,7 @@ def add_column(workbook, sheet, name, expression=None):
     sheet = workbook.sheets[sheet]
     if expression is None:
         expression = lambda row: ''
-    sheet.append_col(expression, header=name)
+    sheet.append_column(name, expression)
 
 
 def remove_column(workbook, sheet, name):

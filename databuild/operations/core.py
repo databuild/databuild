@@ -4,4 +4,7 @@ def import_data(workbook, sheet, format, filename):
 
 def export_data(workbook, sheet, format, filename):
     sheet = workbook.sheets[sheet]
-    sheet.export_data(format, filename)
+    data = sheet.export_data(format)
+    with open(filename, 'wb') as fh:
+        fh.write(data)
+

@@ -28,8 +28,7 @@ An example of build file could be::
         "description": "Calculate the gender ratio",
         "params": {
           "sheet": "dataset1",
-          "column": "Gender Ratio",
-          "facets": [],
+          "name": "Gender Ratio",
           "expression": {
             "language": "lua",
             "content": "return row['Male Total'] / row['Female Total']"

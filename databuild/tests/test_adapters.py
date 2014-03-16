@@ -124,7 +124,7 @@ class ShelveAdapterTestCase(BaseAdapterMixin, TestCase):
     def setup_book(self):
         return self.workbook_class(name='test_workbook', data_dir=TEST_DIR)
 
-    def test_shelve_adapter(self):
+    def _test_shelve_adapter(self):
         assert os.path.exists(self.book.db)
 
     def tearDown(self):

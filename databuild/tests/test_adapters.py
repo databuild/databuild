@@ -48,6 +48,32 @@ class BaseAdapterMixin(object):
         self.sheet.delete(lambda r: r['Comune'] == "Acqui Terme")
         self.assertRaises(exceptions.DoesNotExist, self.sheet.get, Comune="Acqui Terme")
 
+    def test_adapter_copy_column(self):
+        self.sheet.copy_column("Codice Comune", "Postal Code")
+        assert "Codice Comune" in self.sheet.headers
+        assert "Postal Code" in self.sheet.headers
+
+        fetched_row = self.sheet.get(Comune="Acqui Terme")
+        assert fetched_row['Codice Comune'] == fetched_row['Postal Code']
+
+    def test_adapter_remove_column(self):
+        self.sheet.remove_column("Codice Comune")
+        assert "Codice Comune" not in self.sheet.headers
+
+        fetched_row = self.sheet.get(Comune="Acqui Terme")
+        assert 'Codice Comune' not in fetched_row
+
+    def test_adapter_rename_column(self):
+        fetched_row = self.sheet.get(Comune="Acqui Terme")
+        value = fetched_row['Codice Comune']
+
+        self.sheet.rename_column("Codice Comune", "Postal Code")
+        assert "Codice Comune" not in self.sheet.headers
+        assert "Postal Code" in self.sheet.headers
+
+        fetched_row = self.sheet.get(Comune="Acqui Terme")
+        assert fetched_row['Postal Code'] == value
+
     def test_adapter_append_column(self):
         self.sheet.append_column("Maschi+Femmine", lambda r: r['Totale Maschi'] + r['Totale Femmine'])
 

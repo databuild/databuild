@@ -36,6 +36,7 @@ class LocMemSheet(BaseWorkSheet):
         return callable_or_docs
 
     def copy_column(self, old_name, new_name):
+        self.headers.append(new_name)
         values = self.data[old_name]
         self.data.append_col(values, header=new_name)
 
@@ -51,6 +52,7 @@ class LocMemSheet(BaseWorkSheet):
 
     def remove_column(self, column_name):
         del self.data[column_name]
+        self.headers.remove(column_name)
 
     def rename_column(self, old_name, new_name):
         self.copy_column(old_name, new_name)

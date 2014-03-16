@@ -65,6 +65,7 @@ class BaseAdapterMixin(object):
 
     def test_adapter_rename_column(self):
         fetched_row = self.sheet.get(Comune="Acqui Terme")
+        print(fetched_row)
         value = fetched_row['Codice Comune']
 
         self.sheet.rename_column("Codice Comune", "Postal Code")

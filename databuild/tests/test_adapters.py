@@ -118,15 +118,12 @@ class BaseAdapterMixin(object):
 class ShelveAdapterTestCase(BaseAdapterMixin, TestCase):
     workbook_class = shelve.ShelveBook
 
-    unlink = os.unlink
-    path_exists = os.path.exists
-
     def _test_shelve_adapter(self):
-        assert self.path_exists(self.book.db)
+        assert os.path.exists(self.book.db)
 
     def tearDown(self):
-        if self.path_exists(self.book.db):
-            self.unlink(self.book.db)
+        if os.path.exists(self.book.db):
+            os.unlink(self.book.db)
 
 
 class LocMemAdapterTestCase(BaseAdapterMixin, TestCase):

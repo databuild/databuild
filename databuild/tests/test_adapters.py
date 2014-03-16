@@ -1,5 +1,4 @@
 import os
-import time
 from unittest import TestCase
 
 from databuild.adapters import shelve
@@ -64,6 +63,8 @@ class BaseAdapterMixin(object):
         fetched_row = self.sheet.get(Comune="Acqui Terme")
         assert 'Codice Comune' not in fetched_row
 
+        self.sheet.append_column('Codice Comune', [6001, 6002, 6003])
+
     def test_adapter_rename_column(self):
         fetched_row = self.sheet.get(Comune="Acqui Terme")
         value = fetched_row['Codice Comune']
@@ -85,6 +86,10 @@ class BaseAdapterMixin(object):
         assert self.sheet.headers[-1] == 'test column' 
         fetched_row = self.sheet.get(Comune="Acqui Terme")
         assert fetched_row["test column"] == None
+
+        self.sheet.append_column("test column 2", [1, 2, 3])
+        fetched_rows = self.sheet.all()
+        assert [row['test column 2'] for row in fetched_rows] == [1, 2, 3]
 
     def test_adapter_update_column(self):
         self.sheet.append_column("Maschi+Femmine", lambda r: None)
@@ -121,7 +126,6 @@ class ShelveAdapterTestCase(BaseAdapterMixin, TestCase):
     def tearDown(self):
         if os.path.exists(self.book.db):
             self.unlink(self.book.db)
-            time.sleep(5)
 
 
 class LocMemAdapterTestCase(BaseAdapterMixin, TestCase):

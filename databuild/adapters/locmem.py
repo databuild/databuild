@@ -46,6 +46,7 @@ class LocMemSheet(BaseWorkSheet):
         if callable_or_values is None:
             callable_or_values = lambda x: None
         values = self._callable_or_docs(callable_or_values, self.data.dict)
+        self.headers.append(column_name)
         self.data.append_col(values, header=column_name)
 
     def remove_column(self, column_name):

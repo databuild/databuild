@@ -54,6 +54,11 @@ class BaseAdapterMixin(object):
         fetched_row = self.sheet.get(Comune="Acqui Terme")
         assert fetched_row["Maschi+Femmine"] == 20449
 
+        self.sheet.append_column("test column")
+        assert self.sheet.headers[-1] == 'test column' 
+        fetched_row = self.sheet.get(Comune="Acqui Terme")
+        assert fetched_row["test column"] == None
+
     def test_adapter_update_column(self):
         self.sheet.append_column("Maschi+Femmine", lambda r: None)
 

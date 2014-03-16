@@ -119,12 +119,13 @@ class ShelveAdapterTestCase(BaseAdapterMixin, TestCase):
     workbook_class = shelve.ShelveBook
 
     unlink = os.unlink
+    path_exists = os.path.exists
 
     def _test_shelve_adapter(self):
-        assert os.path.exists(self.book.db)
+        assert self.path_exists(self.book.db)
 
     def tearDown(self):
-        if os.path.exists(self.book.db):
+        if self.path_exists(self.book.db):
             self.unlink(self.book.db)
 
 

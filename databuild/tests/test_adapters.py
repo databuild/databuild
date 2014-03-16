@@ -1,4 +1,5 @@
 import os
+import time
 from unittest import TestCase
 
 from databuild.adapters import shelve
@@ -112,12 +113,15 @@ class BaseAdapterMixin(object):
 class ShelveAdapterTestCase(BaseAdapterMixin, TestCase):
     workbook_class = shelve.ShelveBook
 
+    unlink = os.unlink
+
     def test_shelve_adapter(self):
         assert os.path.exists(self.book.db)
 
     def tearDown(self):
         if os.path.exists(self.book.db):
-            os.unlink(self.book.db)
+            self.unlink(self.book.db)
+            time.sleep(1)
 
 
 class LocMemAdapterTestCase(BaseAdapterMixin, TestCase):

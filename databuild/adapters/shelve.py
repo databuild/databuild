@@ -37,14 +37,14 @@ class ShelveSheet(BaseWorkSheet):
         self.headers.remove(column_name)
         with offtheshelf.openDB(self.db) as db:
             collection = db.get_collection(self.name)
-            for row in collection:
+            for row in collection.find():
                 del row[column_name]
 
     def copy_column(self, old_name, new_name):
         self.headers.append(new_name)
         with offtheshelf.openDB(self.db) as db:
             collection = db.get_collection(self.name)
-            for row in collection:
+            for row in collection.find():
                 row[new_name] = row[old_name]
 
     def rename_column(self, old_name, new_name):
@@ -52,14 +52,14 @@ class ShelveSheet(BaseWorkSheet):
         self.headers.remove(old_name)
         with offtheshelf.openDB(self.db) as db:
             collection = db.get_collection(self.name)
-            for row in collection:
+            for row in collection.find():
                 row[new_name] = row[old_name]
                 del row[old_name]
 
     def get_column(self, column_name):
         with offtheshelf.openDB(self.db) as db:
             collection = db.get_collection(self.name)
-            values = [row[column_name] for row in collection]
+            values = [row[column_name] for row in collection.find()]
         return values
 
     def all(self):

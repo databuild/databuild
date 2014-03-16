@@ -56,7 +56,7 @@ class BaseAdapterMixin(object):
         fetched_row = self.sheet.get(Comune="Acqui Terme")
         assert fetched_row['Codice Comune'] == fetched_row['Postal Code']
 
-    def test_adapter_remove_column(self):
+    def _test_adapter_remove_column(self):
         self.sheet.remove_column("Codice Comune")
         assert "Codice Comune" not in self.sheet.headers
 
@@ -114,7 +114,7 @@ class ShelveAdapterTestCase(BaseAdapterMixin, TestCase):
     workbook_class = shelve.ShelveBook
 
     def _test_shelve_adapter(self):
-        assert os.path.exists(self.sheet.db)
+        assert os.path.exists(self.book.db)
 
     def tearDown(self):
         if os.path.exists(self.book.db):

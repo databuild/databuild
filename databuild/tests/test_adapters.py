@@ -115,19 +115,18 @@ class BaseAdapterMixin(object):
         assert fetched_row["Maschi+Femmine"] == 10939
 
 
-
-unlink = os.unlink
-path_exists = os.path.exists
-
 class ShelveAdapterTestCase(BaseAdapterMixin, TestCase):
     workbook_class = shelve.ShelveBook
 
-    def test_shelve_adapter(self):
-        assert path_exists(self.book.db)
+    unlink = os.unlink
+    path_exists = os.path.exists
+
+    def _test_shelve_adapter(self):
+        assert self.path_exists(self.book.db)
 
     def tearDown(self):
-        if path_exists(self.book.db):
-            unlink(self.book.db)
+        if self.path_exists(self.book.db):
+            self.unlink(self.book.db)
 
 
 class LocMemAdapterTestCase(BaseAdapterMixin, TestCase):

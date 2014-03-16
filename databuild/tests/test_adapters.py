@@ -56,7 +56,7 @@ class BaseAdapterMixin(object):
         fetched_row = self.sheet.get(Comune="Acqui Terme")
         assert fetched_row['Codice Comune'] == fetched_row['Postal Code']
 
-    def _test_adapter_remove_column(self):
+    def test_adapter_remove_column(self):
         self.sheet.remove_column("Codice Comune")
         assert "Codice Comune" not in self.sheet.headers
 
@@ -65,7 +65,7 @@ class BaseAdapterMixin(object):
 
     def test_adapter_rename_column(self):
         fetched_row = self.sheet.get(Comune="Acqui Terme")
-        print(fetched_row)
+        print(self.book.db)
         value = fetched_row['Codice Comune']
 
         self.sheet.rename_column("Codice Comune", "Postal Code")

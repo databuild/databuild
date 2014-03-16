@@ -11,8 +11,11 @@ TEST_DIR = os.path.join(os.path.dirname(__file__))
 class BaseAdapterMixin(object):
     workbook_class = None
 
+    def setup_book(self):
+        return self.workbook_class(name='test_workbook')
+
     def setUp(self):
-        self.book = self.workbook_class(name='test_workbook')
+        self.book = self.setup_book()
         self.sheet = self.book.add_sheet('students', ["Codice Comune", "Comune", "Totale Maschi", "Totale Femmine"])
 
         self.acqui = {
@@ -118,7 +121,10 @@ class BaseAdapterMixin(object):
 class ShelveAdapterTestCase(BaseAdapterMixin, TestCase):
     workbook_class = shelve.ShelveBook
 
-    def _test_shelve_adapter(self):
+    def setup_book(self):
+        return self.workbook_class(name='test_workbook', data_dir=TEST_DIR)
+
+    def test_shelve_adapter(self):
         assert os.path.exists(self.book.db)
 
     def tearDown(self):

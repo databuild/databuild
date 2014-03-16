@@ -11,8 +11,8 @@ def read(fname):
     except IOError:
         return ''
 
-requirements = read('requirements').splitlines()
-tests_requirements = read('test-requirements').splitlines()
+requirements = read('requirements.txt').splitlines()
+tests_requirements = read('test-requirements.txt').splitlines()
 
 setup(
     name="databuild",

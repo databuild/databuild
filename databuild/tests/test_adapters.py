@@ -63,7 +63,7 @@ class BaseAdapterMixin(object):
         fetched_row = self.sheet.get(Comune="Acqui Terme")
         assert 'Codice Comune' not in fetched_row
         print(self.sheet.all())
-        self.sheet.append_column('Codice Comune', [6001, 6002, 6003])
+        self.sheet.append_column('Codice Comune')
 
     def test_adapter_rename_column(self):
         fetched_row = self.sheet.get(Comune="Acqui Terme")

@@ -1,5 +1,5 @@
-def import_data(workbook, sheet, format, filename):
-    workbook.import_data(format, filename, sheet)
+def import_data(workbook, format, filename, sheet, headers, encoding):
+    workbook.import_data(format, filename, sheet, headers, encoding)
 
 
 def export_data(workbook, sheet, format, filename):

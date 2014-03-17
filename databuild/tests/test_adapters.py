@@ -118,6 +118,16 @@ class BaseAdapterMixin(object):
         assert fetched_row["Maschi+Femmine"] == 10939
 
 
+class WriteFileTest(TestCase):
+    def test_write_file(self):
+        filename = os.path.join(TEST_DIR, 'testfile')
+        with open(filename, 'wb') as fh:
+            fh.write('test')
+        assert os.path.exists(filename)
+        os.unlink(filename)
+        assert not os.path.exists(filename)
+
+
 class ShelveAdapterTestCase(BaseAdapterMixin, TestCase):
     workbook_class = shelve.ShelveBook
 

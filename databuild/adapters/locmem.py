@@ -1,6 +1,7 @@
 from .base import BaseWorkBook, BaseWorkSheet
 from .exceptions import DoesNotExist
 import tablib
+from tabulate import tabulate
 from collections import OrderedDict
 
 
@@ -112,6 +113,9 @@ class LocMemSheet(BaseWorkSheet):
     def delete(self, fn):
         docs = [self._dict_to_values(doc) for doc in self.data.dict if not fn(doc) ]
         self.data = tablib.Dataset(*docs, headers=self.data.headers)
+
+    def print_data(self):
+        print(tabulate(self.data, headers=self.headers))
 
     def export_data(self, format='csv'):
         export_method = getattr(self, 'export_%s' % format, False)

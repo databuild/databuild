@@ -1,7 +1,7 @@
 import os
 from unittest import TestCase
 
-from databuild.adapters import shelve2 as shelve
+from databuild.adapters import shelved
 from databuild.adapters import locmem
 from databuild.adapters import exceptions
 
@@ -65,7 +65,6 @@ class BaseAdapterMixin(object):
 
         fetched_row = self.sheet.get(Comune="Acqui Terme")
         assert 'Codice Comune' not in fetched_row
-        #self.sheet.append_column('Codice Comune')
 
     def test_adapter_rename_column(self):
         fetched_row = self.sheet.get(Comune="Acqui Terme")
@@ -118,13 +117,10 @@ class BaseAdapterMixin(object):
 
 
 class ShelveAdapterTestCase(BaseAdapterMixin, TestCase):
-    workbook_class = shelve.ShelveBook
+    workbook_class = shelved.ShelveBook
 
     def setup_book(self):
         return self.workbook_class(name='test_workbook', data_dir=TEST_DIR)
-
-    def _test_shelve_adapter(self):
-        assert os.path.exists(self.book.db)
 
     def tearDown(self):
         if os.path.exists(self.book.db):

@@ -35,3 +35,18 @@ class ImporterTestCase(TestCase):
 
         acqui = sheet.get(Comune="Acqui Terme")
         assert acqui == acqui_test
+
+    def test_import_json(self):
+        book = LocMemBook('project1')
+        dataimporter = importer.Importer(workbook=book)
+        sheet = dataimporter.import_data('json', os.path.join(TEST_DIR, "dataset1.json"), 'sheet1')
+        acqui_test = {
+            "Codice Comune": '6001',
+            "Comune": "Acqui Terme",
+            "Totale Maschi": '9510',
+            "Totale Femmine": '10939',
+            "Maschi+Femmine": '20449'
+        }
+
+        acqui = sheet.get(Comune="Acqui Terme")
+        assert acqui == acqui_test

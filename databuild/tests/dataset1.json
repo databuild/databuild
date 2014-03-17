@@ -1,0 +1,1339 @@
+[
+  {
+    "Codice Comune": "6001",
+    "Comune": "Acqui Terme",
+    "Totale Maschi": "9510",
+    "Totale Femmine": "10939",
+    "Maschi+Femmine": "20449"
+  },
+  {
+    "Codice Comune": "6002",
+    "Comune": "Albera Ligure",
+    "Totale Maschi": "181",
+    "Totale Femmine": "157",
+    "Maschi+Femmine": "338"
+  },
+  {
+    "Codice Comune": "6003",
+    "Comune": "Alessandria",
+    "Totale Maschi": "44897",
+    "Totale Femmine": "49294",
+    "Maschi+Femmine": "94191"
+  },
+  {
+    "Codice Comune": "6004",
+    "Comune": "Alfiano Natta",
+    "Totale Maschi": "366",
+    "Totale Femmine": "402",
+    "Maschi+Femmine": "768"
+  },
+  {
+    "Codice Comune": "6005",
+    "Comune": "Alice Bel Colle",
+    "Totale Maschi": "412",
+    "Totale Femmine": "374",
+    "Maschi+Femmine": "786"
+  },
+  {
+    "Codice Comune": "6006",
+    "Comune": "Alluvioni Cambiò",
+    "Totale Maschi": "481",
+    "Totale Femmine": "506",
+    "Maschi+Femmine": "987"
+  },
+  {
+    "Codice Comune": "6007",
+    "Comune": "Altavilla Monferrato",
+    "Totale Maschi": "273",
+    "Totale Femmine": "240",
+    "Maschi+Femmine": "513"
+  },
+  {
+    "Codice Comune": "6008",
+    "Comune": "Alzano Scrivia",
+    "Totale Maschi": "203",
+    "Totale Femmine": "182",
+    "Maschi+Femmine": "385"
+  },
+  {
+    "Codice Comune": "6009",
+    "Comune": "Arquata Scrivia",
+    "Totale Maschi": "2975",
+    "Totale Femmine": "3190",
+    "Maschi+Femmine": "6165"
+  },
+  {
+    "Codice Comune": "6010",
+    "Comune": "Avolasca",
+    "Totale Maschi": "149",
+    "Totale Femmine": "145",
+    "Maschi+Femmine": "294"
+  },
+  {
+    "Codice Comune": "6011",
+    "Comune": "Balzola",
+    "Totale Maschi": "696",
+    "Totale Femmine": "746",
+    "Maschi+Femmine": "1442"
+  },
+  {
+    "Codice Comune": "6012",
+    "Comune": "Basaluzzo",
+    "Totale Maschi": "1062",
+    "Totale Femmine": "1052",
+    "Maschi+Femmine": "2114"
+  },
+  {
+    "Codice Comune": "6013",
+    "Comune": "Bassignana",
+    "Totale Maschi": "865",
+    "Totale Femmine": "921",
+    "Maschi+Femmine": "1786"
+  },
+  {
+    "Codice Comune": "6014",
+    "Comune": "Belforte Monferrato",
+    "Totale Maschi": "242",
+    "Totale Femmine": "226",
+    "Maschi+Femmine": "468"
+  },
+  {
+    "Codice Comune": "6015",
+    "Comune": "Bergamasco",
+    "Totale Maschi": "379",
+    "Totale Femmine": "393",
+    "Maschi+Femmine": "772"
+  },
+  {
+    "Codice Comune": "6016",
+    "Comune": "Berzano di Tortona",
+    "Totale Maschi": "88",
+    "Totale Femmine": "78",
+    "Maschi+Femmine": "166"
+  },
+  {
+    "Codice Comune": "6017",
+    "Comune": "Bistagno",
+    "Totale Maschi": "943",
+    "Totale Femmine": "986",
+    "Maschi+Femmine": "1929"
+  },
+  {
+    "Codice Comune": "6018",
+    "Comune": "Borghetto di Borbera",
+    "Totale Maschi": "998",
+    "Totale Femmine": "1017",
+    "Maschi+Femmine": "2015"
+  },
+  {
+    "Codice Comune": "6019",
+    "Comune": "Borgoratto Alessandrino",
+    "Totale Maschi": "290",
+    "Totale Femmine": "325",
+    "Maschi+Femmine": "615"
+  },
+  {
+    "Codice Comune": "6020",
+    "Comune": "Borgo San Martino",
+    "Totale Maschi": "696",
+    "Totale Femmine": "740",
+    "Maschi+Femmine": "1436"
+  },
+  {
+    "Codice Comune": "6021",
+    "Comune": "Bosco Marengo",
+    "Totale Maschi": "1272",
+    "Totale Femmine": "1263",
+    "Maschi+Femmine": "2535"
+  },
+  {
+    "Codice Comune": "6022",
+    "Comune": "Bosio",
+    "Totale Maschi": "628",
+    "Totale Femmine": "599",
+    "Maschi+Femmine": "1227"
+  },
+  {
+    "Codice Comune": "6023",
+    "Comune": "Bozzole",
+    "Totale Maschi": "159",
+    "Totale Femmine": "170",
+    "Maschi+Femmine": "329"
+  },
+  {
+    "Codice Comune": "6024",
+    "Comune": "Brignano-Frascata",
+    "Totale Maschi": "227",
+    "Totale Femmine": "235",
+    "Maschi+Femmine": "462"
+  },
+  {
+    "Codice Comune": "6025",
+    "Comune": "Cabella Ligure",
+    "Totale Maschi": "313",
+    "Totale Femmine": "264",
+    "Maschi+Femmine": "577"
+  },
+  {
+    "Codice Comune": "6026",
+    "Comune": "Camagna Monferrato",
+    "Totale Maschi": "273",
+    "Totale Femmine": "265",
+    "Maschi+Femmine": "538"
+  },
+  {
+    "Codice Comune": "6027",
+    "Comune": "Camino",
+    "Totale Maschi": "403",
+    "Totale Femmine": "403",
+    "Maschi+Femmine": "806"
+  },
+  {
+    "Codice Comune": "6028",
+    "Comune": "Cantalupo Ligure",
+    "Totale Maschi": "266",
+    "Totale Femmine": "280",
+    "Maschi+Femmine": "546"
+  },
+  {
+    "Codice Comune": "6029",
+    "Comune": "Capriata d'Orba",
+    "Totale Maschi": "948",
+    "Totale Femmine": "1012",
+    "Maschi+Femmine": "1960"
+  },
+  {
+    "Codice Comune": "6030",
+    "Comune": "Carbonara Scrivia",
+    "Totale Maschi": "539",
+    "Totale Femmine": "557",
+    "Maschi+Femmine": "1096"
+  },
+  {
+    "Codice Comune": "6031",
+    "Comune": "Carentino",
+    "Totale Maschi": "177",
+    "Totale Femmine": "163",
+    "Maschi+Femmine": "340"
+  },
+  {
+    "Codice Comune": "6032",
+    "Comune": "Carezzano",
+    "Totale Maschi": "212",
+    "Totale Femmine": "227",
+    "Maschi+Femmine": "439"
+  },
+  {
+    "Codice Comune": "6033",
+    "Comune": "Carpeneto",
+    "Totale Maschi": "492",
+    "Totale Femmine": "493",
+    "Maschi+Femmine": "985"
+  },
+  {
+    "Codice Comune": "6034",
+    "Comune": "Carrega Ligure",
+    "Totale Maschi": "48",
+    "Totale Femmine": "39",
+    "Maschi+Femmine": "87"
+  },
+  {
+    "Codice Comune": "6035",
+    "Comune": "Carrosio",
+    "Totale Maschi": "253",
+    "Totale Femmine": "238",
+    "Maschi+Femmine": "491"
+  },
+  {
+    "Codice Comune": "6036",
+    "Comune": "Cartosio",
+    "Totale Maschi": "395",
+    "Totale Femmine": "424",
+    "Maschi+Femmine": "819"
+  },
+  {
+    "Codice Comune": "6037",
+    "Comune": "Casal Cermelli",
+    "Totale Maschi": "627",
+    "Totale Femmine": "672",
+    "Maschi+Femmine": "1299"
+  },
+  {
+    "Codice Comune": "6038",
+    "Comune": "Casaleggio Boiro",
+    "Totale Maschi": "215",
+    "Totale Femmine": "199",
+    "Maschi+Femmine": "414"
+  },
+  {
+    "Codice Comune": "6039",
+    "Comune": "Casale Monferrato",
+    "Totale Maschi": "16970",
+    "Totale Femmine": "19023",
+    "Maschi+Femmine": "35993"
+  },
+  {
+    "Codice Comune": "6040",
+    "Comune": "Casalnoceto",
+    "Totale Maschi": "487",
+    "Totale Femmine": "505",
+    "Maschi+Femmine": "992"
+  },
+  {
+    "Codice Comune": "6041",
+    "Comune": "Casasco",
+    "Totale Maschi": "81",
+    "Totale Femmine": "56",
+    "Maschi+Femmine": "137"
+  },
+  {
+    "Codice Comune": "6042",
+    "Comune": "Cassano Spinola",
+    "Totale Maschi": "924",
+    "Totale Femmine": "951",
+    "Maschi+Femmine": "1875"
+  },
+  {
+    "Codice Comune": "6043",
+    "Comune": "Cassine",
+    "Totale Maschi": "1509",
+    "Totale Femmine": "1579",
+    "Maschi+Femmine": "3088"
+  },
+  {
+    "Codice Comune": "6044",
+    "Comune": "Cassinelle",
+    "Totale Maschi": "474",
+    "Totale Femmine": "470",
+    "Maschi+Femmine": "944"
+  },
+  {
+    "Codice Comune": "6045",
+    "Comune": "Castellania",
+    "Totale Maschi": "38",
+    "Totale Femmine": "47",
+    "Maschi+Femmine": "85"
+  },
+  {
+    "Codice Comune": "6046",
+    "Comune": "Castellar Guidobono",
+    "Totale Maschi": "216",
+    "Totale Femmine": "199",
+    "Maschi+Femmine": "415"
+  },
+  {
+    "Codice Comune": "6047",
+    "Comune": "Castellazzo Bormida",
+    "Totale Maschi": "2271",
+    "Totale Femmine": "2423",
+    "Maschi+Femmine": "4694"
+  },
+  {
+    "Codice Comune": "6048",
+    "Comune": "Castelletto d'Erro",
+    "Totale Maschi": "70",
+    "Totale Femmine": "80",
+    "Maschi+Femmine": "150"
+  },
+  {
+    "Codice Comune": "6049",
+    "Comune": "Castelletto d'Orba",
+    "Totale Maschi": "1063",
+    "Totale Femmine": "1030",
+    "Maschi+Femmine": "2093"
+  },
+  {
+    "Codice Comune": "6050",
+    "Comune": "Castelletto Merli",
+    "Totale Maschi": "260",
+    "Totale Femmine": "239",
+    "Maschi+Femmine": "499"
+  },
+  {
+    "Codice Comune": "6051",
+    "Comune": "Castelletto Monferrato",
+    "Totale Maschi": "788",
+    "Totale Femmine": "782",
+    "Maschi+Femmine": "1570"
+  },
+  {
+    "Codice Comune": "6052",
+    "Comune": "Castelnuovo Bormida",
+    "Totale Maschi": "328",
+    "Totale Femmine": "374",
+    "Maschi+Femmine": "702"
+  },
+  {
+    "Codice Comune": "6053",
+    "Comune": "Castelnuovo Scrivia",
+    "Totale Maschi": "2681",
+    "Totale Femmine": "2827",
+    "Maschi+Femmine": "5508"
+  },
+  {
+    "Codice Comune": "6054",
+    "Comune": "Castelspina",
+    "Totale Maschi": "205",
+    "Totale Femmine": "225",
+    "Maschi+Femmine": "430"
+  },
+  {
+    "Codice Comune": "6055",
+    "Comune": "Cavatore",
+    "Totale Maschi": "157",
+    "Totale Femmine": "163",
+    "Maschi+Femmine": "320"
+  },
+  {
+    "Codice Comune": "6056",
+    "Comune": "Cella Monte",
+    "Totale Maschi": "256",
+    "Totale Femmine": "267",
+    "Maschi+Femmine": "523"
+  },
+  {
+    "Codice Comune": "6057",
+    "Comune": "Cereseto",
+    "Totale Maschi": "239",
+    "Totale Femmine": "233",
+    "Maschi+Femmine": "472"
+  },
+  {
+    "Codice Comune": "6058",
+    "Comune": "Cerreto Grue",
+    "Totale Maschi": "155",
+    "Totale Femmine": "163",
+    "Maschi+Femmine": "318"
+  },
+  {
+    "Codice Comune": "6059",
+    "Comune": "Cerrina Monferrato",
+    "Totale Maschi": "778",
+    "Totale Femmine": "774",
+    "Maschi+Femmine": "1552"
+  },
+  {
+    "Codice Comune": "6060",
+    "Comune": "Coniolo",
+    "Totale Maschi": "230",
+    "Totale Femmine": "249",
+    "Maschi+Femmine": "479"
+  },
+  {
+    "Codice Comune": "6061",
+    "Comune": "Conzano",
+    "Totale Maschi": "494",
+    "Totale Femmine": "526",
+    "Maschi+Femmine": "1020"
+  },
+  {
+    "Codice Comune": "6062",
+    "Comune": "Costa Vescovato",
+    "Totale Maschi": "196",
+    "Totale Femmine": "188",
+    "Maschi+Femmine": "384"
+  },
+  {
+    "Codice Comune": "6063",
+    "Comune": "Cremolino",
+    "Totale Maschi": "543",
+    "Totale Femmine": "550",
+    "Maschi+Femmine": "1093"
+  },
+  {
+    "Codice Comune": "6064",
+    "Comune": "Cuccaro Monferrato",
+    "Totale Maschi": "176",
+    "Totale Femmine": "178",
+    "Maschi+Femmine": "354"
+  },
+  {
+    "Codice Comune": "6065",
+    "Comune": "Denice",
+    "Totale Maschi": "93",
+    "Totale Femmine": "108",
+    "Maschi+Femmine": "201"
+  },
+  {
+    "Codice Comune": "6066",
+    "Comune": "Dernice",
+    "Totale Maschi": "118",
+    "Totale Femmine": "119",
+    "Maschi+Femmine": "237"
+  },
+  {
+    "Codice Comune": "6067",
+    "Comune": "Fabbrica Curone",
+    "Totale Maschi": "353",
+    "Totale Femmine": "379",
+    "Maschi+Femmine": "732"
+  },
+  {
+    "Codice Comune": "6068",
+    "Comune": "Felizzano",
+    "Totale Maschi": "1231",
+    "Totale Femmine": "1228",
+    "Maschi+Femmine": "2459"
+  },
+  {
+    "Codice Comune": "6069",
+    "Comune": "Fraconalto",
+    "Totale Maschi": "207",
+    "Totale Femmine": "159",
+    "Maschi+Femmine": "366"
+  },
+  {
+    "Codice Comune": "6070",
+    "Comune": "Francavilla Bisio",
+    "Totale Maschi": "251",
+    "Totale Femmine": "260",
+    "Maschi+Femmine": "511"
+  },
+  {
+    "Codice Comune": "6071",
+    "Comune": "Frascaro",
+    "Totale Maschi": "222",
+    "Totale Femmine": "256",
+    "Maschi+Femmine": "478"
+  },
+  {
+    "Codice Comune": "6072",
+    "Comune": "Frassinello Monferrato",
+    "Totale Maschi": "260",
+    "Totale Femmine": "299",
+    "Maschi+Femmine": "559"
+  },
+  {
+    "Codice Comune": "6073",
+    "Comune": "Frassineto Po",
+    "Totale Maschi": "722",
+    "Totale Femmine": "742",
+    "Maschi+Femmine": "1464"
+  },
+  {
+    "Codice Comune": "6074",
+    "Comune": "Fresonara",
+    "Totale Maschi": "375",
+    "Totale Femmine": "345",
+    "Maschi+Femmine": "720"
+  },
+  {
+    "Codice Comune": "6075",
+    "Comune": "Frugarolo",
+    "Totale Maschi": "991",
+    "Totale Femmine": "1011",
+    "Maschi+Femmine": "2002"
+  },
+  {
+    "Codice Comune": "6076",
+    "Comune": "Fubine",
+    "Totale Maschi": "781",
+    "Totale Femmine": "902",
+    "Maschi+Femmine": "1683"
+  },
+  {
+    "Codice Comune": "6077",
+    "Comune": "Gabiano",
+    "Totale Maschi": "603",
+    "Totale Femmine": "641",
+    "Maschi+Femmine": "1244"
+  },
+  {
+    "Codice Comune": "6078",
+    "Comune": "Gamalero",
+    "Totale Maschi": "403",
+    "Totale Femmine": "439",
+    "Maschi+Femmine": "842"
+  },
+  {
+    "Codice Comune": "6079",
+    "Comune": "Garbagna",
+    "Totale Maschi": "364",
+    "Totale Femmine": "375",
+    "Maschi+Femmine": "739"
+  },
+  {
+    "Codice Comune": "6080",
+    "Comune": "Gavazzana",
+    "Totale Maschi": "91",
+    "Totale Femmine": "74",
+    "Maschi+Femmine": "165"
+  },
+  {
+    "Codice Comune": "6081",
+    "Comune": "Gavi",
+    "Totale Maschi": "2362",
+    "Totale Femmine": "2341",
+    "Maschi+Femmine": "4703"
+  },
+  {
+    "Codice Comune": "6082",
+    "Comune": "Giarole",
+    "Totale Maschi": "348",
+    "Totale Femmine": "375",
+    "Maschi+Femmine": "723"
+  },
+  {
+    "Codice Comune": "6083",
+    "Comune": "Gremiasco",
+    "Totale Maschi": "173",
+    "Totale Femmine": "176",
+    "Maschi+Femmine": "349"
+  },
+  {
+    "Codice Comune": "6084",
+    "Comune": "Grognardo",
+    "Totale Maschi": "153",
+    "Totale Femmine": "146",
+    "Maschi+Femmine": "299"
+  },
+  {
+    "Codice Comune": "6085",
+    "Comune": "Grondona",
+    "Totale Maschi": "274",
+    "Totale Femmine": "280",
+    "Maschi+Femmine": "554"
+  },
+  {
+    "Codice Comune": "6086",
+    "Comune": "Guazzora",
+    "Totale Maschi": "161",
+    "Totale Femmine": "163",
+    "Maschi+Femmine": "324"
+  },
+  {
+    "Codice Comune": "6087",
+    "Comune": "Isola Sant'Antonio",
+    "Totale Maschi": "367",
+    "Totale Femmine": "387",
+    "Maschi+Femmine": "754"
+  },
+  {
+    "Codice Comune": "6088",
+    "Comune": "Lerma",
+    "Totale Maschi": "432",
+    "Totale Femmine": "451",
+    "Maschi+Femmine": "883"
+  },
+  {
+    "Codice Comune": "6089",
+    "Comune": "Lu",
+    "Totale Maschi": "566",
+    "Totale Femmine": "620",
+    "Maschi+Femmine": "1186"
+  },
+  {
+    "Codice Comune": "6090",
+    "Comune": "Malvicino",
+    "Totale Maschi": "42",
+    "Totale Femmine": "55",
+    "Maschi+Femmine": "97"
+  },
+  {
+    "Codice Comune": "6091",
+    "Comune": "Masio",
+    "Totale Maschi": "747",
+    "Totale Femmine": "739",
+    "Maschi+Femmine": "1486"
+  },
+  {
+    "Codice Comune": "6092",
+    "Comune": "Melazzo",
+    "Totale Maschi": "673",
+    "Totale Femmine": "637",
+    "Maschi+Femmine": "1310"
+  },
+  {
+    "Codice Comune": "6093",
+    "Comune": "Merana",
+    "Totale Maschi": "100",
+    "Totale Femmine": "85",
+    "Maschi+Femmine": "185"
+  },
+  {
+    "Codice Comune": "6094",
+    "Comune": "Mirabello Monferrato",
+    "Totale Maschi": "683",
+    "Totale Femmine": "696",
+    "Maschi+Femmine": "1379"
+  },
+  {
+    "Codice Comune": "6095",
+    "Comune": "Molare",
+    "Totale Maschi": "1088",
+    "Totale Femmine": "1192",
+    "Maschi+Femmine": "2280"
+  },
+  {
+    "Codice Comune": "6096",
+    "Comune": "Molino dei Torti",
+    "Totale Maschi": "341",
+    "Totale Femmine": "360",
+    "Maschi+Femmine": "701"
+  },
+  {
+    "Codice Comune": "6097",
+    "Comune": "Mombello Monferrato",
+    "Totale Maschi": "535",
+    "Totale Femmine": "573",
+    "Maschi+Femmine": "1108"
+  },
+  {
+    "Codice Comune": "6098",
+    "Comune": "Momperone",
+    "Totale Maschi": "107",
+    "Totale Femmine": "111",
+    "Maschi+Femmine": "218"
+  },
+  {
+    "Codice Comune": "6099",
+    "Comune": "Moncestino",
+    "Totale Maschi": "122",
+    "Totale Femmine": "122",
+    "Maschi+Femmine": "244"
+  },
+  {
+    "Codice Comune": "6100",
+    "Comune": "Mongiardino Ligure",
+    "Totale Maschi": "98",
+    "Totale Femmine": "83",
+    "Maschi+Femmine": "181"
+  },
+  {
+    "Codice Comune": "6101",
+    "Comune": "Monleale",
+    "Totale Maschi": "297",
+    "Totale Femmine": "322",
+    "Maschi+Femmine": "619"
+  },
+  {
+    "Codice Comune": "6102",
+    "Comune": "Montacuto",
+    "Totale Maschi": "170",
+    "Totale Femmine": "140",
+    "Maschi+Femmine": "310"
+  },
+  {
+    "Codice Comune": "6103",
+    "Comune": "Montaldeo",
+    "Totale Maschi": "150",
+    "Totale Femmine": "140",
+    "Maschi+Femmine": "290"
+  },
+  {
+    "Codice Comune": "6104",
+    "Comune": "Montaldo Bormida",
+    "Totale Maschi": "352",
+    "Totale Femmine": "361",
+    "Maschi+Femmine": "713"
+  },
+  {
+    "Codice Comune": "6105",
+    "Comune": "Montecastello",
+    "Totale Maschi": "158",
+    "Totale Femmine": "169",
+    "Maschi+Femmine": "327"
+  },
+  {
+    "Codice Comune": "6106",
+    "Comune": "Montechiaro d'Acqui",
+    "Totale Maschi": "296",
+    "Totale Femmine": "293",
+    "Maschi+Femmine": "589"
+  },
+  {
+    "Codice Comune": "6107",
+    "Comune": "Montegioco",
+    "Totale Maschi": "182",
+    "Totale Femmine": "165",
+    "Maschi+Femmine": "347"
+  },
+  {
+    "Codice Comune": "6108",
+    "Comune": "Montemarzino",
+    "Totale Maschi": "169",
+    "Totale Femmine": "187",
+    "Maschi+Femmine": "356"
+  },
+  {
+    "Codice Comune": "6109",
+    "Comune": "Morano sul Po",
+    "Totale Maschi": "749",
+    "Totale Femmine": "789",
+    "Maschi+Femmine": "1538"
+  },
+  {
+    "Codice Comune": "6110",
+    "Comune": "Morbello",
+    "Totale Maschi": "215",
+    "Totale Femmine": "218",
+    "Maschi+Femmine": "433"
+  },
+  {
+    "Codice Comune": "6111",
+    "Comune": "Mornese",
+    "Totale Maschi": "370",
+    "Totale Femmine": "368",
+    "Maschi+Femmine": "738"
+  },
+  {
+    "Codice Comune": "6112",
+    "Comune": "Morsasco",
+    "Totale Maschi": "347",
+    "Totale Femmine": "359",
+    "Maschi+Femmine": "706"
+  },
+  {
+    "Codice Comune": "6113",
+    "Comune": "Murisengo",
+    "Totale Maschi": "714",
+    "Totale Femmine": "768",
+    "Maschi+Femmine": "1482"
+  },
+  {
+    "Codice Comune": "6114",
+    "Comune": "Novi Ligure",
+    "Totale Maschi": "13689",
+    "Totale Femmine": "14998",
+    "Maschi+Femmine": "28687"
+  },
+  {
+    "Codice Comune": "6115",
+    "Comune": "Occimiano",
+    "Totale Maschi": "671",
+    "Totale Femmine": "718",
+    "Maschi+Femmine": "1389"
+  },
+  {
+    "Codice Comune": "6116",
+    "Comune": "Odalengo Grande",
+    "Totale Maschi": "255",
+    "Totale Femmine": "266",
+    "Maschi+Femmine": "521"
+  },
+  {
+    "Codice Comune": "6117",
+    "Comune": "Odalengo Piccolo",
+    "Totale Maschi": "124",
+    "Totale Femmine": "135",
+    "Maschi+Femmine": "259"
+  },
+  {
+    "Codice Comune": "6118",
+    "Comune": "Olivola",
+    "Totale Maschi": "66",
+    "Totale Femmine": "65",
+    "Maschi+Femmine": "131"
+  },
+  {
+    "Codice Comune": "6119",
+    "Comune": "Orsara Bormida",
+    "Totale Maschi": "202",
+    "Totale Femmine": "201",
+    "Maschi+Femmine": "403"
+  },
+  {
+    "Codice Comune": "6120",
+    "Comune": "Ottiglio",
+    "Totale Maschi": "342",
+    "Totale Femmine": "345",
+    "Maschi+Femmine": "687"
+  },
+  {
+    "Codice Comune": "6121",
+    "Comune": "Ovada",
+    "Totale Maschi": "5669",
+    "Totale Femmine": "6232",
+    "Maschi+Femmine": "11901"
+  },
+  {
+    "Codice Comune": "6122",
+    "Comune": "Oviglio",
+    "Totale Maschi": "624",
+    "Totale Femmine": "675",
+    "Maschi+Femmine": "1299"
+  },
+  {
+    "Codice Comune": "6123",
+    "Comune": "Ozzano Monferrato",
+    "Totale Maschi": "717",
+    "Totale Femmine": "808",
+    "Maschi+Femmine": "1525"
+  },
+  {
+    "Codice Comune": "6124",
+    "Comune": "Paderna",
+    "Totale Maschi": "113",
+    "Totale Femmine": "126",
+    "Maschi+Femmine": "239"
+  },
+  {
+    "Codice Comune": "6125",
+    "Comune": "Pareto",
+    "Totale Maschi": "334",
+    "Totale Femmine": "295",
+    "Maschi+Femmine": "629"
+  },
+  {
+    "Codice Comune": "6126",
+    "Comune": "Parodi Ligure",
+    "Totale Maschi": "390",
+    "Totale Femmine": "372",
+    "Maschi+Femmine": "762"
+  },
+  {
+    "Codice Comune": "6127",
+    "Comune": "Pasturana",
+    "Totale Maschi": "582",
+    "Totale Femmine": "635",
+    "Maschi+Femmine": "1217"
+  },
+  {
+    "Codice Comune": "6128",
+    "Comune": "Pecetto di Valenza",
+    "Totale Maschi": "641",
+    "Totale Femmine": "640",
+    "Maschi+Femmine": "1281"
+  },
+  {
+    "Codice Comune": "6129",
+    "Comune": "Pietra Marazzi",
+    "Totale Maschi": "435",
+    "Totale Femmine": "478",
+    "Maschi+Femmine": "913"
+  },
+  {
+    "Codice Comune": "6130",
+    "Comune": "Piovera",
+    "Totale Maschi": "415",
+    "Totale Femmine": "422",
+    "Maschi+Femmine": "837"
+  },
+  {
+    "Codice Comune": "6131",
+    "Comune": "Pomaro Monferrato",
+    "Totale Maschi": "190",
+    "Totale Femmine": "197",
+    "Maschi+Femmine": "387"
+  },
+  {
+    "Codice Comune": "6132",
+    "Comune": "Pontecurone",
+    "Totale Maschi": "1912",
+    "Totale Femmine": "1993",
+    "Maschi+Femmine": "3905"
+  },
+  {
+    "Codice Comune": "6133",
+    "Comune": "Pontestura",
+    "Totale Maschi": "700",
+    "Totale Femmine": "765",
+    "Maschi+Femmine": "1465"
+  },
+  {
+    "Codice Comune": "6134",
+    "Comune": "Ponti",
+    "Totale Maschi": "317",
+    "Totale Femmine": "329",
+    "Maschi+Femmine": "646"
+  },
+  {
+    "Codice Comune": "6135",
+    "Comune": "Ponzano Monferrato",
+    "Totale Maschi": "182",
+    "Totale Femmine": "205",
+    "Maschi+Femmine": "387"
+  },
+  {
+    "Codice Comune": "6136",
+    "Comune": "Ponzone",
+    "Totale Maschi": "581",
+    "Totale Femmine": "550",
+    "Maschi+Femmine": "1131"
+  },
+  {
+    "Codice Comune": "6137",
+    "Comune": "Pozzol Groppo",
+    "Totale Maschi": "191",
+    "Totale Femmine": "180",
+    "Maschi+Femmine": "371"
+  },
+  {
+    "Codice Comune": "6138",
+    "Comune": "Pozzolo Formigaro",
+    "Totale Maschi": "2411",
+    "Totale Femmine": "2492",
+    "Maschi+Femmine": "4903"
+  },
+  {
+    "Codice Comune": "6139",
+    "Comune": "Prasco",
+    "Totale Maschi": "278",
+    "Totale Femmine": "282",
+    "Maschi+Femmine": "560"
+  },
+  {
+    "Codice Comune": "6140",
+    "Comune": "Predosa",
+    "Totale Maschi": "1044",
+    "Totale Femmine": "1063",
+    "Maschi+Femmine": "2107"
+  },
+  {
+    "Codice Comune": "6141",
+    "Comune": "Quargnento",
+    "Totale Maschi": "687",
+    "Totale Femmine": "711",
+    "Maschi+Femmine": "1398"
+  },
+  {
+    "Codice Comune": "6142",
+    "Comune": "Quattordio",
+    "Totale Maschi": "831",
+    "Totale Femmine": "864",
+    "Maschi+Femmine": "1695"
+  },
+  {
+    "Codice Comune": "6143",
+    "Comune": "Ricaldone",
+    "Totale Maschi": "356",
+    "Totale Femmine": "337",
+    "Maschi+Femmine": "693"
+  },
+  {
+    "Codice Comune": "6144",
+    "Comune": "Rivalta Bormida",
+    "Totale Maschi": "698",
+    "Totale Femmine": "744",
+    "Maschi+Femmine": "1442"
+  },
+  {
+    "Codice Comune": "6145",
+    "Comune": "Rivarone",
+    "Totale Maschi": "184",
+    "Totale Femmine": "188",
+    "Maschi+Femmine": "372"
+  },
+  {
+    "Codice Comune": "6146",
+    "Comune": "Roccaforte Ligure",
+    "Totale Maschi": "87",
+    "Totale Femmine": "67",
+    "Maschi+Femmine": "154"
+  },
+  {
+    "Codice Comune": "6147",
+    "Comune": "Rocca Grimalda",
+    "Totale Maschi": "783",
+    "Totale Femmine": "757",
+    "Maschi+Femmine": "1540"
+  },
+  {
+    "Codice Comune": "6148",
+    "Comune": "Rocchetta Ligure",
+    "Totale Maschi": "111",
+    "Totale Femmine": "106",
+    "Maschi+Femmine": "217"
+  },
+  {
+    "Codice Comune": "6149",
+    "Comune": "Rosignano Monferrato",
+    "Totale Maschi": "837",
+    "Totale Femmine": "867",
+    "Maschi+Femmine": "1704"
+  },
+  {
+    "Codice Comune": "6150",
+    "Comune": "Sala Monferrato",
+    "Totale Maschi": "193",
+    "Totale Femmine": "201",
+    "Maschi+Femmine": "394"
+  },
+  {
+    "Codice Comune": "6151",
+    "Comune": "Sale",
+    "Totale Maschi": "1993",
+    "Totale Femmine": "2293",
+    "Maschi+Femmine": "4286"
+  },
+  {
+    "Codice Comune": "6152",
+    "Comune": "San Cristoforo",
+    "Totale Maschi": "296",
+    "Totale Femmine": "312",
+    "Maschi+Femmine": "608"
+  },
+  {
+    "Codice Comune": "6153",
+    "Comune": "San Giorgio Monferrato",
+    "Totale Maschi": "615",
+    "Totale Femmine": "668",
+    "Maschi+Femmine": "1283"
+  },
+  {
+    "Codice Comune": "6154",
+    "Comune": "San Salvatore Monferrato",
+    "Totale Maschi": "2166",
+    "Totale Femmine": "2338",
+    "Maschi+Femmine": "4504"
+  },
+  {
+    "Codice Comune": "6155",
+    "Comune": "San Sebastiano Curone",
+    "Totale Maschi": "296",
+    "Totale Femmine": "336",
+    "Maschi+Femmine": "632"
+  },
+  {
+    "Codice Comune": "6156",
+    "Comune": "Sant'Agata Fossili",
+    "Totale Maschi": "226",
+    "Totale Femmine": "237",
+    "Maschi+Femmine": "463"
+  },
+  {
+    "Codice Comune": "6157",
+    "Comune": "Sardigliano",
+    "Totale Maschi": "222",
+    "Totale Femmine": "229",
+    "Maschi+Femmine": "451"
+  },
+  {
+    "Codice Comune": "6158",
+    "Comune": "Sarezzano",
+    "Totale Maschi": "601",
+    "Totale Femmine": "599",
+    "Maschi+Femmine": "1200"
+  },
+  {
+    "Codice Comune": "6159",
+    "Comune": "Serralunga di Crea",
+    "Totale Maschi": "282",
+    "Totale Femmine": "306",
+    "Maschi+Femmine": "588"
+  },
+  {
+    "Codice Comune": "6160",
+    "Comune": "Serravalle Scrivia",
+    "Totale Maschi": "3170",
+    "Totale Femmine": "3203",
+    "Maschi+Femmine": "6373"
+  },
+  {
+    "Codice Comune": "6161",
+    "Comune": "Sezzadio",
+    "Totale Maschi": "635",
+    "Totale Femmine": "657",
+    "Maschi+Femmine": "1292"
+  },
+  {
+    "Codice Comune": "6162",
+    "Comune": "Silvano d'Orba",
+    "Totale Maschi": "970",
+    "Totale Femmine": "1030",
+    "Maschi+Femmine": "2000"
+  },
+  {
+    "Codice Comune": "6163",
+    "Comune": "Solero",
+    "Totale Maschi": "813",
+    "Totale Femmine": "873",
+    "Maschi+Femmine": "1686"
+  },
+  {
+    "Codice Comune": "6164",
+    "Comune": "Solonghello",
+    "Totale Maschi": "114",
+    "Totale Femmine": "125",
+    "Maschi+Femmine": "239"
+  },
+  {
+    "Codice Comune": "6165",
+    "Comune": "Spigno Monferrato",
+    "Totale Maschi": "584",
+    "Totale Femmine": "583",
+    "Maschi+Femmine": "1167"
+  },
+  {
+    "Codice Comune": "6166",
+    "Comune": "Spineto Scrivia",
+    "Totale Maschi": "184",
+    "Totale Femmine": "188",
+    "Maschi+Femmine": "372"
+  },
+  {
+    "Codice Comune": "6167",
+    "Comune": "Stazzano",
+    "Totale Maschi": "1162",
+    "Totale Femmine": "1220",
+    "Maschi+Femmine": "2382"
+  },
+  {
+    "Codice Comune": "6168",
+    "Comune": "Strevi",
+    "Totale Maschi": "1050",
+    "Totale Femmine": "1040",
+    "Maschi+Femmine": "2090"
+  },
+  {
+    "Codice Comune": "6169",
+    "Comune": "Tagliolo Monferrato",
+    "Totale Maschi": "805",
+    "Totale Femmine": "761",
+    "Maschi+Femmine": "1566"
+  },
+  {
+    "Codice Comune": "6170",
+    "Comune": "Tassarolo",
+    "Totale Maschi": "317",
+    "Totale Femmine": "307",
+    "Maschi+Femmine": "624"
+  },
+  {
+    "Codice Comune": "6171",
+    "Comune": "Terruggia",
+    "Totale Maschi": "410",
+    "Totale Femmine": "470",
+    "Maschi+Femmine": "880"
+  },
+  {
+    "Codice Comune": "6172",
+    "Comune": "Terzo",
+    "Totale Maschi": "451",
+    "Totale Femmine": "441",
+    "Maschi+Femmine": "892"
+  },
+  {
+    "Codice Comune": "6173",
+    "Comune": "Ticineto",
+    "Totale Maschi": "682",
+    "Totale Femmine": "747",
+    "Maschi+Femmine": "1429"
+  },
+  {
+    "Codice Comune": "6174",
+    "Comune": "Tortona",
+    "Totale Maschi": "13077",
+    "Totale Femmine": "14457",
+    "Maschi+Femmine": "27534"
+  },
+  {
+    "Codice Comune": "6175",
+    "Comune": "Treville",
+    "Totale Maschi": "136",
+    "Totale Femmine": "145",
+    "Maschi+Femmine": "281"
+  },
+  {
+    "Codice Comune": "6176",
+    "Comune": "Trisobbio",
+    "Totale Maschi": "325",
+    "Totale Femmine": "354",
+    "Maschi+Femmine": "679"
+  },
+  {
+    "Codice Comune": "6177",
+    "Comune": "Valenza",
+    "Totale Maschi": "9590",
+    "Totale Femmine": "10573",
+    "Maschi+Femmine": "20163"
+  },
+  {
+    "Codice Comune": "6178",
+    "Comune": "Valmacca",
+    "Totale Maschi": "500",
+    "Totale Femmine": "588",
+    "Maschi+Femmine": "1088"
+  },
+  {
+    "Codice Comune": "6179",
+    "Comune": "Vignale Monferrato",
+    "Totale Maschi": "539",
+    "Totale Femmine": "562",
+    "Maschi+Femmine": "1101"
+  },
+  {
+    "Codice Comune": "6180",
+    "Comune": "Vignole Borbera",
+    "Totale Maschi": "1080",
+    "Totale Femmine": "1169",
+    "Maschi+Femmine": "2249"
+  },
+  {
+    "Codice Comune": "6181",
+    "Comune": "Viguzzolo",
+    "Totale Maschi": "1558",
+    "Totale Femmine": "1648",
+    "Maschi+Femmine": "3206"
+  },
+  {
+    "Codice Comune": "6182",
+    "Comune": "Villadeati",
+    "Totale Maschi": "251",
+    "Totale Femmine": "266",
+    "Maschi+Femmine": "517"
+  },
+  {
+    "Codice Comune": "6183",
+    "Comune": "Villalvernia",
+    "Totale Maschi": "473",
+    "Totale Femmine": "518",
+    "Maschi+Femmine": "991"
+  },
+  {
+    "Codice Comune": "6184",
+    "Comune": "Villamiroglio",
+    "Totale Maschi": "174",
+    "Totale Femmine": "163",
+    "Maschi+Femmine": "337"
+  },
+  {
+    "Codice Comune": "6185",
+    "Comune": "Villanova Monferrato",
+    "Totale Maschi": "907",
+    "Totale Femmine": "970",
+    "Maschi+Femmine": "1877"
+  },
+  {
+    "Codice Comune": "6186",
+    "Comune": "Villaromagnano",
+    "Totale Maschi": "360",
+    "Totale Femmine": "358",
+    "Maschi+Femmine": "718"
+  },
+  {
+    "Codice Comune": "6187",
+    "Comune": "Visone",
+    "Totale Maschi": "610",
+    "Totale Femmine": "635",
+    "Maschi+Femmine": "1245"
+  },
+  {
+    "Codice Comune": "6188",
+    "Comune": "Volpedo",
+    "Totale Maschi": "606",
+    "Totale Femmine": "644",
+    "Maschi+Femmine": "1250"
+  },
+  {
+    "Codice Comune": "6189",
+    "Comune": "Volpeglino",
+    "Totale Maschi": "98",
+    "Totale Femmine": "75",
+    "Maschi+Femmine": "173"
+  },
+  {
+    "Codice Comune": "6190",
+    "Comune": "Voltaggio",
+    "Totale Maschi": "387",
+    "Totale Femmine": "387",
+    "Maschi+Femmine": "774"
+  },
+  {
+    "Codice Comune": "",
+    "Comune": "TOTALE",
+    "Totale Maschi": "211905",
+    "Totale Femmine": "227509",
+    "Maschi+Femmine": "439414"
+  }
+]

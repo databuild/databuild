@@ -11,10 +11,14 @@ Available Operations
 ``core.import_data``
 ~~~~~~~~~~~~~~~~~~~~
 
+Creates a new sheet importing data from an external source.
+
 arguments:
-    * ``sheet``
-    * ``format``
-    * ``filename``
+    * ``filename``: Required.
+    * ``sheet``: Optional. Defaults to ``filename``'s basename.
+    * ``format``: Values currently supported are ``'csv'`` and ``'json'``.
+    * ``headers``: Optional. By default the importer tries to autodetects the header names.
+    * ``encoding``: Optional. Defaults to ``'utf-8'``.
 
 ``core.export_data``
 ~~~~~~~~~~~~~~~~~~~~

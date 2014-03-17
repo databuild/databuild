@@ -56,20 +56,31 @@ class Importer(object):
         self.workbook = workbook
         super(Importer, self).__init__()
 
-    def import_data(self, format, *args, **kwargs):
+    def import_data(self, format, filename, sheet_name=None, *args, **kwargs):
+        if sheet_name is None:
+            sheet_name = os.path.basename(filename)
+
         import_method = getattr(self, 'import_%s' % format, False)
         if import_method:
-            return import_method(*args, **kwargs)
+            return import_method(filename, sheet_name, *args, **kwargs)
         raise NotImplementedError()
 
-    def import_csv(self, filename, sheet_name=None, headers=None, encoding='utf-8', **kwargs):
+    def import_csv(self, filename, sheet_name, headers=None, encoding='utf-8', **kwargs):
         with open(filename, 'rb') as f:
             reader = UnicodeDictReader(f, encoding, **kwargs)
             if headers is None:
                 headers = reader.fieldnames
-            if sheet_name is None:
-                sheet_name = os.path.basename(filename)
 
             sheet = self.workbook.add_sheet(sheet_name, headers)
             sheet.extend(reader)
+        return sheet
+
+    def import_json(self, filename, sheet_name, headers=None, encoding='utf-8', **kwargs):
+        with open(filename, 'rb') as fh:
+            data = json.load(fh)
+            if headers is None:
+                headers = data[0].keys()
+
+            sheet = self.workbook.add_sheet(sheet_name, headers)
+            sheet.extend(data)
         return sheet

@@ -1,7 +1,7 @@
 import os
 from unittest import TestCase
 
-from databuild.adapters import shelve
+from databuild.adapters import shelve2 as shelve
 from databuild.adapters import locmem
 from databuild.adapters import exceptions
 
@@ -118,23 +118,13 @@ class BaseAdapterMixin(object):
         assert fetched_row["Maschi+Femmine"] == 10939
 
 
-class WriteFileTest(TestCase):
-    def test_write_file(self):
-        filename = os.path.join(TEST_DIR, 'testfile')
-        with open(filename, 'wb') as fh:
-            fh.write('test'.encode('utf-8'))
-        assert os.path.exists(filename)
-        os.unlink(filename)
-        assert not os.path.exists(filename)
-
-
 class ShelveAdapterTestCase(BaseAdapterMixin, TestCase):
     workbook_class = shelve.ShelveBook
 
     def setup_book(self):
         return self.workbook_class(name='test_workbook', data_dir=TEST_DIR)
 
-    def _test_shelve_adapter(self):
+    def test_shelve_adapter(self):
         assert os.path.exists(self.book.db)
 
     def tearDown(self):

@@ -9,29 +9,32 @@ import shelve
 class ShelveSheet(LocMemSheet):
     headers = tuple()
 
+    def sync(self):
+        self.workbook.sync(self)
+
     def update_column(self, *args, **kwargs):
         _super = super(ShelveSheet, self).update_column(*args, **kwargs)
-        self.workbook.sync()
+        self.sync()
         return _super
 
     def append_column(self, *args, **kwargs):
         _super = super(ShelveSheet, self).append_column(*args, **kwargs)
-        self.workbook.sync()
+        self.sync()
         return _super
 
     def remove_column(self, *args, **kwargs):
         _super = super(ShelveSheet, self).remove_column(*args, **kwargs)
-        self.workbook.sync()
+        self.sync()
         return _super
 
     def copy_column(self, *args, **kwargs):
         _super = super(ShelveSheet, self).copy_column(*args, **kwargs)
-        self.workbook.sync()
+        self.sync()
         return _super
 
     def rename_column(self, *args, **kwargs):
         _super = super(ShelveSheet, self).rename_column(*args, **kwargs)
-        self.workbook.sync()
+        self.sync()
         return _super
 
     def get_column(self, *args, **kwargs):
@@ -48,22 +51,22 @@ class ShelveSheet(LocMemSheet):
 
     def append(self, *args, **kwargs):
         _super = super(ShelveSheet, self).append(*args, **kwargs)
-        self.workbook.sync()
+        self.sync()
         return _super
 
     def extend(self, *args, **kwargs):
         _super = super(ShelveSheet, self).extend(*args, **kwargs)
-        self.workbook.sync()
+        self.sync()
         return _super
 
     def update_rows(self, *args, **kwargs):
         _super = super(ShelveSheet, self).update_rows(*args, **kwargs)
-        self.workbook.sync()
+        self.sync()
         return _super
 
     def delete(self, *args, **kwargs):
         _super = super(ShelveSheet, self).delete(*args, **kwargs)
-        self.workbook.sync()
+        self.sync()
         return _super
 
     def serialize(self):
@@ -84,9 +87,12 @@ class ShelveBook(LocMemBook):
         self.db = os.path.join(data_dir, name)
         self.data = shelve.open(self.db)
 
-    def sync(self):
-        for name, sheet in self.sheets.items():
-            self.data[name] = sheet.serialize()
+    def sync(self, sheet=None):
+        if sheet:
+            self.data[sheet.name] = sheet.serialize()
+        else:
+            for name, sheet in self.sheets.items():
+                self.data[name] = sheet.serialize()
         self.data.sync()
 
     def __del__(self):

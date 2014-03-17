@@ -84,6 +84,5 @@ This project is still in alpha stage.
 
 ## TODO
 
-* exporting for ShelveSheet
 * R environment
 * yaml buildfiles

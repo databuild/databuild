@@ -28,7 +28,7 @@ def main(build_file, settings):
     book = AdapterClass()
     with open(build_file, 'rb') as fh:
         operations = json.load(fh)
-        book.apply_operations(operations)
+        book.apply_operations(operations, echo=True)
 
 
 if __name__ == '__main__':

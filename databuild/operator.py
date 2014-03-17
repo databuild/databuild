@@ -5,6 +5,8 @@ from databuild.parsers import parse_expression
 
 
 class Operator(object):
+    operations = []
+
     def __init__(self, workbook):
         self.workbook = workbook
         super(Operator, self).__init__()
@@ -24,3 +26,4 @@ class Operator(object):
 
         kwargs = operation['params']
         fn(self.workbook, **kwargs)
+        self.operations.append(operation)

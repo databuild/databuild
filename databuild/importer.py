@@ -50,6 +50,13 @@ class UnicodeDictReader(object):
             return getattr(self.reader, name)
         raise AttributeError()
 
+if six.PY2:
+    def _open(*args, **kwargs):
+        kwargs.pop('encoding', False)
+        return open(*args, **kwargs) 
+else:
+    _open = open
+
 
 class Importer(object):
     def __init__(self, workbook):
@@ -76,7 +83,7 @@ class Importer(object):
         return sheet
 
     def import_json(self, filename, sheet_name, headers=None, encoding='utf-8', **kwargs):
-        with open(filename, 'rb') as fh:
+        with _open(filename, 'r', encoding=encoding) as fh:
             data = json.load(fh)
             if headers is None:
                 headers = data[0].keys()

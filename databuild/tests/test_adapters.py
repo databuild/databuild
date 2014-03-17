@@ -122,7 +122,7 @@ class WriteFileTest(TestCase):
     def test_write_file(self):
         filename = os.path.join(TEST_DIR, 'testfile')
         with open(filename, 'wb') as fh:
-            fh.write('test')
+            fh.write('test'.encode('utf-8'))
         assert os.path.exists(filename)
         os.unlink(filename)
         assert not os.path.exists(filename)

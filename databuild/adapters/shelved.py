@@ -1,8 +1,5 @@
 from __future__ import absolute_import
-import errno
 import os
-import socket
-import time
 from tempfile import gettempdir
 
 from .locmem import LocMemBook, LocMemSheet

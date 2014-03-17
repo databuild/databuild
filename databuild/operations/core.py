@@ -8,3 +8,7 @@ def export_data(workbook, sheet, format, filename):
     with open(filename, 'wb') as fh:
         fh.write(data)
 
+
+def print_data(workbook, sheet):
+    sheet = workbook.sheets[sheet]
+    sheet.print_data()

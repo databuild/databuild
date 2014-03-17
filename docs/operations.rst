@@ -24,6 +24,13 @@ arguments:
     * ``format``
     * ``filename``
 
+
+``core.print_data``
+~~~~~~~~~~~~~~~~~~~~
+
+arguments:
+    * ``sheet``
+
 ``columns.update_column``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 

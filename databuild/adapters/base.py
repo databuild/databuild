@@ -80,3 +80,6 @@ class BaseWorkSheet(object):
 
     def export_data(self, format='csv'):
         raise NotImplementedError()
+
+    def print_data(self):
+        raise NotImplementedError()

@@ -53,7 +53,7 @@ An example of build file could be:
 ]
 ```
 
-For more, see the [Extended Documention][http://databuild.readthedocs.org/en/latest/].
+For more, see the [Extended Documention](http://databuild.readthedocs.org/en/latest/).
 
 ## Data Model
 

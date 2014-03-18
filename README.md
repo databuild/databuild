@@ -6,6 +6,7 @@ An automation tool for data manipulation.
 
 Inspired by Open Refine.
 
+
 ## Quickstart
 
 ```
@@ -51,6 +52,8 @@ An example of build file could be:
   }
 ]
 ```
+
+For more, see the [Extended Documention][http://databuild.readthedocs.org/en/latest/].
 
 ## Data Model
 

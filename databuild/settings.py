@@ -14,3 +14,10 @@ FUNCTIONS = (
 )
 
 ADAPTER = 'databuild.adapters.locmem.LocMemBook'
+
+LANGUAGES = {
+    'lua': {
+        'init': 'parsers.lua.build_lua_runtime',
+        'parser': 'parsers.lua.lua'
+    },
+}

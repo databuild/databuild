@@ -1,6 +1,7 @@
 from databuild.facets import sum_facets
 from databuild.loader import load_classpath
-from databuild.parsers import parse_expression
+
+from databuild import settings
 
 
 
@@ -9,7 +10,16 @@ class Operator(object):
 
     def __init__(self, workbook):
         self.workbook = workbook
+        self.languages = self.build_languages()
+
         super(Operator, self).__init__()
+
+    def build_languages(self):
+        languages = {}
+        for name, runtime in settings.LANGUAGES.items():
+            runtime_build = load_classpath(runtime['init'])
+            languages[name] = runtime_build(self.workbook)
+        return languages
 
     def apply_operation(self, operation, echo=False):
         if echo and operation['description']:
@@ -18,12 +28,19 @@ class Operator(object):
         fn = load_classpath(operation['path'])
 
         if 'expression' in operation['params']:
-            operation['params']['expression'] = parse_expression(operation['params']['expression'])
+            operation['params']['expression'] = self.parse_expression(operation['params']['expression'])
 
         if 'facets' in operation['params']:
-            facets = [parse_expression(facet['expression']) for facet in operation['params']['facets']]
+            facets = [self.parse_expression(facet['expression']) for facet in operation['params']['facets']]
             operation['params']['facets'] = sum_facets(facets)
 
         kwargs = operation['params']
         fn(self.workbook, **kwargs)
         self.operations.append(operation)
+
+    def parse_expression(self, expression, wrap=True):
+        language, exp = expression['language'], expression['content']
+        runtime = self.languages[language]
+        parser = settings.LANGUAGES[language]['parser']
+        parse = load_classpath(parser)
+        return parse(runtime, exp, wrap)

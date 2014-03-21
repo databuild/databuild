@@ -4,7 +4,7 @@ from databuild.loader import load_module
 from lupa import LuaRuntime
 
 
-def build_lua_runtime():
+def build_lua_runtime(book):
     lua_runtime = LuaRuntime()
     functions = []
     [functions.extend(load_module(module)) for module in settings.FUNCTIONS]
@@ -19,11 +19,10 @@ def build_lua_runtime():
 
     return lua_runtime
 
-lua_runtime = build_lua_runtime()
 
-def lua(expression, wrap=True):
+def lua(runtime, expression, wrap=True):
     if wrap:
         func = 'function(row) %s end' % expression
     else:
         func = expression
-    return lua_runtime.eval(func)
+    return runtime.eval(func)

@@ -27,5 +27,5 @@ class FunctionsTestCase(TestCase):
         a.extend(a_data)
         b.extend(b_data)
 
-        result = data.cross(book, 'a', 'b', 'z', 'id')
+        result = [data.cross(book, row, 'b', 'z', 'id') for row in a.all()]
         assert result == [4, 4.5, 3]

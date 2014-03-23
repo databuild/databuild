@@ -1,2 +1,2 @@
-def test_fn(*args, **kwargs):
+def test_fn(book, *args, **kwargs):
     return 'x'

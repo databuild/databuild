@@ -1,3 +1,4 @@
+import functools
 import warnings
 from databuild import settings
 from databuild.loader import load_module
@@ -13,7 +14,7 @@ def build_lua_runtime(book):
 
     for fn in functions:
         if not fn in lua_globals:
-            lua_globals[fn.__name__] = fn
+            lua_globals[fn.__name__] = functools.partial(fn, book)
         else:
             warnings.warn("Function '%s' already present in Lua Environment. Skipping.")
 
@@ -25,4 +26,5 @@ def lua(runtime, expression, wrap=True):
         func = 'function(row) %s end' % expression
     else:
         func = expression
+
     return runtime.eval(func)

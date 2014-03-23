@@ -3,11 +3,11 @@ from databuild.importer import Importer
 
 
 class BaseWorkBook(object):
-    sheets = {}
     sheet_class = None
 
     def __init__(self, name='workbook'):
         self.name = name
+        self.sheets = {}
         self.operator = Operator(self)
         self.importer = Importer(self)
         super(BaseWorkBook, self).__init__()

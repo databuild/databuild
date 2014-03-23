@@ -17,8 +17,8 @@ class Operator(object):
     def build_languages(self):
         languages = {}
         for name, runtime in settings.LANGUAGES.items():
-            runtime_build = load_classpath(runtime['init'])
-            languages[name] = runtime_build(self.workbook)
+            RuntimeClass = load_classpath(runtime)
+            languages[name] = RuntimeClass(self.workbook)
         return languages
 
     def apply_operation(self, operation, echo=False):
@@ -41,6 +41,20 @@ class Operator(object):
     def parse_expression(self, expression, wrap=True):
         language, exp = expression['language'], expression['content']
         runtime = self.languages[language]
-        parser = settings.LANGUAGES[language]['parser']
-        parse = load_classpath(parser)
-        return parse(runtime, exp, wrap)
+        return runtime.eval(exp, wrap)
+
+def column_reference(reference):
+    """
+    "sheet"."column"
+    "sheet \"escaped quotes\""."column"
+    "sheet name.something"."column"
+    'sheet name.something'.'column'
+    """
+    quote = reference[0]
+    split_token = "{0}.{0}".format(quote)
+    sheet, column = reference[1:-1].split(split_token)
+    sheet = sheet.replace('\%s' % quote, quote)
+    column = column.replace('\%s' % quote, quote)
+    sheet = sheet.replace('\\\\', '\\')
+    column = column.replace('\\\\', '\\')
+    return sheet.column

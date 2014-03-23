@@ -51,6 +51,66 @@ class OperatorTestCase(TestCase):
         book.apply_operation(operation)
         assert sheet.get_column('test column')[0] == 'x'
 
+    def test_function_map(self):
+        operation = {
+            "path": "columns.update_column",
+            "description": "",
+            "params": {
+                "sheet": "a",
+                "column": "test column",
+                "facets": [],
+                "expression": {
+                    "language": "lua",
+                    "content": "return row['x'] * 10"
+                }
+            }
+        }
+        book = LocMemBook('project1')
+        a_data = [
+            {'id': 1, 'x': 2, 'y': 3},
+            {'id': 2, 'x': 2, 'y': 3.5},
+            {'id': 3, 'x': 1, 'y': 3.5},
+        ]
+
+        book = LocMemBook('project1')
+        sheet_a = book.add_sheet('a', ['id', 'x', 'y'])
+
+        sheet_a.extend(a_data)
+
+        sheet_a.append_column("test column")
+        book.apply_operation(operation)
+        assert sheet_a.get_column('test column') == [20, 20, 10]
+
+    def test_function_values(self):
+        operation = {
+            "path": "columns.update_column",
+            "description": "",
+            "params": {
+                "sheet": "a",
+                "column": "test column",
+                "facets": [],
+                "values": [
+                    3,
+                    5,
+                    7
+                ]
+            }
+        }
+        book = LocMemBook('project1')
+        a_data = [
+            {'id': 1, 'x': 2, 'y': 3},
+            {'id': 2, 'x': 2, 'y': 3.5},
+            {'id': 3, 'x': 1, 'y': 3.5},
+        ]
+
+        book = LocMemBook('project1')
+        sheet_a = book.add_sheet('a', ['id', 'x', 'y'])
+
+        sheet_a.extend(a_data)
+
+        sheet_a.append_column("test column")
+        book.apply_operation(operation)
+        assert sheet_a.get_column('test column') == [3, 5, 7]
     def test_facets(self):
         operation = {
             "path": "columns.update_column",

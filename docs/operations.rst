@@ -43,6 +43,7 @@ arguments:
     * ``column``
     * ``facets``
     * ``expression``
+    * ``values``
 
 ``columns.add_column``
 ~~~~~~~~~~~~~~~~~~~~~~

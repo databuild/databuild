@@ -1,6 +1,9 @@
-def update_column(workbook, sheet, column, facets, expression, wrap=True):
+def update_column(workbook, sheet, column, facets, values=None, expression=None, wrap=True):
+    assert values or expression
+
+    callable_or_values = expression and expression or values
     sheet = workbook.sheets[sheet]
-    sheet.update_column(column, expression, filter_fn=facets)
+    sheet.update_column(column, callable_or_values, filter_fn=facets)
 
 
 def add_column(workbook, sheet, name, expression=None):

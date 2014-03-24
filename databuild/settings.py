@@ -6,7 +6,6 @@ SHORTCUTS = {
     'columns.update_column': "databuild.operations.columns.update_column",
     'columns.remove_column': "databuild.operations.columns.remove_column",
     'columns.rename_column': "databuild.operations.columns.rename_column",
-    'lua': "databuild.parsers.lua.lua",
 }
 
 FUNCTIONS = (

@@ -15,5 +15,5 @@ FUNCTIONS = (
 ADAPTER = 'databuild.adapters.locmem.LocMemBook'
 
 LANGUAGES = {
-    'lua': 'databuild.parsers.lua.LuaEnvironment',
+    'lua': 'databuild.environments.lua.LuaEnvironment',
 }

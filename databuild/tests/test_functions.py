@@ -8,7 +8,7 @@ from databuild.functions import data
 
 TEST_DIR = os.path.join(os.path.dirname(__file__))
 
-settings.LANGUAGES['noop'] = 'databuild.parsers.noop.NoopEnvironment'
+settings.LANGUAGES['noop'] = 'databuild.environments.noop.NoopEnvironment'
 
 
 class FunctionsTestCase(TestCase):

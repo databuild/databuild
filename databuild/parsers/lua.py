@@ -16,7 +16,7 @@ class LuaEnvironment(BaseEnvironment):
         lua_globals = lua_runtime.globals()
 
         for fn in functions:
-            if not fn.__name__ in lua_globals:
+            if fn.__name__ not in lua_globals:
                 lua_globals[fn.__name__] = functools.partial(fn, book)
             else:
                 warnings.warn("Function '%s' already present in Lua Environment. Skipping.")

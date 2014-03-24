@@ -16,11 +16,11 @@ class LuaEnvironment(BaseEnvironment):
 
         self.lua_copy = lua_runtime.eval("""
 function(L)
-        local t = {}
-        for index, item in python.enumerate(L) do
-                t[ index+1 ] = item
-        end
-        return t
+    local t = {}
+    for index, item in python.enumerate(L) do
+        t[ index+1 ] = item
+    end
+    return t
 end
         """)
 

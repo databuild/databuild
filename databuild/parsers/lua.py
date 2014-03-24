@@ -6,6 +6,7 @@ from lupa import LuaRuntime
 
 from .base import BaseEnvironment
 
+
 class LuaEnvironment(BaseEnvironment):
     def __init__(self, book):
         lua_runtime = LuaRuntime()
@@ -15,7 +16,7 @@ class LuaEnvironment(BaseEnvironment):
         lua_globals = lua_runtime.globals()
 
         for fn in functions:
-            if not fn in lua_globals:
+            if not fn.__name__ in lua_globals:
                 lua_globals[fn.__name__] = functools.partial(fn, book)
             else:
                 warnings.warn("Function '%s' already present in Lua Environment. Skipping.")

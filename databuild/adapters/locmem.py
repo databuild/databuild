@@ -10,6 +10,9 @@ class LocMemSheet(BaseWorkSheet):
         self.data = tablib.Dataset(headers=headers)
         super(LocMemSheet, self).__init__(workbook, name, headers)
 
+    def __getitem__(self, key):
+        return self.data[key]
+
     def _match(self, doc, where):
         """Return True if 'doc' matches the 'where' condition."""
         assert isinstance(where, dict), "where is not a dictionary"

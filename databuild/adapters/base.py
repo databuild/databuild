@@ -12,6 +12,9 @@ class BaseWorkBook(object):
         self.importer = Importer(self)
         super(BaseWorkBook, self).__init__()
 
+    def __getitem__(self, key):
+        return self.sheets[key]
+
     def add_sheet(self, name, headers):
         assert self.sheet_class is not None
         sheet = self.sheet_class(workbook=self, name=name, headers=headers)

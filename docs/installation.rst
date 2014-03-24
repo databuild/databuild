@@ -14,6 +14,9 @@ Install databuild::
 
 OS X
 ----
+Install Lua5.1 with `brew`::
+
+    $ brew install lua
 
 Download and extract databuild::
 

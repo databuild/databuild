@@ -6,6 +6,41 @@ An automation tool for data manipulation.
 
 Inspired by Open Refine.
 
+## Installation
+
+Requirements:
+
+* Lua 5.1
+
+### Linux
+
+Install databuild:
+
+```
+  $ pip install git+https://github.com/fcurella/databuild.git
+```
+
+### OS X
+
+Install Lua5.1 with `brew`:
+
+```
+  $ brew install lua
+```
+
+Download and extract databuild:
+
+```
+  $ wget https://github.com/fcurella/databuild/archive/master.tar.gz
+  $ tar -zxf master.tar.gz -C databuild
+
+```
+Build:
+
+```
+  $ cd databuild
+  $ make all
+```
 
 ## Quickstart
 
@@ -54,28 +89,6 @@ An example of build file could be:
 ```
 
 For more, see the [Extended Documentation](http://databuild.readthedocs.org/en/latest/).
-
-## Data Model
-
-Data is organized in a `Workbook`, containing one or more `Sheet`s.
-
-## Operations
-
-Operations are functions called on the book. Examples of operations are: `core.import_data`, `core.add_column`, `columns.update_column`, and more.
-
-They have a path that identifies them, an optional description and a number of parameters that they accept. Different operations have different parameters.
-
-## Expressions
-
-Expressions are objects representing code for complex situations, such as filtering or calculations.
-
-## Functions
-
-## Extending
-
-## Installation
-
-Run `make` from the project root.
 
 ## License
 

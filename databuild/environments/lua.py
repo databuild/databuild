@@ -1,8 +1,10 @@
 import functools
 import warnings
+
+from lupa import LuaRuntime
+
 from databuild import settings
 from databuild.loader import load_module
-from lupa import LuaRuntime
 
 from .base import BaseEnvironment
 

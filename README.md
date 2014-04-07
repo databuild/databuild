@@ -105,5 +105,6 @@ This project is still in alpha stage.
 ## TODO
 
 * pandas adapter
+* make Lua optional
 * R environment
 * yaml buildfiles

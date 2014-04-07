@@ -10,8 +10,7 @@ Inspired by Open Refine.
 
 ### Linux
 
-* Requirements:
-  * Lua 5.1 or LuaJIT
+**Requirements**: `Lua` or `LuaJIT`
 
 Install databuild:
 
@@ -21,7 +20,7 @@ Install databuild:
 
 ### OS X
 
-**Requirements**: `Lua 5.1` (LuaJIT is not supported ATM)
+**Requirements**: `Lua` (LuaJIT is not supported ATM)
 
 Temporarily unlink `LuaJIT` if you have it installed:
 

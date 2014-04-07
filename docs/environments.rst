@@ -27,7 +27,7 @@ Writing Custom Environments
 ===========================
 
 An ``Environment`` is a subclass of ``databuild.environments.base.BaseEnvironment``
-that implementes the following methods:
+that implements the following methods:
 
     * ``__init__(self, book)``: Initializes the environment with the appropriate global variables.
     * ``copy(self, iterable)``: Copies a variable from the databuild process to the hosted environment.

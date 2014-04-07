@@ -3,7 +3,7 @@
 Environments
 ------------
 
-:doc:`expressions` are evaluated in the environment specified by their `language` property.
+:doc:expressions are evaluated in the environment specified by their ``language`` property.
 The value maps to a specific environment as specified in ``settings.LANGUAGES``.
 
 Currently, the following environments are shipped with ``databuild``.

@@ -8,11 +8,10 @@ Inspired by Open Refine.
 
 ## Installation
 
-Requirements:
-
-* Lua 5.1
-
 ### Linux
+
+* Requirements:
+  * Lua 5.1 or LuaJIT
 
 Install databuild:
 
@@ -21,6 +20,8 @@ Install databuild:
 ```
 
 ### OS X
+
+**Requirements**: `Lua 5.1` (LuaJIT is not supported ATM)
 
 Temporarily unlink `LuaJIT` if you have it installed:
 
@@ -34,13 +35,13 @@ Install Lua5.1 with `brew`:
   $ brew install lua
 ```
 
-Download and extract databuild:
+Download and extract `databuild`:
 
 ```
   $ pip install https://github.com/fcurella/databuild/archive/master.tar.gz
 ```
 
-After databuild is installed, you can re-link `LuaJIT` if you need:
+After ``databuild`` is installed, you can re-link `LuaJIT` if you need:
 
 ```
   $ brew link luajit

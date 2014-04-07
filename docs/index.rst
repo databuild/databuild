@@ -16,6 +16,7 @@ Contents:
    buildfiles
    operations
    expressions
+   environments
    functions
    extending
    settings

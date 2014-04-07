@@ -1,12 +1,10 @@
 Installation
 ------------
 
-Requirements:
-
-* Lua 5.1
-
 Linux
 -----
+
+**Requirements**: ``Lua5.1`` or ``LuaJIT``
 
 Install databuild::
 
@@ -14,16 +12,21 @@ Install databuild::
 
 OS X
 ----
-Install Lua5.1 with `brew`::
 
-    $ brew install lua
+**Requirements**: ``Lua5.1`` (``LuaJIT`` is not supported ATM)
 
-Download and extract databuild::
+Temporarily unlink ``LuaJIT`` if you have it installed::
 
-  $ wget https://github.com/fcurella/databuild/archive/master.tar.gz
-  $ tar -zxf master.tar.gz -C databuild
+  $ brew unlink luajit
 
-Build::
+Install ``Lua5.1`` with ``brew``::
 
-  $ cd databuild
-  $ make all
+  $ brew install lua
+
+Download and extract ``databuild``::
+
+  $ pip install https://github.com/fcurella/databuild/archive/master.tar.gz
+
+After ``databuild`` is installed, you can re-link ``LuaJIT`` if you need::
+
+  $ brew link luajit

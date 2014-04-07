@@ -17,10 +17,16 @@ Requirements:
 Install databuild:
 
 ```
-  $ pip install git+https://github.com/fcurella/databuild.git
+  $ pip install https://github.com/fcurella/databuild/archive/master.tar.gz
 ```
 
 ### OS X
+
+Temporarily unlink `LuaJIT` if you have it installed:
+
+```
+  $ brew unlink luajit
+```
 
 Install Lua5.1 with `brew`:
 
@@ -31,15 +37,13 @@ Install Lua5.1 with `brew`:
 Download and extract databuild:
 
 ```
-  $ wget https://github.com/fcurella/databuild/archive/master.tar.gz
-  $ tar -zxf master.tar.gz -C databuild
+  $ pip install https://github.com/fcurella/databuild/archive/master.tar.gz
+```
+
+After databuild is installed, you can re-link `LuaJIT` if you need:
 
 ```
-Build:
-
-```
-  $ cd databuild
-  $ make all
+  $ brew link luajit
 ```
 
 ## Quickstart
@@ -53,7 +57,7 @@ $ data-build.py buildfile.json
 
 An example of build file could be:
 
-```
+```json
 [
   {
     "path": "core.import_data",
@@ -100,5 +104,6 @@ This project is still in alpha stage.
 
 ## TODO
 
+* pandas adapter
 * R environment
 * yaml buildfiles

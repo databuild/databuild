@@ -3,3 +3,4 @@ https://github.com/fcurella/tablib/archive/1a7d59774594aab090be9418a4e98e5af7e14
 docopt==0.6.1
 six==1.5.2
 tabulate==0.7.2
+https://github.com/scoder/lupa/archive/master.tar.gz

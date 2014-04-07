@@ -8,16 +8,19 @@ The value maps to a specific environment as specified in ``settings.LANGUAGES``.
 
 Currently, the following environments are shipped with ``databuild``.
 
+Included Environments
+=====================
+
 Python
-======
+~~~~~~
 
 **Unsafe** Python environment. Use only with trusted build files.
 
 
 Lua
-===
+~~~
 
-Requires Lua or LuaJIT (Note: LuaJIT is unsupported on OS X).
+Requires Lua or LuaJIT (Note: LuaJIT is currently unsupported on OS X).
 
 
 Writing Custom Environments

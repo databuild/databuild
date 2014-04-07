@@ -20,7 +20,7 @@ Install databuild:
 
 ### OS X
 
-**Requirements**: `Lua` (LuaJIT is not supported ATM)
+**Requirements**: `Lua` (`LuaJIT` is not supported ATM)
 
 Temporarily unlink `LuaJIT` if you have it installed:
 
@@ -28,7 +28,7 @@ Temporarily unlink `LuaJIT` if you have it installed:
   $ brew unlink luajit
 ```
 
-Install Lua5.1 with `brew`:
+Install `Lua` with `brew`:
 
 ```
   $ brew install lua

@@ -19,7 +19,7 @@ Temporarily unlink ``LuaJIT`` if you have it installed::
 
   $ brew unlink luajit
 
-Install ``Lua5.1`` with ``brew``::
+Install ``Lua`` with ``brew``::
 
   $ brew install lua
 

@@ -38,10 +38,10 @@ class Operator(object):
         fn(self.workbook, **kwargs)
         self.operations.append(operation)
 
-    def parse_expression(self, expression, wrap=True):
+    def parse_expression(self, expression):
         language, exp = expression['language'], expression['content']
         runtime = self.languages[language]
-        return runtime.eval(exp, wrap)
+        return runtime.eval(exp)
 
 def column_reference(reference):
     """

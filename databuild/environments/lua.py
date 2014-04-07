@@ -40,10 +40,6 @@ end
             return self.lua_copy(value)
         return value
 
-    def eval(self, expression, wrap=True):
-        if wrap:
-            func = 'function(row) %s end' % expression
-        else:
-            func = expression
-
+    def eval(self, expression):
+        func = 'function(row) %s end' % expression
         return self.runtime.eval(func)

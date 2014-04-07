@@ -34,9 +34,8 @@ class PythonEnvironment(BaseEnvironment):
     def copy(self, iterable):
         return iterable
 
-    def eval(self, expression, wrap=True):
-        if wrap:
-            expression = "def fn(row):\n %s\n" % indent(expression, 4)
+    def eval(self, expression):
+        expression = "def fn(row):\n %s\n" % indent(expression, 4)
         exec(expression, self.globals, locals())
         return vars()['fn']
 

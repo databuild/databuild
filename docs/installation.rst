@@ -2,7 +2,7 @@ Installation
 ------------
 
 Linux
------
+=====
 
 **Requirements**: ``Lua`` or ``LuaJIT``
 
@@ -11,7 +11,7 @@ Install databuild::
   $ pip install git+https://github.com/fcurella/databuild.git
 
 OS X
-----
+====
 
 **Requirements**: ``Lua`` (``LuaJIT`` is not supported ATM)
 

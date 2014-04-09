@@ -105,6 +105,9 @@ This project is still in alpha stage.
 ## TODO
 
 * pandas adapter
+* guess column types when importing
+* export only specified columns
+* add operations for converting types
 * make Lua optional
 * R environment
 * yaml buildfiles

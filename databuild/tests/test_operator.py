@@ -20,7 +20,7 @@ class OperatorTestCase(TestCase):
                 "column": "test column",
                 "facets": [],
                 "expression": {
-                    "language": "lua",
+                    "language": "python",
                     "content": "return 'x'"
                 }
             }
@@ -40,7 +40,7 @@ class OperatorTestCase(TestCase):
                 "column": "test column",
                 "facets": [],
                 "expression": {
-                    "language": "lua",
+                    "language": "python",
                     "content": "return test_fn()"
                 }
             }
@@ -60,7 +60,7 @@ class OperatorTestCase(TestCase):
                 "column": "test column",
                 "facets": [],
                 "expression": {
-                    "language": "lua",
+                    "language": "python",
                     "content": "return row['x'] * 10"
                 }
             }
@@ -121,7 +121,7 @@ class OperatorTestCase(TestCase):
                 "column": "test column",
                 "facets": [],
                 "expression": {
-                    "language": "lua",
+                    "language": "python",
                     "content": "return cross(row, 'b', 'z', 'id')"
                 }
             }
@@ -158,8 +158,8 @@ class OperatorTestCase(TestCase):
                 "column": "test column",
                 "facets": [],
                 "expression": {
-                    "language": "lua",
-                    "content": "local zs = column('a', 'b', 'z', 'id') return math.max(unpack(zs))"
+                    "language": "python",
+                    "content": "zs = column('a', 'b', 'z', 'id'); return max(map(float, zs))"
                 }
             }
         }
@@ -197,13 +197,13 @@ class OperatorTestCase(TestCase):
                 "facets": [
                     {
                         "expression": {
-                            "language": "lua",
+                            "language": "python",
                             "content": "return row['Comune'] == 'Acqui Terme'"
                         }
                     }
                 ],
                 "expression": {
-                    "language": "lua",
+                    "language": "python",
                     "content": "return 'x'"
                 },
             }

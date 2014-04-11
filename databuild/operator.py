@@ -17,8 +17,12 @@ class Operator(object):
     def build_languages(self):
         languages = {}
         for name, runtime in settings.LANGUAGES.items():
-            RuntimeClass = load_classpath(runtime)
-            languages[name] = RuntimeClass(self.workbook)
+            try:
+                RuntimeClass = load_classpath(runtime)
+            except ImportError:
+                continue
+            else:
+                languages[name] = RuntimeClass(self.workbook)
         return languages
 
     def apply_operation(self, operation, echo=False):

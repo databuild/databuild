@@ -1,12 +1,18 @@
 import os
-from unittest import TestCase
+from unittest import TestCase, skipUnless
 from databuild.adapters.locmem import LocMemBook
 
+try:
+    from databuild.environments.lua import LuaEnvironment  # NOQA
+    LUA_INSTALLED = True
+except ImportError:
+    LUA_INSTALLED = False
 
 TEST_DIR = os.path.join(os.path.dirname(__file__))
 
 
 class ParserTestCase(TestCase):
+    @skipUnless(LUA_INSTALLED, "Lua not installed")
     def test_parse_lua(self):
         expression = {"language": "lua", "content": "return row['a']"}
         book = LocMemBook('project1')
@@ -19,6 +25,7 @@ class ParserTestCase(TestCase):
         fn = book.operator.parse_expression(expression)
         assert fn(row) == 4
 
+    @skipUnless(LUA_INSTALLED, "Lua not installed")
     def test_lua_function(self):
         operation = {
             "path": "columns.update_column",

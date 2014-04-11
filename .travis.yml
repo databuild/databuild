@@ -3,11 +3,15 @@ python:
   - "2.7"
   - "3.2"
   - "3.3"
+env:
+  - LUA="liblua5.1-0-dev liblua50-dev liblualib50-dev"
+  - LUA=""
 install:
   - sudo apt-get update -qq
-  - sudo apt-get install liblua5.1-0-dev liblua50-dev liblualib50-dev
+  - if [ "$LUA" ]; then sudo apt-get install liblua5.1-0-dev liblua50-dev liblualib50-dev; fi
   - pip install --quiet --upgrade pip
-  - pip install --quiet -r requirements.txt
   - pip install --quiet -r test-requirements.txt
+  - pip install --quiet .
 script:
   - py.test databuild
+

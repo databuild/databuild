@@ -1,0 +1,2 @@
+cython==0.20.1
+https://github.com/scoder/lupa/archive/master.tar.gz

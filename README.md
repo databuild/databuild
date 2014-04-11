@@ -8,42 +8,10 @@ Inspired by Open Refine.
 
 ## Installation
 
-### Linux
-
-**Requirements**: `Lua` or `LuaJIT`
-
 Install databuild:
 
 ```
   $ pip install https://github.com/fcurella/databuild/archive/master.tar.gz
-```
-
-### OS X
-
-**Requirements**: `Lua` (`LuaJIT` is not supported ATM)
-
-Temporarily unlink `LuaJIT` if you have it installed:
-
-```
-  $ brew unlink luajit
-```
-
-Install `Lua` with `brew`:
-
-```
-  $ brew install lua
-```
-
-Download and extract `databuild`:
-
-```
-  $ pip install https://github.com/fcurella/databuild/archive/master.tar.gz
-```
-
-After ``databuild`` is installed, you can re-link `LuaJIT` if you need:
-
-```
-  $ brew link luajit
 ```
 
 ## Quickstart
@@ -75,8 +43,8 @@ An example of build file could be:
       "sheet": "dataset1",
       "name": "Gender Ratio",
       "expression": {
-        "language": "lua",
-        "content": "return row['Male Total'] / row['Female Total']"
+        "language": "python",
+        "content": "return float(row['Male Total']) / float(row['Female Total'])"
       }
     }
   },
@@ -108,6 +76,5 @@ This project is still in alpha stage.
 * guess column types when importing
 * export only specified columns
 * add operations for converting types
-* make Lua optional
 * R environment
 * yaml buildfiles

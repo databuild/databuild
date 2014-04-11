@@ -17,7 +17,7 @@ class OperatorTestCase(TestCase):
                 "column": "test column",
                 "facets": [],
                 "expression": {
-                    "language": "lua",
+                    "language": "python",
                     "content": "return 'x'"
                 }
             }

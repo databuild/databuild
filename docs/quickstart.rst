@@ -30,8 +30,8 @@ An example of build file could be::
           "sheet": "dataset1",
           "name": "Gender Ratio",
           "expression": {
-            "language": "lua",
-            "content": "return row['Male Total'] / row['Female Total']"
+            "language": "python",
+            "content": "return float(row['Male Total']) / float(row['Female Total'])"
           }
         }
       },

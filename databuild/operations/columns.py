@@ -40,7 +40,7 @@ def to_integer(workbook, sheet, column, facets):
     update_column(workbook, sheet, column, facets, expression=expression)
 
 
-def to_decimal(workbook, sheet, column, facets, ):
+def to_decimal(workbook, sheet, column, facets):
     expression = lambda x: Decimal(x[column])
     update_column(workbook, sheet, column, facets, expression=expression)
 

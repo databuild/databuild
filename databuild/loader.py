@@ -3,10 +3,10 @@ from databuild import settings
 
 
 def load_classpath(classpath):
-    if classpath in settings.SHORTCUTS:
-        classpath = settings.SHORTCUTS[classpath]
-
     modules, function = classpath.rsplit('.', 1)
+    if modules in settings.SHORTCUTS:
+        modules = settings.SHORTCUTS[modules]
+
     module = import_module(modules)
     fn = getattr(module, function)
     return fn

@@ -1,6 +1,5 @@
 import os
 from unittest import TestCase
-from databuild import settings
 from databuild.adapters.locmem import LocMemBook
 
 

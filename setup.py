@@ -44,9 +44,6 @@ if WITHLUA:
 
 tests_requirements = read('test-requirements.txt').splitlines()
 
-# Temporary fix until https://github.com/kennethreitz/tablib/pull/141 gets merged
-subprocess.call(["pip", "install", "--quiet", "https://github.com/fcurella/tablib/archive/1a7d59774594aab090be9418a4e98e5af7e14827.zip#egg=tablib-dev"])
-
 setup(
     name="databuild",
     version=VERSION,

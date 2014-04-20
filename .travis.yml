@@ -11,7 +11,7 @@ install:
   - if [ "$LUA" ]; then sudo apt-get install liblua5.1-0-dev liblua50-dev liblualib50-dev; fi
   - pip install --quiet --upgrade pip
   - pip install --quiet -r test-requirements.txt
-  - pip install --quiet .
+  - pip install .
 script:
   - py.test databuild
 

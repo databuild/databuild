@@ -4,7 +4,6 @@ from databuild.loader import load_classpath
 from databuild import settings
 
 
-
 class Operator(object):
     operations = []
 
@@ -46,6 +45,7 @@ class Operator(object):
         language, exp = expression['language'], expression['content']
         runtime = self.languages[language]
         return runtime.eval(exp)
+
 
 def column_reference(reference):
     """

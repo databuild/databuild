@@ -44,6 +44,9 @@ if WITHLUA:
 
 tests_requirements = read('test-requirements.txt').splitlines()
 
+# Temporary fix until tablib gets released
+subprocess.call(["pip", "install", "--quiet", "https://github.com/kennethreitz/tablib/archive/f6cd89c76cb8f025114e208caa8965d3d0196ae7.zip"])
+
 setup(
     name="databuild",
     version=VERSION,

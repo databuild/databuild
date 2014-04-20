@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 import six
 
 
@@ -35,6 +37,11 @@ def to_float(workbook, sheet, column, facets):
 
 def to_integer(workbook, sheet, column, facets):
     expression = lambda x: int(x[column])
+    update_column(workbook, sheet, column, facets, expression=expression)
+
+
+def to_decimal(workbook, sheet, column, facets, ):
+    expression = lambda x: Decimal(x[column])
     update_column(workbook, sheet, column, facets, expression=expression)
 
 

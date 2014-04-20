@@ -1,6 +1,8 @@
+from decimal import Decimal
 import os
 import six
 from unittest import TestCase
+
 from databuild.adapters.locmem import LocMemBook
 
 
@@ -72,6 +74,21 @@ class OperatorTestCase(TestCase):
         sheet = book.import_data('csv', os.path.join(TEST_DIR, "dataset1.csv"), sheet_name='dataset1')
         book.apply_operation(operation)
         assert isinstance(sheet.get_column('Totale Maschi')[0], int)
+
+    def test_to_decimal(self):
+        operation = {
+            "path": "columns.to_decimal",
+            "description": "",
+            "params": {
+                "sheet": "dataset1",
+                "column": "Totale Maschi",
+                "facets": []
+            }
+        }
+        book = LocMemBook('project1')
+        sheet = book.import_data('csv', os.path.join(TEST_DIR, "dataset1.csv"), sheet_name='dataset1')
+        book.apply_operation(operation)
+        assert isinstance(sheet.get_column('Totale Maschi')[0], Decimal)
 
     def test_to_text(self):
         operation = {

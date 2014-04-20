@@ -6,6 +6,9 @@ SHORTCUTS = {
     'columns.update_column': "databuild.operations.columns.update_column",
     'columns.remove_column': "databuild.operations.columns.remove_column",
     'columns.rename_column': "databuild.operations.columns.rename_column",
+    'columns.to_float': "databuild.operations.columns.to_float",
+    'columns.to_integer': "databuild.operations.columns.to_integer",
+    'columns.to_text': "databuild.operations.columns.to_text",
 }
 
 FUNCTIONS = (

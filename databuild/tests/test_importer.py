@@ -3,6 +3,7 @@ import six
 from unittest import TestCase
 
 from databuild.adapters.locmem import LocMemBook
+from databuild.adapters.exceptions import DoesNotExist
 from databuild import importer
 
 
@@ -36,6 +37,7 @@ class ImporterTestCase(TestCase):
         acqui = sheet.get(Comune="Acqui Terme")
         assert acqui == acqui_test
 
+        short_sheet = dataimporter.import_data('csv', os.path.join(TEST_DIR, "dataset1.csv"), 'sheet2', skip_first_lines=2)
     def test_import_json(self):
         book = LocMemBook('project1')
         dataimporter = importer.Importer(workbook=book)

@@ -72,14 +72,17 @@ class Importer(object):
             return import_method(filename, sheet_name, *args, **kwargs)
         raise NotImplementedError()
 
-    def import_csv(self, filename, sheet_name, headers=None, encoding='utf-8', **kwargs):
+    def import_csv(self, filename, sheet_name, headers=None, encoding='utf-8', skip_first_lines=0, skip_last_lines=0, **kwargs):
         with open(filename, 'rb') as f:
             reader = UnicodeDictReader(f, encoding, **kwargs)
             if headers is None:
                 headers = reader.fieldnames
 
             sheet = self.workbook.add_sheet(sheet_name, headers)
+
+            [reader.next() for i in range(skip_first_lines)]
             sheet.extend(reader)
+            sheet.pop_rows(skip_last_lines)
         return sheet
 
     def import_json(self, filename, sheet_name, headers=None, encoding='utf-8', **kwargs):

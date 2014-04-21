@@ -19,6 +19,8 @@ arguments:
     * ``format``: Values currently supported are ``'csv'`` and ``'json'``.
     * ``headers``: Optional. By default the importer tries to autodetects the header names.
     * ``encoding``: Optional. Defaults to ``'utf-8'``.
+    * ``skip_first_lines``: Optional. Defaults to ``0``.
+    * ``skip_Last_lines``: Optional. Defaults to ``0``.
 
 ``core.export_data``
 ~~~~~~~~~~~~~~~~~~~~

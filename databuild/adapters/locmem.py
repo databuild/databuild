@@ -39,11 +39,6 @@ class LocMemSheet(BaseWorkSheet):
             return [callable_or_docs(item) for item in items]
         return callable_or_docs
 
-    def copy_column(self, old_name, new_name):
-        self.headers.append(new_name)
-        values = self.data[old_name]
-        self.data.append_col(values, header=new_name)
-
     def get_sheet(self, sheet):
         return self.sheets[sheet]
 
@@ -53,6 +48,10 @@ class LocMemSheet(BaseWorkSheet):
         values = self._callable_or_docs(callable_or_values, self.data.dict)
         self.headers.append(column_name)
         self.data.append_col(values, header=column_name)
+
+    def copy_column(self, old_name, new_name):
+        values = self.data[old_name]
+        self.append_column(new_name, values)
 
     def remove_column(self, column_name):
         del self.data[column_name]

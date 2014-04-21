@@ -11,7 +11,7 @@ class LocMemSheet(BaseWorkSheet):
         super(LocMemSheet, self).__init__(workbook, name, headers)
 
     def __getitem__(self, key):
-        return self.data[key]
+        return self._values_to_dict(self.data[key])
 
     def _match(self, doc, where):
         """Return True if 'doc' matches the 'where' condition."""

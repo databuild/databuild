@@ -1,4 +1,5 @@
 from decimal import Decimal
+from dateutil import parser as date_parser
 
 import six
 
@@ -47,4 +48,9 @@ def to_decimal(workbook, sheet, column, facets):
 
 def to_text(workbook, sheet, column, facets):
     expression = lambda x: six.text_type(x[column])
+    update_column(workbook, sheet, column, facets, expression=expression)
+
+
+def to_datetime(workbook, sheet, column, facets):
+    expression = lambda x: date_parser.parse(x[column])
     update_column(workbook, sheet, column, facets, expression=expression)

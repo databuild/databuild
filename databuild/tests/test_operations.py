@@ -1,3 +1,4 @@
+from datetime import datetime
 from decimal import Decimal
 import os
 import six
@@ -104,3 +105,19 @@ class OperatorTestCase(TestCase):
         sheet = book.import_data('csv', os.path.join(TEST_DIR, "dataset1.csv"), sheet_name='dataset1')
         book.apply_operation(operation)
         assert isinstance(sheet.get_column('Totale Maschi')[0], six.text_type)
+
+    def test_to_datetime(self):
+        operation = {
+            "path": "columns.to_datetime",
+            "description": "",
+            "params": {
+                "sheet": "dataset1",
+                "column": "test column",
+                "facets": []
+            }
+        }
+        book = LocMemBook('project1')
+        sheet = book.import_data('csv', os.path.join(TEST_DIR, "dataset1.csv"), sheet_name='dataset1')
+        sheet.append_column("test column", lambda x: '2014-01-01')
+        book.apply_operation(operation)
+        assert isinstance(sheet.get_column('test column')[0], datetime)

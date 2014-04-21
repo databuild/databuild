@@ -54,6 +54,11 @@ class ShelveSheet(LocMemSheet):
         self.sync()
         return _super
 
+    def pop_rows(self, *args, **kwargs):
+        _super = super(ShelveSheet, self).pop_rows(*args, **kwargs)
+        self.sync()
+        return _super
+
     def extend(self, *args, **kwargs):
         _super = super(ShelveSheet, self).extend(*args, **kwargs)
         self.sync()

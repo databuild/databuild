@@ -96,6 +96,10 @@ class LocMemSheet(BaseWorkSheet):
                 doc[header] = None
         self.data.append(self._dict_to_values(doc))
 
+    def pop_rows(self, rows_count):
+        for i in range(rows_count):
+            self.data.pop()
+
     def extend(self, docs):
         [self.append(doc) for doc in docs]
 

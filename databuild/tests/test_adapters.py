@@ -115,6 +115,11 @@ class BaseAdapterMixin(object):
         fetched_row = self.sheet.get(Comune="Acqui Terme")
         assert fetched_row["Maschi+Femmine"] == 10939
 
+    def test_adapater_pop_rows(self):
+        self.sheet.pop_rows(2)
+        assert len(self.sheet.data) == 1
+        assert self.sheet[0] == self.acqui
+
 
 class ShelveAdapterTestCase(BaseAdapterMixin, TestCase):
     workbook_class = shelved.ShelveBook

@@ -68,6 +68,9 @@ class BaseWorkSheet(object):
     def append(self, doc):
         raise NotImplementedError()
 
+    def pop_rows(self, rows_count):
+        raise NotImplementedError()
+
     def extend(self, docs):
         raise NotImplementedError()
 

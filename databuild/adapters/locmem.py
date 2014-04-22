@@ -3,10 +3,19 @@ from .exceptions import DoesNotExist
 import tablib
 from tabulate import tabulate
 from collections import OrderedDict
-
+try:
+    from databuild.formats import _pyaml
+except ImportError:
+    _pyaml = False
 
 class LocMemSheet(BaseWorkSheet):
     def __init__(self, workbook, name, headers):
+        if _pyaml:
+            formats = list(tablib.formats.available)
+            formats.append(_pyaml) 
+            tablib.formats.available = formats
+            tablib.Dataset.pyml = property()
+
         self.data = tablib.Dataset(headers=headers)
         super(LocMemSheet, self).__init__(workbook, name, headers)
 
@@ -136,6 +145,8 @@ class LocMemSheet(BaseWorkSheet):
         return self.data.json
 
     def export_yaml(self):
+        if _pyaml:
+            return self.data.pyaml
         return self.data.yaml
 
     def export_xls(self):

@@ -20,7 +20,8 @@ An example of build file could be::
         "params": {
           "sheet": "dataset1",
           "format": "csv",
-          "filename": "dataset1.csv"
+          "filename": "dataset1.csv",
+          "skip_last_lines": 1
         }
       },
       {

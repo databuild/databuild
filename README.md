@@ -33,7 +33,8 @@ An example of build file could be:
     "params": {
       "sheet": "dataset1",
       "format": "csv",
-      "filename": "dataset1.csv"
+      "filename": "dataset1.csv",
+      "skip_lat_lines": 1
     }
   },
   {
@@ -73,7 +74,6 @@ This project is still in alpha stage.
 ## TODO
 
 * pandas adapter
-* guess column types when importing
 * export only specified columns
 * R environment
 * yaml buildfiles

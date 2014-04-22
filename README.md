@@ -34,7 +34,7 @@ An example of build file could be:
       "sheet": "dataset1",
       "format": "csv",
       "filename": "dataset1.csv",
-      "skip_lat_lines": 1
+      "skip_last_lines": 1
     }
   },
   {

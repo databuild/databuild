@@ -45,20 +45,3 @@ class Operator(object):
         language, exp = expression['language'], expression['content']
         runtime = self.languages[language]
         return runtime.eval(exp)
-
-
-def column_reference(reference):
-    """
-    "sheet"."column"
-    "sheet \"escaped quotes\""."column"
-    "sheet name.something"."column"
-    'sheet name.something'.'column'
-    """
-    quote = reference[0]
-    split_token = "{0}.{0}".format(quote)
-    sheet, column = reference[1:-1].split(split_token)
-    sheet = sheet.replace('\%s' % quote, quote)
-    column = column.replace('\%s' % quote, quote)
-    sheet = sheet.replace('\\\\', '\\')
-    column = column.replace('\\\\', '\\')
-    return sheet.column

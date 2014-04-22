@@ -25,11 +25,11 @@ class FunctionalTestCase(TestCase):
         assert functional.guess_type(values) == six.text_type
 
         values = [
-            u'10939',
-            u'157',
-            u'49294',
-            u'402',
-            u'374',
+            '10939',
+            '157',
+            '49294',
+            '402',
+            '374',
         ]
         assert functional.guess_type(values) == int
 

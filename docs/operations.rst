@@ -44,9 +44,11 @@ arguments:
 arguments:
     * ``sheet``
     * ``column``
-    * ``facets``
-    * ``expression``
+    * ``facets`` (optional)
     * ``values``
+    * ``expression``
+
+Either ``values`` or ``expression`` are required.
 
 ``columns.add_column``
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -70,6 +72,43 @@ arguments:
     * ``sheet``
     * ``old_name``
     * ``new_name``
+
+
+``columns.to_float``
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+arguments:
+    * ``sheet``
+    * ``column``
+    * ``facets`` (optional)
+
+
+``columns.to_integer``
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+arguments:
+    * ``sheet``
+    * ``column``
+    * ``facets`` (optional)
+
+
+``columns.to_text``
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+arguments:
+    * ``sheet``
+    * ``column``
+    * ``facets`` (optional)
+
+
+``columns.to_datetime``
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+arguments:
+    * ``sheet``
+    * ``column``
+    * ``facets`` (optional)
+
 
 Custom Operation Functions
 ===========================

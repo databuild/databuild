@@ -19,8 +19,8 @@ arguments:
     * ``format``: Values currently supported are ``'csv'`` and ``'json'``.
     * ``headers``: Optional. Defaults to `null`, meaning that the importer tries to autodetects the header names.
     * ``encoding``: Optional. Defaults to ``'utf-8'``.
-    * ``skip_first_lines``: Optional. Defaults to ``0``. Supported only be the CSV importer.
-    * ``skip_Last_lines``: Optional. Defaults to ``0``. Supported only be the CSV importer.
+    * ``skip_first_lines``: Optional. Defaults to ``0``. Supported only by the CSV importer.
+    * ``skip_Last_lines``: Optional. Defaults to ``0``. Supported only by the CSV importer.
     * ``guess_types``: Optional. If set to ``true``, the CSV importer will try to guess the data type. Defaults to ``true``.
 
 ``core.export_data``

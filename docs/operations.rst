@@ -92,6 +92,15 @@ arguments:
     * ``facets`` (optional)
 
 
+``columns.to_decimal``
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+arguments:
+    * ``sheet``
+    * ``column``
+    * ``facets`` (optional)
+
+
 ``columns.to_text``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 

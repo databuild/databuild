@@ -4,7 +4,7 @@ from dateutil import parser as date_parser
 import six
 
 
-def update_column(workbook, sheet, column, facets, values=None, expression=None, wrap=True):
+def update_column(workbook, sheet, column, facets=None, values=None, expression=None, wrap=True):
     assert values or expression
 
     callable_or_values = expression and expression or values
@@ -31,26 +31,26 @@ def rename_column(workbook, sheet, old_name, new_name):
     sheet.remove_column(old_name)
 
 
-def to_float(workbook, sheet, column, facets):
+def to_float(workbook, sheet, column, facets=None):
     expression = lambda x: float(x[column])
     update_column(workbook, sheet, column, facets, expression=expression)
 
 
-def to_integer(workbook, sheet, column, facets):
+def to_integer(workbook, sheet, column, facets=None):
     expression = lambda x: int(x[column])
     update_column(workbook, sheet, column, facets, expression=expression)
 
 
-def to_decimal(workbook, sheet, column, facets):
+def to_decimal(workbook, sheet, column, facets=None):
     expression = lambda x: Decimal(x[column])
     update_column(workbook, sheet, column, facets, expression=expression)
 
 
-def to_text(workbook, sheet, column, facets):
+def to_text(workbook, sheet, column, facets=None):
     expression = lambda x: six.text_type(x[column])
     update_column(workbook, sheet, column, facets, expression=expression)
 
 
-def to_datetime(workbook, sheet, column, facets):
+def to_datetime(workbook, sheet, column, facets=None):
     expression = lambda x: date_parser.parse(x[column])
     update_column(workbook, sheet, column, facets, expression=expression)

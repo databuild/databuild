@@ -6,12 +6,9 @@ python:
 env:
   - LUA="liblua5.1-0-dev liblua50-dev liblualib50-dev"
   - LUA=""
-  - PYAML=""
-  - PYAML="pyaml==14.04.3"
 install:
   - sudo apt-get update -qq
   - if [ "$LUA" ]; then sudo apt-get install liblua5.1-0-dev liblua50-dev liblualib50-dev; fi
-  - if [ "$PYAML" ]; then pip install --quiet $PYAML; fi
   - pip install --quiet --upgrade pip
   - pip install --quiet -r test-requirements.txt
   - pip install --quiet .

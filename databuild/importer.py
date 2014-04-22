@@ -80,7 +80,7 @@ class Importer(object):
 
             sheet = self.workbook.add_sheet(sheet_name, headers)
 
-            [reader.next() for i in range(skip_first_lines)]
+            [next(reader) for i in range(skip_first_lines)]
             sheet.extend(reader)
             sheet.pop_rows(skip_last_lines)
 

@@ -57,5 +57,7 @@ def guess_type(values):
 
     types = set([value.__class__ for value in values])
     if len(types) == 1:
-        return types.pop()
-    return six.string_types[0]
+        guessed_type = types.pop()
+        if guessed_type != str:
+            return guessed_type
+    return six.text_type

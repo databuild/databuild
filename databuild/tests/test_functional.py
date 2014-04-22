@@ -22,7 +22,7 @@ class FunctionalTestCase(TestCase):
             'Daniel',
             'Emily',
         ]
-        assert functional.guess_type(values) == str
+        assert functional.guess_type(values) == six.text_type
 
         values = [
             u'10939',
@@ -67,7 +67,7 @@ class FunctionalTestCase(TestCase):
             '2014-04-01',
             '5.70',
         ]
-        assert functional.guess_type(values) == str
+        assert functional.guess_type(values) == six.text_type
 
         values = [
             1,

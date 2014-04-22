@@ -72,7 +72,7 @@ class Importer(object):
             return import_method(filename, sheet_name, *args, **kwargs)
         raise NotImplementedError()
 
-    def import_csv(self, filename, sheet_name, headers=None, encoding='utf-8', skip_first_lines=0, skip_last_lines=0, **kwargs):
+    def import_csv(self, filename, sheet_name, headers=None, encoding='utf-8', skip_first_lines=0, skip_last_lines=0, guess_types=True, **kwargs):
         with open(filename, 'rb') as f:
             reader = UnicodeDictReader(f, encoding, **kwargs)
             if headers is None:
@@ -83,6 +83,9 @@ class Importer(object):
             [reader.next() for i in range(skip_first_lines)]
             sheet.extend(reader)
             sheet.pop_rows(skip_last_lines)
+
+        if guess_types:
+            sheet.guess_column_types()
         return sheet
 
     def import_json(self, filename, sheet_name, headers=None, encoding='utf-8', **kwargs):

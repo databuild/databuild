@@ -1,3 +1,4 @@
+from databuild.functional import guess_type
 from databuild.operator import Operator
 from databuild.importer import Importer
 
@@ -37,6 +38,14 @@ class BaseWorkSheet(object):
         self.name = name
         self.headers = headers
         super(BaseWorkSheet, self).__init__()
+
+    def guess_column_types(self, sample_size=5):
+        headers = self.headers[:]
+        for column in headers:
+            values = self.get_column(column)[:sample_size]
+            value_type = guess_type(values)
+            transform = lambda x: value_type(x[column])
+            self.update_column(column, transform)
 
     def append_column(self, column_name, callable_or_values=None):
         raise NotImplementedError()

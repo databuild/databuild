@@ -21,6 +21,7 @@ arguments:
     * ``encoding``: Optional. Defaults to ``'utf-8'``.
     * ``skip_first_lines``: Optional. Defaults to ``0``. Supported only be the CSV importer.
     * ``skip_Last_lines``: Optional. Defaults to ``0``. Supported only be the CSV importer.
+    * ``guess_types``: Optional. If set to ``true``, the CSV importer will try to guess the data type. Defaults to ``true``.
 
 ``core.export_data``
 ~~~~~~~~~~~~~~~~~~~~

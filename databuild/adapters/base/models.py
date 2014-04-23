@@ -1,6 +1,6 @@
 from databuild.functional import guess_type
 from databuild.operator import Operator
-from databuild.importer import Importer
+from .importer import Importer
 
 
 class BaseWorkBook(object):

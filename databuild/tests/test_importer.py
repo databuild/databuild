@@ -4,7 +4,7 @@ from unittest import TestCase
 
 from databuild.adapters.locmem.models import LocMemBook
 from databuild.adapters.base.exceptions import DoesNotExist
-from databuild import importer
+from databuild.adapters.base import importer
 
 
 TEST_DIR = os.path.join(os.path.dirname(__file__))

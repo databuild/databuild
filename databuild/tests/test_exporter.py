@@ -4,7 +4,7 @@ from tablib.formats._yaml import yaml
 from unittest import TestCase
 
 from databuild.adapters.locmem.models import LocMemBook
-from databuild import importer
+from databuild.adapters.base import importer
 
 
 TEST_DIR = os.path.join(os.path.dirname(__file__))

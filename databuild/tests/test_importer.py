@@ -2,8 +2,8 @@ import os
 import six
 from unittest import TestCase
 
-from databuild.adapters.locmem import LocMemBook
-from databuild.adapters.exceptions import DoesNotExist
+from databuild.adapters.locmem.models import LocMemBook
+from databuild.adapters.base.exceptions import DoesNotExist
 from databuild import importer
 
 

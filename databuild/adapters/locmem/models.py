@@ -1,8 +1,9 @@
-from .base import BaseWorkBook, BaseWorkSheet
-from .exceptions import DoesNotExist
+from collections import OrderedDict
 import tablib
 from tabulate import tabulate
-from collections import OrderedDict
+
+from ..base.models import BaseWorkBook, BaseWorkSheet
+from ..base.exceptions import DoesNotExist
 
 
 class LocMemSheet(BaseWorkSheet):

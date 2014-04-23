@@ -1,9 +1,9 @@
 import os
 from unittest import TestCase
 
-from databuild.adapters import shelved
-from databuild.adapters import locmem
-from databuild.adapters import exceptions
+from databuild.adapters.shelved.models import ShelveBook
+from databuild.adapters.locmem.models import LocMemBook
+from databuild.adapters.base import exceptions
 
 
 TEST_DIR = os.path.join(os.path.dirname(__file__))
@@ -122,7 +122,7 @@ class BaseAdapterMixin(object):
 
 
 class ShelveAdapterTestCase(BaseAdapterMixin, TestCase):
-    workbook_class = shelved.ShelveBook
+    workbook_class = ShelveBook
 
     def setup_book(self):
         return self.workbook_class(name='test_workbook', data_dir=TEST_DIR)
@@ -133,7 +133,7 @@ class ShelveAdapterTestCase(BaseAdapterMixin, TestCase):
 
 
 class LocMemAdapterTestCase(BaseAdapterMixin, TestCase):
-    workbook_class = locmem.LocMemBook
+    workbook_class = LocMemBook
 
     def test_locmem_adapter(self):
         row = {

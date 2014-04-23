@@ -1,9 +1,8 @@
-from __future__ import absolute_import
 import os
+import shelve
 from tempfile import gettempdir
 
-from .locmem import LocMemBook, LocMemSheet
-import shelve
+from ..locmem.models import LocMemBook, LocMemSheet
 
 
 class ShelveSheet(LocMemSheet):
@@ -36,18 +35,6 @@ class ShelveSheet(LocMemSheet):
         _super = super(ShelveSheet, self).rename_column(*args, **kwargs)
         self.sync()
         return _super
-
-    def get_column(self, *args, **kwargs):
-        return super(ShelveSheet, self).get_column(*args, **kwargs)
-
-    def all(self, *args, **kwargs):
-        return super(ShelveSheet, self).all(*args, **kwargs)
-
-    def filter(self, *args, **kwargs):
-        return super(ShelveSheet, self).filter(*args, **kwargs)
-
-    def get(self, *args, **kwargs):
-        return super(ShelveSheet, self).get(*args, **kwargs)
 
     def append(self, *args, **kwargs):
         _super = super(ShelveSheet, self).append(*args, **kwargs)
@@ -104,5 +91,3 @@ class ShelveBook(LocMemBook):
         self.sync()
         self.data.close()
         super(ShelveBook, self).__del__()
-
-

@@ -1,6 +1,6 @@
 import os
 from unittest import TestCase, skipUnless
-from databuild.adapters.locmem import LocMemBook
+from databuild.adapters.locmem.models import LocMemBook
 
 try:
     from databuild.environments.lua import LuaEnvironment  # NOQA

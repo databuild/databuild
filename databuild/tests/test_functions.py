@@ -2,7 +2,7 @@ import os
 from unittest import TestCase
 from databuild import settings
 
-from databuild.adapters.locmem import LocMemBook
+from databuild.adapters.locmem.models import LocMemBook
 from databuild.functions import data
 
 

@@ -3,7 +3,7 @@ import os
 from tablib.formats._yaml import yaml
 from unittest import TestCase
 
-from databuild.adapters.locmem import LocMemBook
+from databuild.adapters.locmem.models import LocMemBook
 from databuild import importer
 
 

@@ -7,7 +7,7 @@ FUNCTIONS = (
     'databuild.functions.data',
 )
 
-ADAPTER = 'databuild.adapters.locmem.LocMemBook'
+ADAPTER = 'databuild.adapters.locmem.models.LocMemBook'
 
 LANGUAGES = {
     'python': 'databuild.environments.python.PythonEnvironment',

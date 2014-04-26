@@ -9,10 +9,10 @@ from .exporter import SheetExporter
 
 
 class LocMemSheet(BaseWorkSheet):
+    exporter_class = SheetExporter
+
     def __init__(self, workbook, name, headers):
         self.data = tablib.Dataset(headers=headers)
-        self.exporter = SheetExporter(self)
-
         super(LocMemSheet, self).__init__(workbook, name, headers)
 
     def __getitem__(self, key):
@@ -127,9 +127,6 @@ class LocMemSheet(BaseWorkSheet):
 
     def print_data(self):
         print(tabulate(self.data, headers=self.headers))
-
-    def export_data(self, format='csv'):
-        return self.exporter.export_data(format)
 
 
 class LocMemBook(BaseWorkBook):

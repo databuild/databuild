@@ -1,6 +1,7 @@
 from databuild.functional import guess_type
 from databuild.operator import Operator
 from .importer import Importer
+from .exporter import BaseSheetExporter
 
 
 class BaseWorkBook(object):
@@ -33,10 +34,13 @@ class BaseWorkBook(object):
 
 
 class BaseWorkSheet(object):
+    exporter_class = BaseSheetExporter
+
     def __init__(self, workbook, name, headers):
         self.workbook = workbook
         self.name = name
         self.headers = headers
+        self.exporter = self.exporter_class(self)
         super(BaseWorkSheet, self).__init__()
 
     def guess_column_types(self, sample_size=5):
@@ -94,7 +98,7 @@ class BaseWorkSheet(object):
         return self.workbook.apply_operation(operation)
 
     def export_data(self, format='csv'):
-        raise NotImplementedError()
+        return self.exporter.export_data(format)
 
     def print_data(self):
         raise NotImplementedError()

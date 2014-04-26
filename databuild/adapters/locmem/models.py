@@ -5,10 +5,14 @@ from tabulate import tabulate
 from ..base.models import BaseWorkBook, BaseWorkSheet
 from ..base.exceptions import DoesNotExist
 
+from .exporter import SheetExporter
+
 
 class LocMemSheet(BaseWorkSheet):
     def __init__(self, workbook, name, headers):
         self.data = tablib.Dataset(headers=headers)
+        self.exporter = SheetExporter(self)
+
         super(LocMemSheet, self).__init__(workbook, name, headers)
 
     def __getitem__(self, key):
@@ -125,22 +129,7 @@ class LocMemSheet(BaseWorkSheet):
         print(tabulate(self.data, headers=self.headers))
 
     def export_data(self, format='csv'):
-        export_method = getattr(self, 'export_%s' % format, False)
-        if export_method:
-            return export_method()
-        raise NotImplementedError()
-
-    def export_csv(self):
-        return self.data.csv
-
-    def export_json(self):
-        return self.data.json
-
-    def export_yaml(self):
-        return self.data.yaml
-
-    def export_xls(self):
-        return self.data.xls
+        return self.exporter.export_data(format)
 
 
 class LocMemBook(BaseWorkBook):

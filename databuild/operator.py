@@ -31,7 +31,7 @@ class Operator(object):
     def apply_operations(self, build_file, echo=False):
         self.build_file = os.path.abspath(build_file)
 
-        with _open(build_file, 'rb', encoding='utf-8') as fh:
+        with _open(build_file, 'r', encoding='utf-8') as fh:
             operations = json.load(fh)
             [self.apply_operation(op, echo) for op in operations]
 

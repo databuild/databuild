@@ -1,5 +1,4 @@
 from importlib import import_module
-import json
 
 from databuild.loader import load_classpath
 
@@ -9,7 +8,5 @@ def build(build_file, settings='databuild.settings', echo=False):
     AdapterClass = load_classpath(settings.ADAPTER) 
     
     book = AdapterClass()
-    with open(build_file, 'rb') as fh:
-        operations = json.load(fh)
-        book.apply_operations(operations, echo)
+    book.apply_operations(build_file, echo)
     return book

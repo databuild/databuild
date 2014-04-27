@@ -26,8 +26,8 @@ class BaseWorkBook(object):
     def import_data(self, format='csv', *args, **kwargs):
         return self.importer.import_data(format, *args, **kwargs)
 
-    def apply_operations(self, operations, echo=False):
-        [self.apply_operation(op, echo) for op in operations]
+    def apply_operations(self, build_file, echo=False):
+        return self.operator.apply_operations(build_file, echo)
 
     def apply_operation(self, operation, echo=False):
         return self.operator.apply_operation(operation, echo)

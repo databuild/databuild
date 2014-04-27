@@ -1,3 +1,6 @@
+import json
+import os
+
 from databuild.facets import sum_facets
 from databuild.loader import load_classpath
 
@@ -23,6 +26,13 @@ class Operator(object):
             else:
                 languages[name] = RuntimeClass(self.workbook)
         return languages
+
+    def apply_operations(self, build_file, echo=False):
+        self.build_file = os.path.abspath(build_file)
+
+        with open(build_file, 'rb') as fh:
+            operations = json.load(fh)
+            [self.apply_operation(op, echo) for op in operations]
 
     def apply_operation(self, operation, echo=False):
         if echo and operation['description']:

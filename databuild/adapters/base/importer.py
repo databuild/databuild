@@ -74,7 +74,7 @@ class Importer(object):
 
     def import_csv(self, filename, sheet_name, headers=None, encoding='utf-8', skip_first_lines=0, skip_last_lines=0, guess_types=True, **kwargs):
         if not os.path.exists(filename):
-            filename = os.path.join(os.path.dirname(self.workbook.operator.build_file), build_file)
+            filename = os.path.join(os.path.dirname(self.workbook.operator.build_file), filename)
 
         with open(filename, 'rb') as f:
             reader = UnicodeDictReader(f, encoding, **kwargs)

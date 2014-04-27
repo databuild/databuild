@@ -14,21 +14,13 @@ Options:
 
 """
 from docopt import docopt
-from importlib import import_module
-import json
 
 from databuild import _version
-from databuild.loader import load_classpath
+from databuild.builder import build
 
 
 def main(build_file, settings):
-    settings = import_module(settings)
-    AdapterClass = load_classpath(settings.ADAPTER) 
-    
-    book = AdapterClass()
-    with open(build_file, 'rb') as fh:
-        operations = json.load(fh)
-        book.apply_operations(operations, echo=True)
+    build(build_file, settings, echo=True)
 
 
 if __name__ == '__main__':

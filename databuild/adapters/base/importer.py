@@ -2,6 +2,8 @@ import six
 import json
 import os, csv, codecs
 
+from databuild.compat import _open
+
 
 class UTF8Recoder(object):
     """
@@ -49,13 +51,6 @@ class UnicodeDictReader(object):
         if hasattr(self.reader, name):
             return getattr(self.reader, name)
         raise AttributeError()
-
-if six.PY2:
-    def _open(*args, **kwargs):
-        kwargs.pop('encoding', False)
-        return open(*args, **kwargs) 
-else:
-    _open = open
 
 
 class Importer(object):

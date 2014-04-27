@@ -14,6 +14,7 @@ Contents:
    installation
    quickstart
    buildfiles
+   python_api
    operations
    expressions
    environments

@@ -3,7 +3,7 @@ import os
 
 from databuild.compat import _open
 from databuild.facets import sum_facets
-from databuild.loader import load_classpath
+from databuild.loader import load_classpath, load_classpath_whitelist
 
 from databuild import settings
 
@@ -39,7 +39,7 @@ class Operator(object):
         if echo and operation['description']:
             print(operation['description'])
 
-        fn = load_classpath(operation['path'])
+        fn = load_classpath_whitelist(operation['path'], settings.OPERATION_MODULES, shortcuts=True)
 
         if 'expression' in operation['params']:
             operation['params']['expression'] = self.parse_expression(operation['params']['expression'])

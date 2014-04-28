@@ -1,7 +1,7 @@
-SHORTCUTS = {
-    'core': "databuild.operations.core",
-    'columns': "databuild.operations.columns",
-}
+OPERATION_MODULES = (
+    "databuild.operations.core",
+    "databuild.operations.columns",
+)
 
 FUNCTIONS = (
     'databuild.functions.data',

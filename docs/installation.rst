@@ -5,8 +5,8 @@ Install databuild::
 
   $ pip install git+https://github.com/fcurella/databuild.git
 
-Lua Support
-===========
+Lua Support (optional)
+======================
 
 In order to be able to use Lua, you'll need to have the Lua environment
 installed before you install ``databuild``.

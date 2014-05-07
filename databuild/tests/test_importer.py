@@ -1,5 +1,4 @@
 import os
-import six
 from unittest import TestCase
 
 from databuild.adapters.locmem.models import LocMemBook
@@ -10,17 +9,6 @@ from databuild.adapters.base import importer
 TEST_DIR = os.path.join(os.path.dirname(__file__))
 
 class ImporterTestCase(TestCase):
-    def test_unicode_csv_dict_reader(self):
-        filename = os.path.join(TEST_DIR, "dataset1.csv")
-
-        with open(filename, 'rb') as f:
-            reader = importer.UnicodeDictReader(f, 'utf-8')
-            row = list(reader)[0]
-
-        assert isinstance(row, dict)
-        assert isinstance(list(row.keys())[0], six.text_type)
-        assert isinstance(list(row.values())[0], six.text_type)
-
     def test_import_csv(self):
         book = LocMemBook('project1')
         dataimporter = importer.Importer(workbook=book)

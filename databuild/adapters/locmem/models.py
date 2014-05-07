@@ -55,11 +55,11 @@ class LocMemSheet(BaseWorkSheet):
         self.data.append_col(values, header=column_name)
 
     def copy_column(self, old_name, new_name):
-        values = self.data[old_name]
+        values = self.data[str(old_name)]
         self.append_column(new_name, values)
 
     def remove_column(self, column_name):
-        del self.data[column_name]
+        del self.data[str(column_name)]
         self.headers.remove(column_name)
 
     def rename_column(self, old_name, new_name):
@@ -79,7 +79,7 @@ class LocMemSheet(BaseWorkSheet):
             self.update_rows(filter_fn, fn)
 
     def get_column(self, column_name):
-        return self.data[column_name]
+        return self.data[str(column_name)]
 
     def all(self):
         return self.data.dict

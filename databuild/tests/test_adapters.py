@@ -120,6 +120,17 @@ class BaseAdapterMixin(object):
         assert len(self.sheet.data) == 1
         assert self.sheet[0] == self.acqui
 
+    def test_adapater_copy_sheet(self):
+        self.book.copy_sheet('students', 'students_copy')
+        assert 'students_copy' in self.book.sheets
+        assert len(self.book.sheets['students_copy']) == len(self.book.sheets['students'])
+        assert len(self.book.sheets['students_copy'].headers) == len(self.book.sheets['students'].headers)
+
+        self.book.copy_sheet('students', 'students_copy2', headers=['Totale Maschi', 'Totale Femmine'])
+        assert 'students_copy' in self.book.sheets
+        assert len(self.book.sheets['students_copy2']) == len(self.book.sheets['students'])
+        assert len(self.book.sheets['students_copy2'].headers) < len(self.book.sheets['students'].headers)
+
 
 class ShelveAdapterTestCase(BaseAdapterMixin, TestCase):
     workbook_class = ShelveBook

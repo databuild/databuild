@@ -122,3 +122,37 @@ class OperatorTestCase(TestCase):
         sheet.append_column("test column", lambda x: '2014-01-01')
         book.apply_operation(operation)
         assert isinstance(sheet.get_column('test column')[0], datetime)
+
+    def test_copy_sheet(self):
+        operation = {
+            "path": "sheets.copy",
+            "description": "",
+            "params": {
+                "source": "dataset1",
+                "destination": "dataset2",
+            }
+        }
+        book = LocMemBook('project1')
+        sheet = book.import_data('csv', os.path.join(TEST_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
+        sheet.append_column("test column", lambda x: '2014-01-01')
+        book.apply_operation(operation)
+        assert 'dataset2' in book.sheets
+        assert len(book.sheets['dataset2']) == len(book.sheets['dataset1'])
+        assert len(book.sheets['dataset2'].headers) == len(book.sheets['dataset1'].headers)
+
+        operation = {
+            "path": "sheets.copy",
+            "description": "",
+            "params": {
+                "source": "dataset1",
+                "destination": "dataset3",
+                "headers": [
+                    "Totale Maschi",
+                    "Totale Femmine"
+                ]
+            }
+        }
+        book.apply_operation(operation)
+        assert 'dataset3' in book.sheets
+        assert len(book.sheets['dataset3']) == len(book.sheets['dataset1'])
+        assert len(book.sheets['dataset3'].headers) < len(book.sheets['dataset1'].headers)

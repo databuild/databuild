@@ -14,3 +14,7 @@ def export_data(workbook, sheet, format, filename):
 def print_data(workbook, sheet):
     sheet = workbook.sheets[sheet]
     sheet.print_data()
+
+
+def copy(workbook, source, destination, headers=None):
+    workbook.copy_sheet(source, destination, headers)

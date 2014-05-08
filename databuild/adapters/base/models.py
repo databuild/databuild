@@ -23,6 +23,30 @@ class BaseWorkBook(object):
         self.sheets[name] = sheet
         return sheet
 
+    def copy_sheet(self, src, dest, headers=None):
+        src_sheet = self.sheets[src]
+        src_headers = src_sheet.headers
+        filter_columns = False
+
+        if headers is None:
+            headers = src_headers
+        else:
+            filter_columns = True
+            excluded_headers = set(src_headers) - set(headers)
+
+        dest_sheet = self.sheet_class(workbook=self, name=dest, headers=headers)
+        self.sheets[dest] = dest_sheet
+
+        if not filter_columns:
+            dest_sheet.extend(src_sheet.all())
+        else:
+            for src_doc in src_sheet.all():
+                dest_doc = src_doc.copy()
+                [dest_doc.pop(k) for k in excluded_headers]
+                dest_sheet.append(dest_doc)
+        return dest_sheet
+
+
     def import_data(self, format='csv', *args, **kwargs):
         return self.importer.import_data(format, *args, **kwargs)
 

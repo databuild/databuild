@@ -27,10 +27,19 @@ arguments:
 ~~~~~~~~~~~~~~~~~~~~
 
 arguments:
+    * ``source``
+    * ``destination``
+    * ``headers`` (optional)
+
+Create a copy of the ``source`` sheet named ``destination``, optionally using only the headers specified in ``headers``.
+
+``sheets.copy``
+~~~~~~~~~~~~~~~~~~~~
+
+arguments:
     * ``sheet``
     * ``format``
     * ``filename``
-
 
 ``sheets.print_data``
 ~~~~~~~~~~~~~~~~~~~~

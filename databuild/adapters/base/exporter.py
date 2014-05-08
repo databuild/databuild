@@ -8,6 +8,7 @@ class BaseSheetExporter(object):
             sheet = self.sheet.copy(dest="__tmp__", headers=headers)
         else:
             sheet = self.sheet
+
         export_method = getattr(sheet.exporter, 'export_%s' % format, False)
         if export_method:
             data = export_method(*args, **kwargs)

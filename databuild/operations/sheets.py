@@ -6,7 +6,7 @@ def import_data(workbook, format, filename, sheet, *args, **kwargs):
 
 def export_data(workbook, sheet, format, filename, headers=None):
     sheet = workbook.sheets[sheet]
-    data = sheet.export_data(headers, format)
+    data = sheet.export_data(format=format, headers=headers)
     with _open(filename, 'w', encoding='utf-8') as fh:
         fh.write(data)
 

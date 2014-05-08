@@ -23,7 +23,7 @@ arguments:
     * ``skip_Last_lines``: Optional. Defaults to ``0``. Supported only by the CSV importer.
     * ``guess_types``: Optional. If set to ``true``, the CSV importer will try to guess the data type. Defaults to ``true``.
 
-``sheets.export_data``
+``sheets.copy``
 ~~~~~~~~~~~~~~~~~~~~
 
 arguments:
@@ -31,15 +31,18 @@ arguments:
     * ``destination``
     * ``headers`` (optional)
 
-Create a copy of the ``source`` sheet named ``destination``, optionally using only the headers specified in ``headers``.
+Create a copy of the ``source`` sheet named ``destination``. Optionally copies only the headers specified in ``headers``.
 
-``sheets.copy``
+``sheets.export_data``
 ~~~~~~~~~~~~~~~~~~~~
 
 arguments:
     * ``sheet``
     * ``format``
     * ``filename``
+    * ``headers`` (optional)
+
+Exports the datasheet named ``sheet`` to the file named ``filename`` in the specified ``format``. Optionally exports only the headers specified in ``headers``.
 
 ``sheets.print_data``
 ~~~~~~~~~~~~~~~~~~~~

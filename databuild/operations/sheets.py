@@ -17,4 +17,5 @@ def print_data(workbook, sheet):
 
 
 def copy(workbook, source, destination, headers=None):
-    workbook.copy_sheet(source, destination, headers)
+    sheet = workbook.sheets[source]
+    sheet.copy(destination, headers)

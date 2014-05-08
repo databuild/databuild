@@ -25,7 +25,7 @@ class ExporterTestCase(TestCase):
         parsed = json.loads(data)
         assert len(parsed) == 191
         assert len(parsed[0].keys()) == 2
-        assert self.book.sheets.keys() == [self.sheet.name]
+        assert list(self.book.sheets.keys()) == [self.sheet.name]
 
     def test_yml(self):
         data = self.sheet.export_data(format='yaml')

@@ -23,6 +23,9 @@ class BaseWorkBook(object):
         self.sheets[name] = sheet
         return sheet
 
+    def remove_sheet(self, sheet):
+        self.sheets.pop(sheet.name)
+
     def import_data(self, format='csv', *args, **kwargs):
         return self.importer.import_data(format, *args, **kwargs)
 
@@ -73,6 +76,9 @@ class BaseWorkSheet(object):
                 dest_sheet.append(dest_doc)
         return dest_sheet
 
+    def destroy(self):
+        self.workbook.remove_sheet(self)
+
     def append_column(self, column_name, callable_or_values=None):
         raise NotImplementedError()
 
@@ -119,8 +125,8 @@ class BaseWorkSheet(object):
         assert operation['params']['sheet'] == self.name
         return self.workbook.apply_operation(operation)
 
-    def export_data(self, format='csv'):
-        return self.exporter.export_data(format)
+    def export_data(self, format='csv', headers=None, *args, **kwargs):
+        return self.exporter.export_data(format=format, headers=headers, *args, **kwargs)
 
     def print_data(self):
         raise NotImplementedError()

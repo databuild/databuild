@@ -79,6 +79,11 @@ class ShelveBook(LocMemBook):
         self.db = os.path.join(data_dir, name)
         self.data = shelve.open(self.db)
 
+    def __del__(self):
+        self.sync()
+        self.data.close()
+        super(ShelveBook, self).__del__()
+
     def sync(self, sheet=None):
         if sheet:
             self.data[sheet.name] = sheet.serialize()
@@ -87,7 +92,12 @@ class ShelveBook(LocMemBook):
                 self.data[name] = sheet.serialize()
         self.data.sync()
 
-    def __del__(self):
+    def add_sheet(self, *args, **kwargs):
+        return super(ShelveBook, self).add_sheet(*args, **kwargs)
         self.sync()
-        self.data.close()
-        super(ShelveBook, self).__del__()
+
+    def remove_sheet(self, *args, **kwargs):
+        return super(ShelveBook, self).remove_sheet(*args, **kwargs)
+        self.sync()
+
+

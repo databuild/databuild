@@ -1,14 +1,14 @@
 Operation Functions
 -------------------
 
-Operations functions are regular Python function that perform actions on the book. Examples of operations are: ``core.import_data``, ``columns.add_column``, ``columns.update_column``, and more.
+Operations functions are regular Python function that perform actions on the book. Examples of operations are: ``sheets.import_data``, ``columns.add_column``, ``columns.update_column``, and more.
 
 They have a path that identifies them, an optional description and a number of parameters that they accept. Different operation functions accept different parameters.
 
 Available Operation Functions
 =============================
 
-``core.import_data``
+``sheets.import_data``
 ~~~~~~~~~~~~~~~~~~~~
 
 Creates a new sheet importing data from an external source.
@@ -23,7 +23,7 @@ arguments:
     * ``skip_Last_lines``: Optional. Defaults to ``0``. Supported only by the CSV importer.
     * ``guess_types``: Optional. If set to ``true``, the CSV importer will try to guess the data type. Defaults to ``true``.
 
-``core.export_data``
+``sheets.export_data``
 ~~~~~~~~~~~~~~~~~~~~
 
 arguments:
@@ -32,7 +32,7 @@ arguments:
     * ``filename``
 
 
-``core.print_data``
+``sheets.print_data``
 ~~~~~~~~~~~~~~~~~~~~
 
 arguments:

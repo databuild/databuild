@@ -33,7 +33,7 @@ class OperatorTestCase(TestCase):
 
     def test_import_data(self):
         operation = {
-            "path": "core.import_data",
+            "path": "sheets.import_data",
             "description": "Importing data from csv file",
             "params": {
               "sheet": "dataset1",

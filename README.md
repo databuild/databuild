@@ -28,7 +28,7 @@ An example of build file could be:
 ```json
 [
   {
-    "path": "core.import_data",
+    "path": "sheets.import_data",
     "description": "Importing data from csv file",
     "params": {
       "sheet": "dataset1",
@@ -50,7 +50,7 @@ An example of build file could be:
     }
   },
   {
-    "path": "core.export_data",
+    "path": "sheets.export_data",
     "description": "",
     "params": {
       "sheet": "dataset1",

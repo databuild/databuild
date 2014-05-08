@@ -1,5 +1,5 @@
 OPERATION_MODULES = (
-    "databuild.operations.core",
+    "databuild.operations.sheets",
     "databuild.operations.columns",
 )
 

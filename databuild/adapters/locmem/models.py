@@ -18,6 +18,9 @@ class LocMemSheet(BaseWorkSheet):
     def __getitem__(self, key):
         return self._values_to_dict(self.data[key])
 
+    def __len__(self):
+        return self.data.__len__()
+
     def _match(self, doc, where):
         """Return True if 'doc' matches the 'where' condition."""
         assert isinstance(where, dict), "where is not a dictionary"

@@ -74,6 +74,5 @@ This project is still in alpha stage.
 ## TODO
 
 * pandas adapter
-* export only specified columns
 * R environment
 * yaml buildfiles

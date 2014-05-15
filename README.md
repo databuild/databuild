@@ -11,7 +11,7 @@ Inspired by Open Refine.
 Install databuild:
 
 ```
-  $ pip install https://github.com/fcurella/databuild/archive/master.tar.gz
+  $ pip install https://github.com/databuild/databuild/archive/master.tar.gz
 ```
 
 ## Quickstart

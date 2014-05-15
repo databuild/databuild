@@ -3,7 +3,7 @@ Installation
 
 Install databuild::
 
-  $ pip install git+https://github.com/fcurella/databuild.git
+  $ pip install git+https://github.com/databuild/databuild.git
 
 Lua Support (optional)
 ======================
@@ -22,7 +22,7 @@ On Ubuntu, these are the packages you need::
 
 Then you can install ``databuild``::
 
-  $ pip install https://github.com/fcurella/databuild/archive/master.tar.gz
+  $ pip install https://github.com/databuild/databuild/archive/master.tar.gz
 
 
 OS X
@@ -40,7 +40,7 @@ Install ``Lua`` with ``brew``::
 
 Install ``databuild`` with the `WITHLUA` environment variable set::
 
-  $ WITHLUA=True pip install https://github.com/fcurella/databuild/archive/master.tar.gz
+  $ WITHLUA=True pip install https://github.com/databuild/databuild/archive/master.tar.gz
 
 After ``databuild`` is installed, you can re-link ``LuaJIT`` if you need::
 

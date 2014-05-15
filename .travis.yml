@@ -14,4 +14,4 @@ install:
   - pip install --quiet .
 script:
   - py.test databuild
-  - data-build.py databuild/tests/buildfile.json
+  - data-build.py databuild/tests/data/buildfile.json

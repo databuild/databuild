@@ -4,7 +4,7 @@ from databuild import settings
 from databuild.adapters.locmem.models import LocMemBook
 
 
-TEST_DIR = os.path.join(os.path.dirname(__file__))
+TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 settings.FUNCTIONS = list(settings.FUNCTIONS) + [
     'databuild.tests.functions',
@@ -26,7 +26,7 @@ class OperatorTestCase(TestCase):
             }
         }
         book = LocMemBook('project1')
-        sheet = book.import_data('csv', os.path.join(TEST_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
+        sheet = book.import_data('csv', os.path.join(TEST_DATA_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
         sheet.append_column("test column")
         book.apply_operation(operation)
         assert sheet.get_column('test column')[0] == 'x'
@@ -46,7 +46,7 @@ class OperatorTestCase(TestCase):
             }
         }
         book = LocMemBook('project1')
-        sheet = book.import_data('csv', os.path.join(TEST_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
+        sheet = book.import_data('csv', os.path.join(TEST_DATA_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
         sheet.append_column("test column")
         book.apply_operation(operation)
         assert sheet.get_column('test column')[0] == 'x'
@@ -210,7 +210,7 @@ class OperatorTestCase(TestCase):
         }
 
         book = LocMemBook('project1')
-        sheet = book.import_data('csv', os.path.join(TEST_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
+        sheet = book.import_data('csv', os.path.join(TEST_DATA_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
         book.apply_operation(operation)
         assert sheet.get(Comune='Acqui Terme')['Totale Femmine'] == 'x'
         assert sheet.get(Comune='Albera Ligure')['Totale Femmine'] != 'x'

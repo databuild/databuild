@@ -7,7 +7,7 @@ from unittest import TestCase
 from databuild.adapters.locmem.models import LocMemBook
 
 
-TEST_DIR = os.path.join(os.path.dirname(__file__))
+TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
 class OperatorTestCase(TestCase):
@@ -26,7 +26,7 @@ class OperatorTestCase(TestCase):
             }
         }
         book = LocMemBook('project1')
-        sheet = book.import_data('csv', os.path.join(TEST_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
+        sheet = book.import_data('csv', os.path.join(TEST_DATA_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
         sheet.append_column("test column")
         book.apply_operation(operation)
         assert sheet.get_column('test column')[0] == 'x'
@@ -38,7 +38,7 @@ class OperatorTestCase(TestCase):
             "params": {
               "sheet": "dataset1",
               "format": "csv",
-              "filename": os.path.join(TEST_DIR, "dataset1.csv"),
+              "filename": os.path.join(TEST_DATA_DIR, "dataset1.csv"),
               "skip_last_lines": 1
             }
         }
@@ -58,7 +58,7 @@ class OperatorTestCase(TestCase):
             }
         }
         book = LocMemBook('project1')
-        sheet = book.import_data('csv', os.path.join(TEST_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
+        sheet = book.import_data('csv', os.path.join(TEST_DATA_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
         book.apply_operation(operation)
         assert isinstance(sheet.get_column('Totale Maschi')[0], float)
 
@@ -73,7 +73,7 @@ class OperatorTestCase(TestCase):
             }
         }
         book = LocMemBook('project1')
-        sheet = book.import_data('csv', os.path.join(TEST_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
+        sheet = book.import_data('csv', os.path.join(TEST_DATA_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
         book.apply_operation(operation)
         assert isinstance(sheet.get_column('Totale Maschi')[0], int)
 
@@ -88,7 +88,7 @@ class OperatorTestCase(TestCase):
             }
         }
         book = LocMemBook('project1')
-        sheet = book.import_data('csv', os.path.join(TEST_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
+        sheet = book.import_data('csv', os.path.join(TEST_DATA_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
         book.apply_operation(operation)
         assert isinstance(sheet.get_column('Totale Maschi')[0], Decimal)
 
@@ -103,7 +103,7 @@ class OperatorTestCase(TestCase):
             }
         }
         book = LocMemBook('project1')
-        sheet = book.import_data('csv', os.path.join(TEST_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
+        sheet = book.import_data('csv', os.path.join(TEST_DATA_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
         book.apply_operation(operation)
         assert isinstance(sheet.get_column('Totale Maschi')[0], six.text_type)
 
@@ -118,7 +118,7 @@ class OperatorTestCase(TestCase):
             }
         }
         book = LocMemBook('project1')
-        sheet = book.import_data('csv', os.path.join(TEST_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
+        sheet = book.import_data('csv', os.path.join(TEST_DATA_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
         sheet.append_column("test column", lambda x: '2014-01-01')
         book.apply_operation(operation)
         assert isinstance(sheet.get_column('test column')[0], datetime)
@@ -133,7 +133,7 @@ class OperatorTestCase(TestCase):
             }
         }
         book = LocMemBook('project1')
-        sheet = book.import_data('csv', os.path.join(TEST_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
+        sheet = book.import_data('csv', os.path.join(TEST_DATA_DIR, "dataset1.csv"), sheet_name='dataset1', guess_types=False)
         sheet.append_column("test column", lambda x: '2014-01-01')
         book.apply_operation(operation)
         assert 'dataset2' in book.sheets

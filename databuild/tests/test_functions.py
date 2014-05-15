@@ -1,12 +1,8 @@
-import os
 from unittest import TestCase
 from databuild import settings
 
 from databuild.adapters.locmem.models import LocMemBook
 from databuild.functions import data
-
-
-TEST_DIR = os.path.join(os.path.dirname(__file__))
 
 settings.LANGUAGES['noop'] = 'databuild.environments.noop.NoopEnvironment'
 

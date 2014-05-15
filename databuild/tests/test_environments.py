@@ -1,4 +1,3 @@
-import os
 from unittest import TestCase, skipUnless
 from databuild.adapters.locmem.models import LocMemBook
 
@@ -7,8 +6,6 @@ try:
     LUA_INSTALLED = True
 except ImportError:
     LUA_INSTALLED = False
-
-TEST_DIR = os.path.join(os.path.dirname(__file__))
 
 
 class ParserTestCase(TestCase):

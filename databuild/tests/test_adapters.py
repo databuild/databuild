@@ -6,7 +6,7 @@ from databuild.adapters.locmem.models import LocMemBook
 from databuild.adapters.base import exceptions
 
 
-TEST_DIR = os.path.join(os.path.dirname(__file__))
+TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 class BaseAdapterMixin(object):
     workbook_class = None
@@ -137,7 +137,7 @@ class ShelveAdapterTestCase(BaseAdapterMixin, TestCase):
     workbook_class = ShelveBook
 
     def setup_book(self):
-        return self.workbook_class(name='test_workbook', data_dir=TEST_DIR)
+        return self.workbook_class(name='test_workbook', data_dir=TEST_DATA_DIR)
 
     def tearDown(self):
         if os.path.exists(self.book.db):

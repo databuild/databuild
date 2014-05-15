@@ -1,9 +1,5 @@
-import os
 from unittest import TestCase
 from databuild.adapters.locmem.models import LocMemBook
-
-
-TEST_DIR = os.path.join(os.path.dirname(__file__))
 
 
 class ParserTestCase(TestCase):

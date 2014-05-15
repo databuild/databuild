@@ -30,7 +30,7 @@ setup(
     name="databuild",
     version=VERSION,
     description="a build tool for data",
-    long_description=read('README.rst'),
+    long_description=read('README.md'),
     url='https://github.com/databuild/databuild',
     license='BSD',
     author='Flavio Curella',

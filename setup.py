@@ -31,7 +31,7 @@ setup(
     version=VERSION,
     description="a build tool for data",
     long_description=read('README.rst'),
-    url='https://github.com/fcurella/databuild',
+    url='https://github.com/databuild/databuild',
     license='BSD',
     author='Flavio Curella',
     author_email='flavio.curella@gmail.com',

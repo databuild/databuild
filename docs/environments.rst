@@ -17,8 +17,13 @@ Python
 **Unsafe** Python environment. Use only with trusted build files.
 
 
+Add-on Environments
+===================
+
 Lua
 ~~~
+
+http://github.com/databuild/databuild-lua
 
 Requires Lua or LuaJIT (Note: LuaJIT is currently unsupported on OS X).
 

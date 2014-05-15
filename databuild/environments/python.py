@@ -1,8 +1,6 @@
 import functools
-import math
 import warnings
 
-from databuild import settings
 from databuild.loader import load_module
 
 from .base import BaseEnvironment
@@ -21,7 +19,7 @@ class PythonEnvironment(BaseEnvironment):
         self.globals = {}
 
         functions = []
-        [functions.extend(load_module(module)) for module in settings.FUNCTIONS]
+        [functions.extend(load_module(module)) for module in book.settings.FUNCTIONS]
 
         for fn in functions:
             if fn.__name__ not in globs:

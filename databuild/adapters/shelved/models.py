@@ -71,8 +71,8 @@ class ShelveSheet(LocMemSheet):
 class ShelveBook(LocMemBook):
     sheet_class = ShelveSheet
 
-    def __init__(self, name='workbook', data_dir=None):
-        super(ShelveBook, self).__init__(name)
+    def __init__(self, name='workbook', data_dir=None, settings=None):
+        super(ShelveBook, self).__init__(name, settings=settings)
         # TODO: slugify name
         if not data_dir:
             data_dir = gettempdir()

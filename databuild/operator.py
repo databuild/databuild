@@ -5,21 +5,22 @@ from databuild.compat import _open
 from databuild.facets import sum_facets
 from databuild.loader import load_classpath, load_classpath_whitelist
 
-from databuild import settings
-
 
 class Operator(object):
     operations = []
 
-    def __init__(self, workbook):
+    def __init__(self, workbook, settings=None):
         self.workbook = workbook
+        if settings is None:
+            settings = workbook.settings
+        self.settings = settings
         self.languages = self.build_languages()
 
         super(Operator, self).__init__()
 
     def build_languages(self):
         languages = {}
-        for name, runtime in settings.LANGUAGES.items():
+        for name, runtime in self.settings.LANGUAGES.items():
             try:
                 RuntimeClass = load_classpath(runtime)
             except ImportError:
@@ -39,7 +40,7 @@ class Operator(object):
         if echo and operation['description']:
             print(operation['description'])
 
-        fn = load_classpath_whitelist(operation['path'], settings.OPERATION_MODULES, shortcuts=True)
+        fn = load_classpath_whitelist(operation['path'], self.settings.OPERATION_MODULES, shortcuts=True)
 
         if 'expression' in operation['params']:
             operation['params']['expression'] = self.parse_expression(operation['params']['expression'])

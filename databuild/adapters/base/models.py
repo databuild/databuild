@@ -3,14 +3,20 @@ from databuild.operator import Operator
 from .importer import Importer
 from .exporter import BaseSheetExporter
 
+from databuild import settings as default_settings
+
 
 class BaseWorkBook(object):
     sheet_class = None
 
-    def __init__(self, name='workbook'):
+    def __init__(self, name='workbook', settings=None):
+        if settings is None:
+            settings = default_settings
+        self.settings = settings
+
         self.name = name
         self.sheets = {}
-        self.operator = Operator(self)
+        self.operator = Operator(self, settings=settings)
         self.importer = Importer(self)
         super(BaseWorkBook, self).__init__()
 

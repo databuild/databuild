@@ -24,7 +24,7 @@ class Operator(object):
             try:
                 RuntimeClass = load_classpath(runtime)
             except ImportError:
-                continue
+                print("Can't load environment %s" % name)
             else:
                 languages[name] = RuntimeClass(self.workbook)
         return languages

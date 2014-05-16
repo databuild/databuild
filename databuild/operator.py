@@ -50,6 +50,18 @@ class Operator(object):
         self.operations.append(operation)
 
     def parse_expression(self, expression):
-        language, exp = expression['language'], expression['content']
+        assert not (expression.get('content') and expression.get('path'))
+
+        language = expression['language']
+
+        filename = expression.get('path')
+        if filename:
+            if not os.path.exists(filename):
+                filename = os.path.join(os.path.dirname(self.build_file), filename)
+
+            with _open(filename, 'r', encoding='utf-8') as fh:
+                exp = fh.read()
+        else:
+            exp = expression['content']
         runtime = self.languages[language]
         return runtime.eval(exp)

@@ -33,7 +33,7 @@ class PythonEnvironment(BaseEnvironment):
         return iterable
 
     def eval(self, expression):
-        expression = "def fn(row):\n %s\n" % indent(expression, 4)
+        expression = "def fn(row):\n%s\n" % indent(expression, 4)
         exec(expression, self.globals, locals())
         return vars()['fn']
 

@@ -1,5 +1,6 @@
 https://github.com/kennethreitz/tablib/archive/f6cd89c76cb8f025114e208caa8965d3d0196ae7.zip
 https://github.com/jdunck/python-unicodecsv/archive/13a300d82d8002e1db141540830e10f3c8dd7606.zip
+pyaml==14.05.2
 docopt==0.6.1
 six==1.5.2
 tabulate==0.7.2

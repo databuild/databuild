@@ -46,3 +46,5 @@ An example of build file could be::
         }
       }
     ]
+
+YAML buildfiles are also supported. ``databuild`` will guess the type based on the extension.

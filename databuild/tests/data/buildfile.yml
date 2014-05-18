@@ -1,0 +1,21 @@
+- path: sheets.import_data
+  description: Importing data from csv file
+  params: 
+    sheet: dataset1
+    format: csv
+    filename: dataset1.csv
+    skip_last_lines: 1
+- path: columns.add_column
+  description: Calculate the gender ratio
+  params: 
+    sheet: dataset1
+    name: Gender Ratio
+    expression: 
+      language: python
+      content: "return float(row['Totale Maschi']) / float(row['Totale Femmine'])"
+- path: sheets.export_data
+  description: save the data
+  params: 
+    sheet: dataset1
+    format: csv
+    filename: dataset2.csv

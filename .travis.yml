@@ -11,3 +11,4 @@ install:
 script:
   - py.test databuild
   - data-build.py databuild/tests/data/buildfile.json
+  - data-build.py databuild/tests/data/buildfile.yml

@@ -1,4 +1,5 @@
 import json
+import yaml
 import os
 
 from databuild.compat import _open
@@ -29,8 +30,11 @@ class Operator(object):
         self.build_file = os.path.abspath(build_file)
 
         with _open(build_file, 'r', encoding='utf-8') as fh:
-            operations = json.load(fh)
-            [self.apply_operation(op, echo) for op in operations]
+            if build_file.endswith('.json'):
+                operations = json.load(fh)
+            elif build_file.endswith('.yaml') or build_file.endswith('.yml'):
+                operations = yaml.safe_load(fh)
+        [self.apply_operation(op, echo) for op in operations]
 
     def apply_operation(self, operation, echo=False):
         if echo and operation['description']:

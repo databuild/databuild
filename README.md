@@ -75,4 +75,4 @@ This project is still in alpha stage.
 
 * pandas adapter
 * R environment
-* yaml buildfiles
+* split buildfiles

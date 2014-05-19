@@ -17,17 +17,6 @@ Python
 **Unsafe** Python environment. Use only with trusted build files.
 
 
-Add-on Environments
-===================
-
-Lua
-~~~
-
-http://github.com/databuild/databuild-lua
-
-Requires Lua or LuaJIT (Note: LuaJIT is currently unsupported on OS X).
-
-
 Writing Custom Environments
 ===========================
 
@@ -37,3 +26,14 @@ that implements the following methods:
     * ``__init__(self, book)``: Initializes the environment with the appropriate global variables.
     * ``copy(self, iterable)``: Copies a variable from the databuild process to the hosted environment.
     * ``eval(self, expression)``: Evaluates the string `expression` to an actual functions and returns it.
+
+
+Add-on Environments
+===================
+
+Lua
+~~~
+
+An additional Lua environment is available at http://github.com/databuild/databuild-lua
+
+Requires ``Lua`` or ``LuaJIT`` (Note: ``LuaJIT`` is currently unsupported on OS X).

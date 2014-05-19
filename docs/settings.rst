@@ -12,3 +12,6 @@ A ``dict`` mapping languages to :doc:environments. Default to::
         'python': 'databuild.environments.python.PythonEnvironment',
         'lua': 'databuild.environments.lua.LuaEnvironment',
     }
+
+``FUNCTION_MODULES``
+--------------------

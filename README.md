@@ -16,6 +16,8 @@ Install databuild:
 
 ## Quickstart
 
+For more details, see the [Extended Documentation](http://databuild.readthedocs.org/en/latest/).
+
 ```
 $ data-build.py buildfile.json
 
@@ -62,8 +64,6 @@ An example of build file could be:
 ```
 
 YAML buildfiles are also supported. `databuild` will guess the type based on the extension.
-
-For more, see the [Extended Documentation](http://databuild.readthedocs.org/en/latest/).
 
 ## License
 

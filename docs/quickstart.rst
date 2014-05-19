@@ -9,7 +9,7 @@ Run databuild using a buildfile::
 
   $ data-build.py buildfile.json
 
-`buildfile.json` contains a list of operations to be performed on data. Think of it as a script for a spreadsheet.
+``buildfile.json`` contains a list of operations to be performed on data. Think of it as a script for a spreadsheet.
 
 An example of build file could be::
 

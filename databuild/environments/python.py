@@ -19,7 +19,7 @@ class PythonEnvironment(BaseEnvironment):
         self.globals = {}
 
         functions = []
-        [functions.extend(load_module(module)) for module in book.settings.FUNCTIONS]
+        [functions.extend(load_module(module)) for module in book.settings.FUNCTION_MODULES]
 
         for fn in functions:
             if fn.__name__ not in globs:

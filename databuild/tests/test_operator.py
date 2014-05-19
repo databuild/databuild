@@ -6,7 +6,7 @@ from databuild.adapters.locmem.models import LocMemBook
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
-settings.FUNCTIONS = list(settings.FUNCTIONS) + [
+settings.FUNCTION_MODULES = list(settings.FUNCTION_MODULES) + [
     'databuild.tests.functions',
 ]
 

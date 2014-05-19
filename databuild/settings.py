@@ -3,7 +3,7 @@ OPERATION_MODULES = (
     "databuild.operations.columns",
 )
 
-FUNCTIONS = (
+FUNCTION_MODULES = (
     'databuild.functions.data',
 )
 

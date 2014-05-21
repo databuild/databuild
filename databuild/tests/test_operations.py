@@ -13,7 +13,7 @@ TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 class OperatorTestCase(TestCase):
     def test_update_column(self):
         operation = {
-            "path": "columns.update_column",
+            "function": "columns.update_column",
             "description": "",
             "params": {
                 "sheet": "dataset1",
@@ -33,7 +33,7 @@ class OperatorTestCase(TestCase):
 
     def test_import_data(self):
         operation = {
-            "path": "sheets.import_data",
+            "function": "sheets.import_data",
             "description": "Importing data from csv file",
             "params": {
               "sheet": "dataset1",
@@ -49,7 +49,7 @@ class OperatorTestCase(TestCase):
 
     def test_to_float(self):
         operation = {
-            "path": "columns.to_float",
+            "function": "columns.to_float",
             "description": "",
             "params": {
                 "sheet": "dataset1",
@@ -64,7 +64,7 @@ class OperatorTestCase(TestCase):
 
     def test_to_integer(self):
         operation = {
-            "path": "columns.to_integer",
+            "function": "columns.to_integer",
             "description": "",
             "params": {
                 "sheet": "dataset1",
@@ -79,7 +79,7 @@ class OperatorTestCase(TestCase):
 
     def test_to_decimal(self):
         operation = {
-            "path": "columns.to_decimal",
+            "function": "columns.to_decimal",
             "description": "",
             "params": {
                 "sheet": "dataset1",
@@ -94,7 +94,7 @@ class OperatorTestCase(TestCase):
 
     def test_to_text(self):
         operation = {
-            "path": "columns.to_text",
+            "function": "columns.to_text",
             "description": "",
             "params": {
                 "sheet": "dataset1",
@@ -109,7 +109,7 @@ class OperatorTestCase(TestCase):
 
     def test_to_datetime(self):
         operation = {
-            "path": "columns.to_datetime",
+            "function": "columns.to_datetime",
             "description": "",
             "params": {
                 "sheet": "dataset1",
@@ -125,7 +125,7 @@ class OperatorTestCase(TestCase):
 
     def test_copy_sheet(self):
         operation = {
-            "path": "sheets.copy",
+            "function": "sheets.copy",
             "description": "",
             "params": {
                 "source": "dataset1",
@@ -141,7 +141,7 @@ class OperatorTestCase(TestCase):
         assert len(book.sheets['dataset2'].headers) == len(book.sheets['dataset1'].headers)
 
         operation = {
-            "path": "sheets.copy",
+            "function": "sheets.copy",
             "description": "",
             "params": {
                 "source": "dataset1",

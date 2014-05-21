@@ -3,7 +3,7 @@ Operation Functions
 
 Operations functions are regular Python function that perform actions on the book. Examples of operations are: ``sheets.import_data``, ``columns.add_column``, ``columns.update_column``, and more.
 
-They have a path that identifies them, an optional description and a number of parameters that they accept. Different operation functions accept different parameters.
+They have a ``function` name that identifies them, an optional description and a number of parameters that they accept. Different operation functions accept different parameters.
 
 Available Operation Functions
 =============================
@@ -148,7 +148,7 @@ As long as your operation function is in your ``PYTHONPATH``, you can call it in
     [
         ...,
         {
-            "path": "mymodule.myoperation",
+            "function": "mymodule.myoperation",
             "description": "",
             "params": {
                 "foo": "foos",

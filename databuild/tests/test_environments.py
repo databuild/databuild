@@ -17,7 +17,7 @@ class ParserTestCase(TestCase):
 
     def test_python_function(self):
         operation = {
-            "path": "columns.update_column",
+            "function": "columns.update_column",
             "description": "",
             "params": {
                 "sheet": "a",

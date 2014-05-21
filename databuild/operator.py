@@ -40,7 +40,7 @@ class Operator(object):
         if echo and operation['description']:
             print(operation['description'])
 
-        fn = load_classpath_whitelist(operation['path'], self.settings.OPERATION_MODULES, shortcuts=True)
+        fn = load_classpath_whitelist(operation['function'], self.settings.OPERATION_MODULES, shortcuts=True)
 
         if 'expression' in operation['params']:
             operation['params']['expression'] = self.parse_expression(operation['params']['expression'])

@@ -13,6 +13,7 @@ Contents:
 
    installation
    quickstart
+   philosophy
    buildfiles
    python_api
    operations

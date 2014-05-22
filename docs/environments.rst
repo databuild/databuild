@@ -4,7 +4,8 @@ Environments
 ------------
 
 :doc:`expressions` are evaluated in the environment specified by their ``language`` property.
-The value maps to a specific environment as specified in ``settings.LANGUAGES``.
+
+The value maps to a specific environment as specified in ``settings.LANGUAGES`` (See :ref:`languages_setting`).
 
 Included Environments
 =====================

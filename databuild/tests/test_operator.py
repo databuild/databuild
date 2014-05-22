@@ -13,7 +13,7 @@ settings.FUNCTION_MODULES = list(settings.FUNCTION_MODULES) + [
 class OperatorTestCase(TestCase):
     def test_operator(self):
         operation = {
-            "function": "columns.update_column",
+            "operation": "columns.update_column",
             "description": "",
             "params": {
                 "sheet": "dataset1",
@@ -33,7 +33,7 @@ class OperatorTestCase(TestCase):
 
     def test_function(self):
         operation = {
-            "function": "columns.update_column",
+            "operation": "columns.update_column",
             "description": "",
             "params": {
                 "sheet": "dataset1",
@@ -53,7 +53,7 @@ class OperatorTestCase(TestCase):
 
     def test_function_map(self):
         operation = {
-            "function": "columns.update_column",
+            "operation": "columns.update_column",
             "description": "",
             "params": {
                 "sheet": "a",
@@ -83,7 +83,7 @@ class OperatorTestCase(TestCase):
 
     def test_function_values(self):
         operation = {
-            "function": "columns.update_column",
+            "operation": "columns.update_column",
             "description": "",
             "params": {
                 "sheet": "a",
@@ -114,7 +114,7 @@ class OperatorTestCase(TestCase):
 
     def test_cross_function(self):
         operation = {
-            "function": "columns.update_column",
+            "operation": "columns.update_column",
             "description": "",
             "params": {
                 "sheet": "a",
@@ -151,7 +151,7 @@ class OperatorTestCase(TestCase):
 
     def test_column_function(self):
         operation = {
-            "function": "columns.update_column",
+            "operation": "columns.update_column",
             "description": "",
             "params": {
                 "sheet": "a",
@@ -189,7 +189,7 @@ class OperatorTestCase(TestCase):
 
     def test_facets(self):
         operation = {
-            "function": "columns.update_column",
+            "operation": "columns.update_column",
             "description": "",
             "params": {
                 "sheet": "dataset1",

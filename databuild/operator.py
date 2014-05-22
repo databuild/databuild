@@ -50,11 +50,11 @@ class Operator(object):
         kwargs = operation['params']
 
         # Short-circuit if the adapter has an optimized operation method
-        if hasattr(self.workbook, operation['function'].replace('.', '_')):
-            fn = getattr(self.workbook, operation['function'].replace('.', '_'))
+        if hasattr(self.workbook, operation['operation'].replace('.', '_')):
+            fn = getattr(self.workbook, operation['operation'].replace('.', '_'))
             fn(**kwargs)
         else:
-            fn = load_classpath_whitelist(operation['function'], self.settings.OPERATION_MODULES, shortcuts=True)
+            fn = load_classpath_whitelist(operation['operation'], self.settings.OPERATION_MODULES, shortcuts=True)
             fn(self.workbook, **kwargs)
 
         self.operations.append(operation)

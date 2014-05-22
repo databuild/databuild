@@ -11,7 +11,7 @@ An example of build file could be::
 
     [
       {
-        "function": "sheets.import_data",
+        "operation": "sheets.import_data",
         "description": "Importing data from csv file",
         "params": {
           "sheet": "dataset1",
@@ -21,7 +21,7 @@ An example of build file could be::
         }
       },
       {
-        "function": "columns.add_column",
+        "operation": "columns.add_column",
         "description": "Calculate the gender ratio",
         "params": {
           "sheet": "dataset1",
@@ -33,7 +33,7 @@ An example of build file could be::
         }
       },
       {
-        "function": "sheets.export_data",
+        "operation": "sheets.export_data",
         "description": "save the data",
         "params": {
           "sheet": "dataset1",

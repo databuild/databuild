@@ -27,6 +27,8 @@ A ``tuple`` of module paths to import :doc:`functions` from. Defaults to::
     )
 
 
+.. operation-modules-setting:
+
 ``OPERATION_MODULES``
 ---------------------
 

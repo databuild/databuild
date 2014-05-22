@@ -131,24 +131,26 @@ arguments:
     * ``facets`` (optional)
 
 
-Custom Operation Functions
-===========================
+Custom Operation
+================
 
-You can add your custom operation functions and use them in your buildfile.
+You can add your custom operation and use them in your buildfile.
 
-An Operation Function is just a regular python function. The first arguments has to be the ``workbook``, but the remaining arguments will be pulled in from the ``params`` property of the operation in the buildfile.
+An Operation is just a regular python function. The first arguments has to be the ``workbook``, but the remaining arguments will be pulled in from the ``params`` property of the operation in the buildfile.
 
 ::
 
     def myoperation(workbook, foo, bar, baz):
         pass
 
-As long as your operation function is in your ``PYTHONPATH``, you can call it in your buildfile by referincing its import path::
+Operations are defined in function modules, which are just regulare Python files.
+
+As long as your operation modules are in your ``PYTHONPATH``, you can add them to your ``OPERATION_MODULES`` setting (see :ref:`operation-modules-setting`) and then call the operation in your buildfile by referencing its import path::
 
     [
         ...,
         {
-            "function": "mymodule.myoperation",
+            "operation": "mymodule.myoperation",
             "description": "",
             "params": {
                 "foo": "foos",

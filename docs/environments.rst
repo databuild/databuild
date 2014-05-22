@@ -1,4 +1,4 @@
-.. _environments
+.. _environments:
 
 Environments
 ------------

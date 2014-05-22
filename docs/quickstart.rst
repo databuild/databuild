@@ -1,11 +1,9 @@
+.. _quickstart:
+
 Quickstart
 -----------
 
-Install databuild::
-
-  $ pip install git+https://github.com/fcurella/databuild.git
-
-Run databuild using a buildfile::
+Run databuild using a :ref:`buildfile <buildfiles>`::
 
   $ data-build.py buildfile.json
 

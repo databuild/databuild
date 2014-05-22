@@ -1,7 +1,7 @@
 Python API
 ----------
 
-``databuild`` can be integrated in your python project. Just import the ``build`` function::
+``Databuild`` can be integrated in your python project. Just import the ``build`` function::
 
     from databuild.builder import build
 

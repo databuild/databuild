@@ -1,4 +1,4 @@
-.. _settings
+.. _settings:
 
 Settings
 ========

@@ -3,6 +3,8 @@
 Settings
 ========
 
+.. _languages-setting:
+
 ``LANGUAGES``
 -------------
 
@@ -13,7 +15,7 @@ A ``dict`` mapping languages to :doc:`environments`. Default to::
     }
 
 
-.. _function_modules_setting:
+.. _function-modules-setting:
 
 ``FUNCTION_MODULES``
 --------------------

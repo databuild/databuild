@@ -40,8 +40,6 @@ class Operator(object):
         if echo and operation['description']:
             print(operation['description'])
 
-        fn = load_classpath_whitelist(operation['function'], self.settings.OPERATION_MODULES, shortcuts=True)
-
         if 'expression' in operation['params']:
             operation['params']['expression'] = self.parse_expression(operation['params']['expression'])
 
@@ -50,7 +48,15 @@ class Operator(object):
             operation['params']['facets'] = sum_facets(facets)
 
         kwargs = operation['params']
-        fn(self.workbook, **kwargs)
+
+        # Short-circuit if the adapter has an optimized operation method
+        if hasattr(self.workbook, operation['function'].replace('.', '_')):
+            fn = getattr(self.workbook, operation['function'].replace('.', '_'))
+            fn(**kwargs)
+        else:
+            fn = load_classpath_whitelist(operation['function'], self.settings.OPERATION_MODULES, shortcuts=True)
+            fn(self.workbook, **kwargs)
+
         self.operations.append(operation)
 
     def parse_expression(self, expression):

@@ -143,7 +143,7 @@ An Operation is just a regular python function. The first arguments has to be th
     def myoperation(workbook, foo, bar, baz):
         pass
 
-Operations are defined in function modules, which are just regulare Python files.
+Operations are defined in modules, which are just regulare Python files.
 
 As long as your operation modules are in your ``PYTHONPATH``, you can add them to your ``OPERATION_MODULES`` setting (see :ref:`operation-modules-setting`) and then call the operation in your buildfile by referencing its import path::
 

@@ -7,7 +7,7 @@ Expressions are objects encapsulating code for situations such as filtering or c
 
 An expression has the following properties:
 
-* ``language``: The name of the environment where the expression will be executed, as specified in ``settings.LANGUAGES``. See :doc:`settings`, :doc:`environments`.
+* ``language``: The name of the environment where the expression will be executed, as specified in ``settings.LANGUAGES``. See :ref:`languages-setting`).
 * ``content``: The actual code to run, or
 * ``path``: path to a file containing the code to run
 

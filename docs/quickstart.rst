@@ -3,7 +3,7 @@
 Quickstart
 -----------
 
-Run databuild using a :ref:`buildfile <buildfiles>`::
+Run databuild using a :doc:`buildfile <buildfiles>`::
 
   $ data-build.py buildfile.json
 
@@ -45,4 +45,4 @@ An example of build file could be::
       }
     ]
 
-YAML buildfiles are also supported. ``databuild`` will guess the type based on the extension.
+YAML buildfiles are also supported. ``Databuild`` will guess the type based on the extension.

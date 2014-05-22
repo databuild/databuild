@@ -22,6 +22,8 @@ arguments:
 ``column``
 
 
+.. _custom-functions:
+
 Custom Functions Modules
 ========================
 

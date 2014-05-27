@@ -20,9 +20,6 @@ dependency_links = [req for req in requirements if req.startswith('http')]
 
 tests_requirements = read('test-requirements.txt').splitlines()
 
-# Temporary fix until tablib gets released
-subprocess.call(["pip", "install", "--quiet", "https://github.com/kennethreitz/tablib/archive/f6cd89c76cb8f025114e208caa8965d3d0196ae7.zip"])
-
 # Temporary fix until unicodecsv gets released
 subprocess.call(["pip", "install", "--quiet", "https://github.com/jdunck/python-unicodecsv/archive/13a300d82d8002e1db141540830e10f3c8dd7606.zip"])
 

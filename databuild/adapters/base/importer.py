@@ -3,7 +3,7 @@ import json
 import os
 
 if six.PY2:
-    import unicodecsv as csv
+    from databuild.vendor import unicodecsv as csv
 else:
     import csv
 

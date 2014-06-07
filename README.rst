@@ -14,7 +14,7 @@ Install databuild:
 
 ::
 
-      $ pip install https://github.com/databuild/databuild/archive/master.tar.gz
+      $ pip install databuild
 
 Quickstart
 ----------

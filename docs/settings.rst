@@ -3,6 +3,13 @@
 Settings
 ========
 
+.. _adapter-setting:
+
+``ADAPTER``
+------------
+
+Classpath of the adapter class. Defaults to ``'databuild.adapters.locmem.models.LocMemBook'``.
+
 .. _languages-setting:
 
 ``LANGUAGES``

@@ -1,14 +1,14 @@
 .. _environments:
 
 Environments
-------------
+============
 
 :doc:`expressions` are evaluated in the environment specified by their ``language`` property.
 
 The value maps to a specific environment as specified in ``settings.LANGUAGES`` (See the :ref:`languages-setting` setting).
 
 Included Environments
-=====================
+---------------------
 
 Currently, the following environments are shipped with ``databuild``:
 
@@ -19,7 +19,7 @@ Python
 
 
 Writing Custom Environments
-===========================
+---------------------------
 
 An ``Environment`` is a subclass of ``databuild.environments.base.BaseEnvironment``
 that implements the following methods:
@@ -30,7 +30,7 @@ that implements the following methods:
 
 
 Add-on Environments
-===================
+-------------------
 
 Lua
 ~~~

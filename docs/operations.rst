@@ -1,15 +1,17 @@
+.. _operations:
+
 Operation Functions
--------------------
+===================
 
 Operations functions are regular Python function that perform actions on the book. Examples of operations are: ``sheets.import_data``, ``columns.add_column``, ``columns.update_column``, and more.
 
-They have a ``function` name that identifies them, an optional description and a number of parameters that they accept. Different operation functions accept different parameters.
+They have a ``function`` name that identifies them, an optional description and a number of parameters that they accept. Different operation functions accept different parameters.
 
 Available Operation Functions
-=============================
+-----------------------------
 
 ``sheets.import_data``
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 Creates a new sheet importing data from an external source.
 
@@ -24,7 +26,7 @@ arguments:
     * ``guess_types``: Optional. If set to ``true``, the CSV importer will try to guess the data type. Defaults to ``true``.
 
 ``sheets.copy``
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 arguments:
     * ``source``
@@ -34,7 +36,7 @@ arguments:
 Create a copy of the ``source`` sheet named ``destination``. Optionally copies only the headers specified in ``headers``.
 
 ``sheets.export_data``
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 arguments:
     * ``sheet``
@@ -45,7 +47,7 @@ arguments:
 Exports the datasheet named ``sheet`` to the file named ``filename`` in the specified ``format``. Optionally exports only the headers specified in ``headers``.
 
 ``sheets.print_data``
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 arguments:
     * ``sheet``
@@ -87,7 +89,7 @@ arguments:
 
 
 ``columns.to_float``
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 arguments:
     * ``sheet``
@@ -96,7 +98,7 @@ arguments:
 
 
 ``columns.to_integer``
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 arguments:
     * ``sheet``
@@ -105,7 +107,7 @@ arguments:
 
 
 ``columns.to_decimal``
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 arguments:
     * ``sheet``
@@ -114,7 +116,7 @@ arguments:
 
 
 ``columns.to_text``
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 arguments:
     * ``sheet``
@@ -123,7 +125,7 @@ arguments:
 
 
 ``columns.to_datetime``
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 arguments:
     * ``sheet``

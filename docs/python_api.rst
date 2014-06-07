@@ -1,5 +1,5 @@
 Python API
-----------
+==========
 
 ``Databuild`` can be integrated in your python project. Just import the ``build`` function::
 

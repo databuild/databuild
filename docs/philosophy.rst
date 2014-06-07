@@ -1,5 +1,5 @@
 Philosophy
-----------
+==========
 
 ``Databuild`` is an alternative to more complex and complete packages like ``pandas``, ``numpy``, and ``R``.
 

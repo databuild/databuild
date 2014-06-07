@@ -1,17 +1,17 @@
 .. _functions:
 
 Functions
----------
+=========
 
 Functions are additional methods that can be used inside :doc:`expressions`.
 
 Available Functions
-===================
+-------------------
 
 ``cross``
 ~~~~~~~~~
 
-Return data from a column in a different sheet.
+Returns a single value from a column in a different sheet.
 
 arguments:
     * ``row`` reference to the current row
@@ -20,12 +20,21 @@ arguments:
     * ``column_key`` name of the sheet that you want to match the data between the sheets.
 
 ``column``
+~~~~~~~~~~
+
+Returns an array of values from column from a different dataset, ordered as the key.
+
+arguments:
+    * ``sheet_name`` name of the current sheet
+    * ``sheet_source`` name of the sheet that you want to get the data from
+    * ``column_source`` name of the column that you want to get the data from
+    * ``column_key`` name of the sheet that you want to match the data between the sheets.
 
 
 .. _custom-functions:
 
 Custom Functions Modules
-========================
+------------------------
 
 You can write your own custom functions modules.
 

@@ -1,7 +1,7 @@
 .. _buildfiles:
 
 Buildfiles
-----------
+==========
 
 A ``buildfile`` contains a list of operations to be performed on data. Think of it as a script for a spreadsheet.
 

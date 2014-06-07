@@ -1,4 +1,3 @@
-https://github.com/jdunck/python-unicodecsv/archive/13a300d82d8002e1db141540830e10f3c8dd7606.zip
 PyYAML==3.11
 docopt==0.6.1
 six==1.5.2

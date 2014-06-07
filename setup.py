@@ -27,7 +27,7 @@ setup(
     name="databuild",
     version=VERSION,
     description="a build tool for data",
-    long_description=read('README.md'),
+    long_description=read('README.rst'),
     url='https://github.com/databuild/databuild',
     license='BSD',
     author='Flavio Curella',

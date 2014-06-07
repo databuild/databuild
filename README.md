@@ -68,13 +68,3 @@ YAML buildfiles are also supported. `databuild` will guess the type based on the
 ## License
 
 Licensed under BSD 3-clauses.
-
-## Status
-
-This project is still in alpha stage.
-
-## TODO
-
-* pandas adapter
-* R environment
-* split buildfiles

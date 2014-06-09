@@ -3,6 +3,6 @@
 Installation
 ============
 
-Install databuild::
+Install Databuild::
 
-  $ pip install git+https://github.com/databuild/databuild.git
+  $ pip install databuild

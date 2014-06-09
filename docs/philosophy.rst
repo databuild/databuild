@@ -13,3 +13,8 @@ The general principles in ``Databuild`` are:
 * Easy to install
 * Easy to grasp
 * Extensible
+
+Databuild cab be useful for scenarios such as:
+
+* Documenting data transformations in your infoviz project
+* Automate data processing in a declarative way

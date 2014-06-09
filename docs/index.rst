@@ -6,6 +6,20 @@
 Welcome to databuild's documentation!
 =====================================
 
+``Databuild`` is an automation tool for data manipulation.
+
+The general principles in ``Databuild`` are:
+
+* Low entry barrier
+* Easy to install
+* Easy to grasp
+* Extensible
+
+``Databuild`` can be useful for scenarios such as:
+
+* Documenting data transformations in your infoviz project
+* Automate data processing in a declarative way
+
 Contents:
 
 .. toctree::

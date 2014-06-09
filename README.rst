@@ -7,6 +7,18 @@ An automation tool for data manipulation.
 
 Inspired by Open Refine.
 
+The general principles in ``Databuild`` are:
+
+* Low entry barrier
+* Easy to install
+* Easy to grasp
+* Extensible
+
+Databuild can be useful for scenarios such as:
+
+* Documenting data transformations in your infoviz project
+* Automate data processing in a declarative way
+
 Installation
 ------------
 

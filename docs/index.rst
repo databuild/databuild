@@ -20,7 +20,8 @@ The general principles in ``Databuild`` are:
 * Documenting data transformations in your infoviz project
 * Automate data processing in a declarative way
 
-Contents:
+Contents
+--------
 
 .. toctree::
    :maxdepth: 3

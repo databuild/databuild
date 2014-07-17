@@ -22,4 +22,4 @@ class BuildFile(object):
                 operations = json.load(fh)
             elif self.path.endswith('.yaml') or self.path.endswith('.yml'):
                 operations = yaml.safe_load(fh)
-        self.operations = operations
+        return operations

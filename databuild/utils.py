@@ -3,5 +3,5 @@ from glob import glob
 
 def multiglob(*patterns):
     files_grabbed = []
-    [files_grabbed.extend(glob.glob(pattern)) for pattern in patterns]
+    [files_grabbed.extend(glob(pattern)) for pattern in patterns]
     return files_grabbed

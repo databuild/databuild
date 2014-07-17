@@ -1,0 +1,14 @@
+[
+  {
+    "operation": "columns.add_column",
+    "description": "Calculate the gender ratio",
+    "params": {
+      "sheet": "dataset1",
+      "name": "Gender Ratio",
+      "expression": {
+        "language": "python",
+        "content": "return float(row['Totale Maschi']) / float(row['Totale Femmine'])"
+      }
+    }
+  }
+]

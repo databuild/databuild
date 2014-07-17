@@ -26,25 +26,25 @@ class Operator(object):
             languages[name] = RuntimeClass(self.workbook)
         return languages
 
-    def apply_operations(self, build_file, echo=False):
-        self.build_file = os.path.abspath(build_file)
+    def apply_operations(self, build_files, echo=False):
+        for build_file in build_files:
+            relative_path = os.path.dirname(os.path.abspath(build_file))
+            with _open(build_file, 'r', encoding='utf-8') as fh:
+                if build_file.endswith('.json'):
+                    operations = json.load(fh)
+                elif build_file.endswith('.yaml') or build_file.endswith('.yml'):
+                    operations = yaml.safe_load(fh)
+            [self.apply_operation(op, echo, relative_path) for op in operations]
 
-        with _open(build_file, 'r', encoding='utf-8') as fh:
-            if build_file.endswith('.json'):
-                operations = json.load(fh)
-            elif build_file.endswith('.yaml') or build_file.endswith('.yml'):
-                operations = yaml.safe_load(fh)
-        [self.apply_operation(op, echo) for op in operations]
-
-    def apply_operation(self, operation, echo=False):
+    def apply_operation(self, operation, relative_path, echo=False):
         if echo and operation['description']:
             print(operation['description'])
 
         if 'expression' in operation['params']:
-            operation['params']['expression'] = self.parse_expression(operation['params']['expression'])
+            operation['params']['expression'] = self.parse_expression(operation['params']['expression'], relative_path)
 
         if 'facets' in operation['params']:
-            facets = [self.parse_expression(facet['expression']) for facet in operation['params']['facets']]
+            facets = [self.parse_expression(facet['expression'], relative_path) for facet in operation['params']['facets']]
             operation['params']['facets'] = sum_facets(facets)
 
         kwargs = operation['params']
@@ -59,7 +59,7 @@ class Operator(object):
 
         self.operations.append(operation)
 
-    def parse_expression(self, expression):
+    def parse_expression(self, expression, relative_path=None):
         assert not (expression.get('content') and expression.get('path'))
 
         language = expression['language']
@@ -67,7 +67,7 @@ class Operator(object):
         filename = expression.get('path')
         if filename:
             if not os.path.exists(filename):
-                filename = os.path.join(os.path.dirname(self.build_file), filename)
+                filename = os.path.join(relative_path, filename)
 
             with _open(filename, 'r', encoding='utf-8') as fh:
                 exp = fh.read()

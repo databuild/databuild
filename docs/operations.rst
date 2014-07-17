@@ -138,11 +138,16 @@ Custom Operation
 
 You can add your custom operation and use them in your buildfile.
 
-An Operation is just a regular python function. The first arguments has to be the ``workbook``, but the remaining arguments will be pulled in from the ``params`` property of the operation in the buildfile.
+An Operation is just a regular python function. The first arguments has to be the ``context``, but the remaining arguments will be pulled in from the ``params`` property of the operation in the buildfile.
+
+By default, ``context`` is a ``dict`` with following keys:
+
+* ``workbook``: a reference the workbook object
+* ``buildfile``: a reference to the build file the operation has been read from.
 
 ::
 
-    def myoperation(workbook, foo, bar, baz):
+    def myoperation(context, foo, bar, baz):
         pass
 
 Operations are defined in modules, which are just regulare Python files.

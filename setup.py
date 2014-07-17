@@ -1,5 +1,4 @@
 import os
-import subprocess
 from setuptools import setup, find_packages
 
 VERSION = "0.0.3"

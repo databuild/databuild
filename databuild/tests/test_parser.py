@@ -23,5 +23,5 @@ class ParserTestCase(TestCase):
         del expression['content']
         expression['path'] = os.path.join(TEST_DATA_DIR, 'square.py')
 
-        fn = book.operator.parse_expression(expression)
+        fn = book.operator.parse_expression(expression, TEST_DATA_DIR)
         assert fn(row) == 4

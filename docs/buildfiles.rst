@@ -66,3 +66,15 @@ The same file in yaml::
         sheet: dataset1
         format: csv
         filename: dataset2.csv
+
+
+You can split a buildfile in different files, and have ``databuild`` process the directory that contains them.
+
+Build files will be executed in alphabetical order. It's recommended that you name them starting with a number indicating their order of execution. For example::
+
+  ├── buildfiles
+      ├── 1_import.json
+      ├── 2_add_column.json
+      ├── 3_export.json
+      └── data
+          └── dataset1.csv

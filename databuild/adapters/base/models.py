@@ -17,7 +17,6 @@ class BaseWorkBook(object):
         self.name = name
         self.sheets = {}
         self.operator = Operator(self, settings=settings)
-        self.importer = Importer(self)
         super(BaseWorkBook, self).__init__()
 
     def __getitem__(self, key):
@@ -32,14 +31,15 @@ class BaseWorkBook(object):
     def remove_sheet(self, sheet):
         self.sheets.pop(sheet.name)
 
-    def import_data(self, format='csv', *args, **kwargs):
-        return self.importer.import_data(format, *args, **kwargs)
+    def import_data(self, filename, relative_path=None, format='csv', *args, **kwargs):
+        importer = Importer(self, relative_path=relative_path)
+        return importer.import_data(format, filename, *args, **kwargs)
 
-    def apply_operations(self, build_file, echo=False):
-        return self.operator.apply_operations(build_file, echo)
+    def apply_operations(self, build_files, echo=False):
+        return self.operator.apply_operations(build_files, echo)
 
-    def apply_operation(self, operation, echo=False):
-        return self.operator.apply_operation(operation, echo)
+    def apply_operation(self, operation, build_file=None, echo=False):
+        return self.operator.apply_operation(operation, build_file, echo)
 
 
 class BaseWorkSheet(object):

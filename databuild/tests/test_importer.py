@@ -11,7 +11,7 @@ TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 class ImporterTestCase(TestCase):
     def test_import_csv(self):
         book = LocMemBook('project1')
-        dataimporter = importer.Importer(workbook=book)
+        dataimporter = importer.Importer(workbook=book, relative_path=TEST_DATA_DIR)
         sheet = dataimporter.import_data('csv', os.path.join(TEST_DATA_DIR, "dataset1.csv"), 'sheet1', guess_types=False)
 
         acqui_test = {
@@ -51,7 +51,7 @@ class ImporterTestCase(TestCase):
 
     def test_import_json(self):
         book = LocMemBook('project1')
-        dataimporter = importer.Importer(workbook=book)
+        dataimporter = importer.Importer(workbook=book, relative_path=TEST_DATA_DIR)
         sheet = dataimporter.import_data('json', os.path.join(TEST_DATA_DIR, "dataset1.json"), 'sheet1')
         acqui_test = {
             "Codice Comune": '6001',

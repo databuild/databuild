@@ -4,3 +4,4 @@ six==1.5.2
 tabulate==0.7.2
 python-dateutil==2.2
 tablib==0.10.0
+cached-property==0.1.5

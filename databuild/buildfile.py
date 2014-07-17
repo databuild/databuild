@@ -9,7 +9,7 @@ from databuild.compat import _open
 class BuildFile(object):
     def __init__(self, path):
         self.path = os.path.abspath(path)
-        super(BuildFile).__init__()
+        super(BuildFile, self).__init__()
 
     @property
     def parent_dir(self):

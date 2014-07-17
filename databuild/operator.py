@@ -28,38 +28,37 @@ class Operator(object):
 
     def apply_operations(self, build_files, echo=False):
         for build_file in build_files:
-            relative_path = os.path.dirname(os.path.abspath(build_file))
-            with _open(build_file, 'r', encoding='utf-8') as fh:
-                if build_file.endswith('.json'):
-                    operations = json.load(fh)
-                elif build_file.endswith('.yaml') or build_file.endswith('.yml'):
-                    operations = yaml.safe_load(fh)
-            [self.apply_operation(op, echo, relative_path) for op in operations]
+            operations = build_file.operations
+            [self.apply_operation(op, build_file, echo) for op in operations]
 
-    def apply_operation(self, operation, relative_path, echo=False):
+    def apply_operation(self, operation, build_file, echo=False):
         if echo and operation['description']:
             print(operation['description'])
 
         if 'expression' in operation['params']:
-            operation['params']['expression'] = self.parse_expression(operation['params']['expression'], relative_path)
+            operation['params']['expression'] = self.parse_expression(operation['params']['expression'], build_file)
 
         if 'facets' in operation['params']:
-            facets = [self.parse_expression(facet['expression'], relative_path) for facet in operation['params']['facets']]
+            facets = [self.parse_expression(facet['expression'], build_file) for facet in operation['params']['facets']]
             operation['params']['facets'] = sum_facets(facets)
 
         kwargs = operation['params']
+        context = {
+            'workbook': self.workbook,
+            'buildfile': build_file,
+        }
 
         # Short-circuit if the adapter has an optimized operation method
         if hasattr(self.workbook, operation['operation'].replace('.', '_')):
             fn = getattr(self.workbook, operation['operation'].replace('.', '_'))
-            fn(**kwargs)
+            fn(context, **kwargs)
         else:
             fn = load_classpath_whitelist(operation['operation'], self.settings.OPERATION_MODULES, shortcuts=True)
-            fn(self.workbook, **kwargs)
+            fn(context, **kwargs)
 
         self.operations.append(operation)
 
-    def parse_expression(self, expression, relative_path=None):
+    def parse_expression(self, expression, build_file=None):
         assert not (expression.get('content') and expression.get('path'))
 
         language = expression['language']
@@ -67,6 +66,7 @@ class Operator(object):
         filename = expression.get('path')
         if filename:
             if not os.path.exists(filename):
+                relative_path = build_file.parent_dir
                 filename = os.path.join(relative_path, filename)
 
             with _open(filename, 'r', encoding='utf-8') as fh:

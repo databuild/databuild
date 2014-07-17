@@ -11,4 +11,5 @@ script:
   - py.test databuild
   - data-build.py databuild/tests/data/buildfile.json
   - data-build.py databuild/tests/data/buildfile.yml
-  - data-build.py databuild/tests/data/split
+  - data-build.py databuild/tests/data/split_json
+  - data-build.py databuild/tests/data/split_yml

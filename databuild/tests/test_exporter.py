@@ -7,13 +7,13 @@ from databuild.adapters.locmem.models import LocMemBook
 from databuild.adapters.base import importer
 
 
-TEST_DAT_DIR = os.path.join(os.path.dirname(__file__), 'data')
+TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 class ExporterTestCase(TestCase):
     def setUp(self):
         self.book = LocMemBook('project1')
-        self.dataimporter = importer.Importer(workbook=self.book)
-        self.sheet = self.dataimporter.import_data('csv', os.path.join(TEST_DAT_DIR, "dataset1.csv"), 'sheet1', guess_types=False)
+        self.dataimporter = importer.Importer(workbook=self.book, relative_path=TEST_DATA_DIR)
+        self.sheet = self.dataimporter.import_data('csv', os.path.join(TEST_DATA_DIR, "dataset1.csv"), 'sheet1', guess_types=False)
 
     def test_json(self):
         data = self.sheet.export_data(format='json')

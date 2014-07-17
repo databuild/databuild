@@ -11,13 +11,17 @@ from databuild.compat import _open
 
 
 class Importer(object):
-    def __init__(self, workbook):
+    def __init__(self, workbook, relative_path):
         self.workbook = workbook
+        self.relative_path = relative_path
         super(Importer, self).__init__()
 
     def import_data(self, format, filename, sheet_name=None, *args, **kwargs):
         if sheet_name is None:
             sheet_name = os.path.basename(filename)
+
+        if not os.path.exists(filename) and self.relative_path:
+            filename = os.path.join(self.relative_path, filename)
 
         import_method = getattr(self, 'import_%s' % format, False)
         if import_method:
@@ -25,9 +29,6 @@ class Importer(object):
         raise NotImplementedError()
 
     def import_csv(self, filename, sheet_name, headers=None, encoding='utf-8', skip_first_lines=0, skip_last_lines=0, guess_types=True, **kwargs):
-        if not os.path.exists(filename):
-            filename = os.path.join(os.path.dirname(self.workbook.operator.build_file), filename)
-
         with open(filename, 'rU') as f:
             reader = csv.DictReader(f, **kwargs)
             if headers is None:

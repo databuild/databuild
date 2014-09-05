@@ -33,9 +33,6 @@ class Operator(object):
             [self.apply_operation(op, build_file, echo) for op in operations]
 
     def apply_operation(self, operation, build_file, echo=False):
-        if echo and operation['description']:
-            print(operation['description'])
-
         if 'expression' in operation['params']:
             operation['params']['expression'] = self.parse_expression(operation['params']['expression'], build_file)
 
@@ -49,18 +46,27 @@ class Operator(object):
         }
 
         operation_name = operation['operation']
+        description = operation.get('description')
 
         if operation_name in runtime_operations:
-            operation_name, kwargs = runtime_operations[operation_name]
+            operation_name, _description, kwargs = runtime_operations[operation_name]
+
+            if not description:
+                description = _description
+
             kwargs.update(operation['params'])
         else:
             kwargs = operation['params']
 
         # Short-circuit if the adapter has an optimized operation method
-        if hasattr(self.workbook, operation['operation'].replace('.', '_')):
+        if hasattr(self.workbook, operation_name.replace('.', '_')):
             fn = getattr(self.workbook, operation_name.replace('.', '_'))
         else:
             fn = load_classpath_whitelist(operation_name, self.settings.OPERATION_MODULES, shortcuts=True)
+
+        if echo and description:
+            print(description)
+
         fn(context, **kwargs)
 
         self.operations.append(operation)

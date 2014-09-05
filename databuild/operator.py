@@ -1,5 +1,3 @@
-import json
-import yaml
 import os
 
 from databuild.compat import _open

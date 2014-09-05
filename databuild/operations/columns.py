@@ -13,12 +13,13 @@ def update_column(context, sheet, column, facets=None, values=None, expression=N
     sheet.update_column(column, callable_or_values, filter_fn=facets)
 
 
-def add_column(context, sheet, name, expression=None):
+def add_column(context, sheet, name, values=None, expression=None):
     workbook = context['workbook']
     sheet = workbook.sheets[sheet]
+    callable_or_values = expression and expression or values
     if expression is None:
         expression = lambda row: ''
-    sheet.append_column(name, expression)
+    sheet.append_column(name, callable_or_values)
 
 
 def remove_column(context, sheet, name):

@@ -70,7 +70,10 @@ Either ``values`` or ``expression`` are required.
 arguments:
     * ``sheet``
     * ``name``
-    * ``expression`` (optional)
+    * ``values``
+    * ``expression``
+
+Either ``values`` or ``expression`` are required.
 
 ``columns.remove_column``
 ~~~~~~~~~~~~~~~~~~~~~~~~~

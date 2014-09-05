@@ -47,9 +47,6 @@ class LocMemSheet(BaseWorkSheet):
             return [callable_or_docs(item) for item in items]
         return callable_or_docs
 
-    def get_sheet(self, sheet):
-        return self.sheets[sheet]
-
     def append_column(self, column_name, callable_or_values=None):
         if callable_or_values is None:
             callable_or_values = lambda x: None

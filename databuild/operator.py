@@ -5,6 +5,9 @@ from databuild.facets import sum_facets
 from databuild.loader import load_classpath, load_classpath_whitelist
 
 
+runtime_operations = {}
+
+
 class Operator(object):
     operations = []
 
@@ -40,19 +43,25 @@ class Operator(object):
             facets = [self.parse_expression(facet['expression'], build_file) for facet in operation['params']['facets']]
             operation['params']['facets'] = sum_facets(facets)
 
-        kwargs = operation['params']
         context = {
             'workbook': self.workbook,
             'buildfile': build_file,
         }
 
+        operation_name = operation['operation']
+
+        if operation_name in runtime_operations:
+            operation_name, kwargs = runtime_operations[operation_name]
+            kwargs.update(operation['params'])
+        else:
+            kwargs = operation['params']
+
         # Short-circuit if the adapter has an optimized operation method
         if hasattr(self.workbook, operation['operation'].replace('.', '_')):
-            fn = getattr(self.workbook, operation['operation'].replace('.', '_'))
-            fn(context, **kwargs)
+            fn = getattr(self.workbook, operation_name.replace('.', '_'))
         else:
-            fn = load_classpath_whitelist(operation['operation'], self.settings.OPERATION_MODULES, shortcuts=True)
-            fn(context, **kwargs)
+            fn = load_classpath_whitelist(operation_name, self.settings.OPERATION_MODULES, shortcuts=True)
+        fn(context, **kwargs)
 
         self.operations.append(operation)
 

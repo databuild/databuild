@@ -156,3 +156,38 @@ class OperatorTestCase(TestCase):
         assert 'dataset3' in book.sheets
         assert len(book.sheets['dataset3']) == len(book.sheets['dataset1'])
         assert len(book.sheets['dataset3'].headers) < len(book.sheets['dataset1'].headers)
+
+    def test_define_operations(self):
+        operation = {
+            "operation": "operations.define_operation",
+            "description": "",
+            "params": {
+                "name": "duplicate_column",
+                "operation": "sheets.copy",
+                "defaults": {
+                    "source": "dataset1",
+                    "destination": "dataset2",
+                }
+            }
+        }
+        book = LocMemBook('project1')
+        sheet = book.import_data(os.path.join(TEST_DATA_DIR, "dataset1.csv"), format='csv', sheet_name='dataset1', guess_types=False)
+        sheet.append_column("test column", lambda x: '2014-01-01')
+        book.apply_operation(operation)
+
+        operation = {
+            "operation": "duplicate_column",
+            "description": "",
+            "params": {
+                "destination": "dataset3",
+                "headers": [
+                    "Totale Maschi",
+                    "Totale Femmine"
+                ]
+            }
+        }
+
+        book.apply_operation(operation)
+        assert 'dataset3' in book.sheets
+        assert len(book.sheets['dataset3']) == len(book.sheets['dataset1'])
+        assert len(book.sheets['dataset3'].headers) < len(book.sheets['dataset1'].headers)

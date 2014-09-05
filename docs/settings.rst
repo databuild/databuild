@@ -44,4 +44,5 @@ A ``tuple`` of module paths to import :doc:`operations` from. Defaults to::
     OPERATION_MODULES = (
         "databuild.operations.sheets",
         "databuild.operations.columns",
+        "databuild.operations.operations",
     )

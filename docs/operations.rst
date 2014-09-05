@@ -132,6 +132,15 @@ arguments:
     * ``column``
     * ``facets`` (optional)
 
+``operations.define_operation``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Define an alias to an operation with default arguments that can be reused.
+
+arguments:
+    * ``name``: how you want to name your operation. This is name that you will use to call the operation later.
+    * ``operation``: the original path of the operation
+    * ``defaults``: values that will be used as defaults for the operation. You can override them by using the ``params`` property when you call your operation
 
 Custom Operation
 ================

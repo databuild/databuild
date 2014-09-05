@@ -120,7 +120,7 @@ class BaseAdapterMixin(object):
         assert len(self.sheet.data) == 1
         assert self.sheet[0] == self.acqui
 
-    def test_adapater_copy_sheet(self):
+    def test_adapter_copy_sheet(self):
         sheet = self.book.sheets['students']
         sheet.copy('students_copy')
         assert 'students_copy' in self.book.sheets

@@ -1,5 +1,6 @@
 from ..base.exporter import BaseSheetExporter
 
+
 class SheetExporter(BaseSheetExporter):
     def export_csv(self, *args, **kwargs):
         return self.sheet.data.csv

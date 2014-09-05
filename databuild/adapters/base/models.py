@@ -8,6 +8,7 @@ from databuild import settings as default_settings
 
 class BaseWorkBook(object):
     sheet_class = None
+    importer_class = Importer
 
     def __init__(self, name='workbook', settings=None):
         if settings is None:
@@ -32,7 +33,7 @@ class BaseWorkBook(object):
         self.sheets.pop(sheet.name)
 
     def import_data(self, filename, relative_path=None, format='csv', *args, **kwargs):
-        importer = Importer(self, relative_path=relative_path)
+        importer = self.importer_class(self, relative_path=relative_path)
         return importer.import_data(format, filename, *args, **kwargs)
 
     def apply_operations(self, build_files, echo=False):
@@ -51,6 +52,18 @@ class BaseWorkSheet(object):
         self.headers = headers
         self.exporter = self.exporter_class(self)
         super(BaseWorkSheet, self).__init__()
+
+    def __getitem__(self, key):
+        """
+        Returns the nth
+        """
+        raise NotImplementedError
+
+    def __len__(self):
+        """
+        Returns the row count
+        """
+        raise NotImplementedError
 
     def guess_column_types(self, sample_size=5):
         headers = self.headers[:]

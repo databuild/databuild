@@ -1,3 +1,4 @@
+from StringIO import StringIO
 import six
 import json
 import os
@@ -29,16 +30,20 @@ class Importer(object):
         raise NotImplementedError()
 
     def import_csv(self, filename, sheet_name, headers=None, encoding='utf-8', skip_first_lines=0, skip_last_lines=0, guess_types=True, **kwargs):
-        with open(filename, 'rU') as f:
-            reader = csv.DictReader(f, **kwargs)
-            if headers is None:
-                headers = reader.fieldnames
+        with _open(filename, 'r', encoding=encoding) as f:
+            if skip_last_lines:
+                lines = f.readlines()[skip_first_lines:-skip_last_lines]
+            else:
+                lines = f.readlines()[skip_first_lines:]
+        _buffer = StringIO('\n'.join(lines))
+        _buffer.seek(0)
 
-            sheet = self.workbook.add_sheet(sheet_name, headers)
+        reader = csv.DictReader(_buffer, **kwargs)
+        if headers is None:
+            headers = reader.fieldnames
 
-            [next(reader) for i in range(skip_first_lines)]
-            sheet.extend(reader)
-            sheet.pop_rows(skip_last_lines)
+        sheet = self.workbook.add_sheet(sheet_name, headers)
+        sheet.extend(reader)
 
         if guess_types:
             sheet.guess_column_types()

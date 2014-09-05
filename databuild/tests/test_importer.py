@@ -25,17 +25,9 @@ class ImporterTestCase(TestCase):
         acqui = sheet.get(Comune="Acqui Terme")
         assert acqui == acqui_test
 
-        short_sheet = dataimporter.import_data('csv', os.path.join(TEST_DATA_DIR, "dataset1.csv"), 'sheet2', skip_first_lines=2, guess_types=False)
+        short_sheet = dataimporter.import_data('csv', os.path.join(TEST_DATA_DIR, "dataset1.csv"), 'sheet2', guess_types=False)
 
-        self.assertRaises(DoesNotExist, short_sheet.get, Comune="Acqui Terme")
         short_sheet.get(Comune="Voltaggio")
-        assert len(short_sheet.all()) == len(sheet.all()) - 2
-
-        short_sheet2 = dataimporter.import_data('csv', os.path.join(TEST_DATA_DIR, "dataset1.csv"), 'sheet3', skip_last_lines=2, guess_types=False)
-
-        self.assertRaises(DoesNotExist, short_sheet2.get, Comune="Voltaggio")
-        assert len(short_sheet2.all()) == len(sheet.all()) - 2
-
         guessed_sheet = dataimporter.import_data('csv', os.path.join(TEST_DATA_DIR, "dataset1.csv"), 'sheet4', skip_last_lines=1)
 
         acqui_test = {

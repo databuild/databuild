@@ -13,10 +13,6 @@ def read(fname):
 
 
 requirements = read('requirements.txt').splitlines()
-
-pypi_requirements = [req for req in requirements if not req.startswith('http')]
-dependency_links = [req for req in requirements if req.startswith('http')]
-
 tests_requirements = read('test-requirements.txt').splitlines()
 
 setup(
@@ -41,7 +37,6 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Topic :: Scientific/Engineering :: Information Analysis',
     ],
-    install_requires=pypi_requirements,
-    dependency_links=dependency_links,
+    install_requires=requirements,
     tests_require=tests_requirements,
 )

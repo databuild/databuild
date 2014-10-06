@@ -65,12 +65,18 @@ class BaseWorkSheet(object):
         """
         raise NotImplementedError
 
-    def guess_column_types(self, sample_size=5):
+    def guess_column_types(self, sample_size=5, na_class=None):
         headers = self.headers[:]
         for column in headers:
             values = self.get_column(column)[:sample_size]
             value_type = guess_type(values)
-            transform = lambda x: value_type(x[column])
+
+            def transform(x):
+                try:
+                    return value_type(x[column])
+                except ValueError:
+                    return na_class
+
             self.update_column(column, transform)
 
 

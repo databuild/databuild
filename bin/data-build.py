@@ -16,11 +16,12 @@ Options:
 from docopt import docopt
 
 from databuild import _version
-from databuild.builder import build
+from databuild.builder import Builder
 
 
 def main(build_file, settings):
-    build(build_file, settings, echo=True)
+    builder = Builder(settings)
+    builder.build(build_file, echo=True)
 
 
 if __name__ == '__main__':

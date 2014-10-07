@@ -4,7 +4,7 @@ from dateutil import parser as date_parser
 import six
 
 
-def update_column(context, sheet, column, facets=None, values=None, expression=None, wrap=True):
+def update_column(context, sheet, column, facets=None, values=None, expression=None):
     assert values or expression
 
     workbook = context['workbook']
@@ -17,8 +17,6 @@ def add_column(context, sheet, name, values=None, expression=None):
     workbook = context['workbook']
     sheet = workbook.sheets[sheet]
     callable_or_values = expression and expression or values
-    if expression is None:
-        expression = lambda row: ''
     sheet.append_column(name, callable_or_values)
 
 

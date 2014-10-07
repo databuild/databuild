@@ -191,3 +191,59 @@ class OperatorTestCase(TestCase):
         assert 'dataset3' in book.sheets
         assert len(book.sheets['dataset3']) == len(book.sheets['dataset1'])
         assert len(book.sheets['dataset3'].headers) < len(book.sheets['dataset1'].headers)
+
+
+    def test_tasks(self):
+        book = LocMemBook('project1')
+        book.import_data(os.path.join(TEST_DATA_DIR, "dataset1.csv"), format='csv', sheet_name='dataset1', guess_types=False)
+
+        tasks = [
+        {
+            "operation": "operations.define_operation",
+            "description": "",
+            "params": {
+                "name": "duplicate_column",
+                "operation": "sheets.copy",
+                "defaults": {
+                    "source": "dataset1",
+                },
+            }
+        },
+        {
+            "operation": "operations.define_task",
+            "description": "",
+            "params": {
+                "name": "duplicate_column_task",
+                "operations": [
+                    {
+                        "operation": "duplicate_column",
+                        "description": "",
+                        "params": {
+                            "destination": "dataset2",
+                            "headers": [
+                                "Totale Maschi",
+                                "Totale Femmine"
+                            ]
+                        }
+                    }
+                ],
+            }
+        }
+        ]
+        [book.apply_operation(t) for t in tasks]
+
+        operation = {
+            "operation": "operations.call_task",
+            "description": "",
+            "params": {
+                "name": "duplicate_column_task",
+                "overrides": {
+                    "destination": "dataset3"
+                }
+            }
+        }
+
+        book.apply_operation(operation)
+        assert 'dataset3' in book.sheets
+        assert len(book.sheets['dataset3']) == len(book.sheets['dataset1'])
+        assert len(book.sheets['dataset3'].headers) < len(book.sheets['dataset1'].headers)

@@ -32,8 +32,9 @@ class PythonEnvironment(BaseEnvironment):
     def copy(self, iterable):
         return iterable
 
-    def eval(self, expression):
+    def eval(self, expression, context):
         expression = "def fn(row):\n%s\n" % indent(expression, 4)
+        self.globals.update(self.copy(context))
         exec(expression, self.globals, locals())
         return vars()['fn']
 

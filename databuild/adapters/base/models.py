@@ -9,6 +9,7 @@ from databuild import settings as default_settings
 class BaseWorkBook(object):
     sheet_class = None
     importer_class = Importer
+    echo = False
 
     def __init__(self, name='workbook', settings=None):
         if settings is None:
@@ -29,6 +30,12 @@ class BaseWorkBook(object):
         self.sheets[name] = sheet
         return sheet
 
+    def get_or_create_sheet(self, name, headers):
+        if name in self.sheets:
+            return self.sheets[name]
+        else:
+            return self.add_sheet(name, headers)
+
     def remove_sheet(self, sheet):
         self.sheets.pop(sheet.name)
 
@@ -36,11 +43,11 @@ class BaseWorkBook(object):
         importer = self.importer_class(self, relative_path=relative_path)
         return importer.import_data(format, filename, *args, **kwargs)
 
-    def apply_operations(self, build_files, echo=False):
-        return self.operator.apply_operations(build_files, echo)
+    def apply_operations(self, *args, **kwargs):
+        return self.operator.apply_operations(*args, **kwargs)
 
-    def apply_operation(self, operation, build_file=None, echo=False):
-        return self.operator.apply_operation(operation, build_file, echo)
+    def apply_operation(self, operation, build_file=None, *args, **kwargs):
+        return self.operator.apply_operation(operation, build_file, *args, **kwargs)
 
 
 class BaseWorkSheet(object):

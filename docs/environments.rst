@@ -26,7 +26,7 @@ that implements the following methods:
 
     * ``__init__(self, book)``: Initializes the environment with the appropriate global variables.
     * ``copy(self, iterable)``: Copies a variable from the databuild process to the hosted environment.
-    * ``eval(self, expression)``: Evaluates the string `expression` to an actual functions and returns it.
+    * ``eval(self, expression, context)``: Evaluates the string `expression` to an actual functions and returns it.
 
 
 Add-on Environments

@@ -1,11 +1,15 @@
+from copy import deepcopy
 import os
+import six
 
 from databuild.compat import _open
 from databuild.facets import sum_facets
 from databuild.loader import load_classpath, load_classpath_whitelist
+from databuild.utils import render_string
 
 
 runtime_operations = {}
+runtime_tasks = {}
 
 
 class Operator(object):
@@ -27,36 +31,42 @@ class Operator(object):
             languages[name] = RuntimeClass(self.workbook)
         return languages
 
-    def apply_operations(self, build_files, echo=False):
+    def apply_operations(self, build_files, *args, **kwargs):
         for build_file in build_files:
             operations = build_file.operations
-            [self.apply_operation(op, build_file, echo) for op in operations]
+            [self.apply_operation(op, build_file, *args, **kwargs) for op in operations]
 
-    def apply_operation(self, operation, build_file, echo=False):
-        if 'expression' in operation['params']:
-            operation['params']['expression'] = self.parse_expression(operation['params']['expression'], build_file)
+    def apply_operation(self, operation, build_file, context=None, echo=False):
+        if not operation.get('enabled', True):
+            return
 
-        if 'facets' in operation['params']:
-            facets = [self.parse_expression(facet['expression'], build_file) for facet in operation['params']['facets']]
-            operation['params']['facets'] = sum_facets(facets)
+        if context is None:
+            context = {}
 
-        context = {
+        context.update({
             'workbook': self.workbook,
             'buildfile': build_file,
-        }
+        })
+
+        if 'context' in operation:
+            context.update(operation['context'])
 
         operation_name = operation['operation']
-        description = operation.get('description')
-
         if operation_name in runtime_operations:
-            operation_name, _description, kwargs = runtime_operations[operation_name]
-
-            if not description:
-                description = _description
-
+            operation_name, description, kwargs = runtime_operations[operation_name]
             kwargs.update(operation['params'])
         else:
+            description = operation.get('description', '')
             kwargs = operation['params']
+
+        if 'expression' in kwargs:
+            backup_expression = deepcopy(kwargs['expression'])
+            kwargs['expression'] = self.parse_expression(kwargs['expression'], build_file, context=context)
+
+        if 'facets' in kwargs:
+            backup_facets = deepcopy(kwargs['facets'])
+            facets = [self.parse_expression(facet['expression'], build_file) for facet in kwargs['facets']]
+            kwargs['facets'] = sum_facets(facets)
 
         # Short-circuit if the adapter has an optimized operation method
         if hasattr(self.workbook, operation_name.replace('.', '_')):
@@ -65,13 +75,23 @@ class Operator(object):
             fn = load_classpath_whitelist(operation_name, self.settings.OPERATION_MODULES, shortcuts=True)
 
         if echo and description:
-            print(description)
+            _description = render_string(description, context)
+            print(_description)
+
+        for k, v in kwargs.items():
+            if k != 'description' and isinstance(v, six.string_types):
+                kwargs[k] = render_string(v, context)
 
         fn(context, **kwargs)
 
+        if 'expression' in kwargs:
+            kwargs['expression'] = backup_expression
+        if 'facets' in kwargs:
+            kwargs['facets'] = backup_facets
+
         self.operations.append(operation)
 
-    def parse_expression(self, expression, build_file=None):
+    def parse_expression(self, expression, build_file=None, context=None):
         assert not (expression.get('content') and expression.get('path'))
 
         language = expression['language']
@@ -86,5 +106,9 @@ class Operator(object):
                 exp = fh.read()
         else:
             exp = expression['content']
+
+        if context is None:
+            context = {}
+
         runtime = self.languages[language]
-        return runtime.eval(exp)
+        return runtime.eval(exp, context)

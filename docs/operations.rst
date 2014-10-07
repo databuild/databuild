@@ -7,6 +7,13 @@ Operations functions are regular Python function that perform actions on the boo
 
 They have a ``function`` name that identifies them, an optional description and a number of parameters that they accept. Different operation functions accept different parameters.
 
+All operations accepts the following arguments:
+    * ``name``: The name idnetifying the operation function
+    * ``description``: Optional. A description to print on screen when the operation gets executed
+    * ``params``: Parameter for the operation. This varies by operation. See below for a detailed list.
+    * ``context``: Optional. An additional set of properties that can be made available to the operation. This can be used in expression or interpolated in strings (by using the ``{{ my var }}`` sysntax).
+    * ``enabled``: Optional. Set this to ``False`` to skip execution of the operation. Useful for debug. Defaults to ``True``.
+
 Available Operation Functions
 -----------------------------
 
@@ -154,6 +161,28 @@ params:
     * ``name``: how you want to name your operation. This is name that you will use to call the operation later.
     * ``operation``: the original path of the operation
     * ``defaults``: values that will be used as defaults for the operation. You can override them by using the ``params`` property when you call your operation
+
+``operations.define_task``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Define an a task, a list of operations with default params that can be reused.
+
+params:
+    * ``name``: How you want to name your task. This is name that you will use to call the task later.
+    * ``operations``: The operations to be applied
+    * ``description``: Optional. A description to be printed when calling the task.
+    * ``defaults``: Optional. values that will be used as defaults for the operations. You can override them by using the ``overrides`` param when you call your task
+
+``operations.call_task``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Call a previously defined task
+
+params:
+    * ``name``: the name your task. This is name that you will use to call the operation later.
+    * ``operations``: the operations to be applied
+    * ``description``: Optional. A description to be printed when calling the task.
+    * ``overrides``: values that will override the defaults for the operations.
 
 Custom Operation
 ================

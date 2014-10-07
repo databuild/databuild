@@ -8,6 +8,6 @@ class NoopEnvironment(BaseEnvironment):
     def copy(self, iterable):
         return iterable
 
-    def eval(self, expression):
+    def eval(self, expression, context):
         return expression
 

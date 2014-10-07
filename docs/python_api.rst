@@ -3,9 +3,9 @@ Python API
 
 ``Databuild`` can be integrated in your python project. Just import the ``build`` function::
 
-    from databuild.builder import build
+    from databuild.builder import Builder
 
-    build('buildfile.json')
+    Builder().build('buildfile.json')
 
 Supported arguments:
     * ``build_file`` Required. Path to the :doc:`buildfile`.

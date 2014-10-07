@@ -15,7 +15,7 @@ Available Operation Functions
 
 Creates a new sheet importing data from an external source.
 
-arguments:
+params:
     * ``filename``: Required.
     * ``sheet``: Optional. Defaults to ``filename``'s basename.
     * ``format``: Values currently supported are ``'csv'`` and ``'json'``.
@@ -28,7 +28,7 @@ arguments:
 ``sheets.copy``
 ~~~~~~~~~~~~~~~
 
-arguments:
+params:
     * ``source``
     * ``destination``
     * ``headers`` (optional)
@@ -38,7 +38,7 @@ Create a copy of the ``source`` sheet named ``destination``. Optionally copies o
 ``sheets.export_data``
 ~~~~~~~~~~~~~~~~~~~~~~
 
-arguments:
+params:
     * ``sheet``
     * ``format``
     * ``filename``
@@ -49,13 +49,13 @@ Exports the datasheet named ``sheet`` to the file named ``filename`` in the spec
 ``sheets.print_data``
 ~~~~~~~~~~~~~~~~~~~~~
 
-arguments:
+params:
     * ``sheet``
 
 ``columns.update_column``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-arguments:
+params:
     * ``sheet``
     * ``column``
     * ``facets`` (optional)
@@ -67,7 +67,7 @@ Either ``values`` or ``expression`` are required.
 ``columns.add_column``
 ~~~~~~~~~~~~~~~~~~~~~~
 
-arguments:
+params:
     * ``sheet``
     * ``name``
     * ``values``
@@ -78,14 +78,14 @@ Either ``values`` or ``expression`` are required.
 ``columns.remove_column``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-arguments:
+params:
     * ``sheet``
     * ``name``
 
 ``columns.rename_column``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-arguments:
+params:
     * ``sheet``
     * ``old_name``
     * ``new_name``
@@ -94,7 +94,7 @@ arguments:
 ``columns.to_float``
 ~~~~~~~~~~~~~~~~~~~~
 
-arguments:
+params:
     * ``sheet``
     * ``column``
     * ``facets`` (optional)
@@ -103,7 +103,7 @@ arguments:
 ``columns.to_integer``
 ~~~~~~~~~~~~~~~~~~~~~~
 
-arguments:
+params:
     * ``sheet``
     * ``column``
     * ``facets`` (optional)
@@ -112,7 +112,7 @@ arguments:
 ``columns.to_decimal``
 ~~~~~~~~~~~~~~~~~~~~~~
 
-arguments:
+params:
     * ``sheet``
     * ``column``
     * ``facets`` (optional)
@@ -121,7 +121,7 @@ arguments:
 ``columns.to_text``
 ~~~~~~~~~~~~~~~~~~~
 
-arguments:
+params:
     * ``sheet``
     * ``column``
     * ``facets`` (optional)
@@ -130,7 +130,7 @@ arguments:
 ``columns.to_datetime``
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-arguments:
+params:
     * ``sheet``
     * ``column``
     * ``facets`` (optional)
@@ -140,7 +140,7 @@ arguments:
 
 Define an alias to an operation with default arguments that can be reused.
 
-arguments:
+params:
     * ``name``: how you want to name your operation. This is name that you will use to call the operation later.
     * ``operation``: the original path of the operation
     * ``defaults``: values that will be used as defaults for the operation. You can override them by using the ``params`` property when you call your operation

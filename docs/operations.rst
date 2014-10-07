@@ -148,7 +148,7 @@ params:
 ``operations.define_operation``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Define an alias to an operation with default arguments that can be reused.
+Define an alias to an operation with default params that can be reused.
 
 params:
     * ``name``: how you want to name your operation. This is name that you will use to call the operation later.

@@ -73,8 +73,8 @@ You can split a buildfile in different files, and have ``databuild`` process the
 Build files will be executed in alphabetical order. It's recommended that you name them starting with a number indicating their order of execution. For example::
 
   ├── buildfiles
-      ├── 1_import.json
-      ├── 2_add_column.json
-      ├── 3_export.json
+      ├── 1_import.yaml
+      ├── 2_add_column.yaml
+      ├── 3_export.yaml
       └── data
           └── dataset1.csv

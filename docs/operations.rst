@@ -24,6 +24,7 @@ params:
     * ``skip_first_lines``: Optional. Defaults to ``0``. Supported only by the CSV importer.
     * ``skip_Last_lines``: Optional. Defaults to ``0``. Supported only by the CSV importer.
     * ``guess_types``: Optional. If set to ``true``, the CSV importer will try to guess the data type. Defaults to ``true``.
+    * ``replace``: Optional. if set to ``true`` and the sheet already exists, its content will be replaced. if set to ``false``, the new data will be appended. Defaults to ``false``.
 
 ``sheets.add``
 ~~~~~~~~~~~~~~~

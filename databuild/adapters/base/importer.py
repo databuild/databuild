@@ -32,7 +32,7 @@ class Importer(object):
             return import_method(filename, sheet_name, *args, **kwargs)
         raise NotImplementedError()
 
-    def import_csv(self, filename, sheet_name, headers=None, encoding='utf-8', skip_first_lines=0, skip_last_lines=0, guess_types=True, **kwargs):
+    def import_csv(self, filename, sheet_name, headers=None, encoding='utf-8', replace=False, skip_first_lines=0, skip_last_lines=0, guess_types=True, **kwargs):
         with _open(filename, 'r', encoding=encoding) as f:
             if skip_last_lines:
                 lines = f.readlines()[skip_first_lines:-skip_last_lines]
@@ -45,19 +45,27 @@ class Importer(object):
         if headers is None:
             headers = reader.fieldnames
 
-        sheet = self.workbook.add_sheet(sheet_name, headers)
+        if not replace:
+            sheet = self.workbook.get_or_create_sheet(sheet_name, headers)
+        else:
+            sheet = self.workbook.add_sheet(sheet_name, headers)
+        sheet.headers = headers
         sheet.extend(reader)
 
         if guess_types:
             sheet.guess_column_types()
         return sheet
 
-    def import_json(self, filename, sheet_name, headers=None, encoding='utf-8', **kwargs):
+    def import_json(self, filename, sheet_name, headers=None, encoding='utf-8', replace=False, **kwargs):
         with _open(filename, 'r', encoding=encoding) as fh:
             data = json.load(fh)
             if headers is None:
                 headers = data[0].keys()
 
+        if not replace:
+            sheet = self.workbook.get_or_create_sheet(sheet_name, headers)
+        else:
             sheet = self.workbook.add_sheet(sheet_name, headers)
-            sheet.extend(data)
+        sheet.headers = headers
+        sheet.extend(data)
         return sheet

@@ -74,7 +74,7 @@ class BaseWorkSheet(object):
             def transform(x):
                 try:
                     return value_type(x[column])
-                except ValueError:
+                except (ValueError, TypeError):
                     return na_class
 
             self.update_column(column, transform)

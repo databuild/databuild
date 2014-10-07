@@ -1,5 +1,11 @@
 from databuild.compat import _open
 
+
+def add(context, name, headers=None):
+    workbook = context['workbook']
+    workbook.add_sheet(name, headers)
+
+
 def import_data(context, format, filename, sheet, *args, **kwargs):
     workbook = context['workbook']
     if context['buildfile']:

@@ -25,6 +25,15 @@ params:
     * ``skip_Last_lines``: Optional. Defaults to ``0``. Supported only by the CSV importer.
     * ``guess_types``: Optional. If set to ``true``, the CSV importer will try to guess the data type. Defaults to ``true``.
 
+``sheets.add``
+~~~~~~~~~~~~~~~
+
+params:
+    * ``name``
+    * ``headers`` (optional)
+
+Adds a new empty sheet named ``name``. Optionally sets its headers as specified in ``headers``.
+
 ``sheets.copy``
 ~~~~~~~~~~~~~~~
 

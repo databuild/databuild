@@ -5,7 +5,7 @@ import six
 from databuild.compat import _open
 from databuild.facets import sum_facets
 from databuild.loader import load_classpath, load_classpath_whitelist
-from databuild.utils import render_string
+from databuild.utils import render_string, recursive_render
 
 
 runtime_operations = {}
@@ -79,8 +79,7 @@ class Operator(object):
             print(_description)
 
         for k, v in kwargs.items():
-            if k != 'description' and isinstance(v, six.string_types):
-                kwargs[k] = render_string(v, context)
+            kwargs[k] = recursive_render(v, context)
 
         fn(context, **kwargs)
 

@@ -12,4 +12,5 @@ OPERATION_MODULES = (
     "databuild.operations.sheets",
     "databuild.operations.columns",
     "databuild.operations.operations",
+    "databuild.operations.system",
 )

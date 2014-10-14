@@ -152,6 +152,15 @@ params:
     * ``column``
     * ``facets`` (optional)
 
+``system.call_command``
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Calls an external command with the provided arguments.
+
+params:
+    * ``command``
+    * ``arguments``
+
 ``operations.define_operation``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

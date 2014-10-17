@@ -35,9 +35,9 @@ For more details, see the `Extended Documentation`_.
 
 ::
 
-    $ data-build.py buildfile.json
+    $ data-build.py buildfile.yml
 
-``buildfile.yaml`` contains a list of operations to be performed on
+``buildfile.yml`` contains a list of operations to be performed on
 data. Think of it as a script for a spreadsheet.
 
 An example of build file could be:

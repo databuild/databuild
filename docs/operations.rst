@@ -161,6 +161,23 @@ params:
     * ``command``
     * ``arguments``
 
+
+``system.remove_dir``
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Deletes a directory and all of its content.
+
+params:
+    * ``path``: The path of the directory. Either absolute or relative to the build file.
+
+``system.make_dir``
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Creates a directory recursively.
+
+params:
+    * ``path``: The path of the directory. Either absolute or relative to the build file.
+
 ``operations.define_operation``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

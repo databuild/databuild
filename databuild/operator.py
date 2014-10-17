@@ -1,6 +1,5 @@
 from copy import deepcopy
 import os
-import six
 
 from databuild.compat import _open
 from databuild.facets import sum_facets
@@ -77,6 +76,8 @@ class Operator(object):
         if echo and description:
             _description = render_string(description, context)
             print(_description)
+
+        kwargs = deepcopy(kwargs)
 
         for k, v in kwargs.items():
             kwargs[k] = recursive_render(v, context)
